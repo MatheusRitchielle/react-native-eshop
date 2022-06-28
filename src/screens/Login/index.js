@@ -3,10 +3,7 @@ import { View } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
 import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from "../../components/CustomButton/styles";
+import {  PrimaryButton,  SecondaryButton } from "../../components/CustomButton/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 
 const Login = ({ navigation }) => {

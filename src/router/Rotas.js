@@ -4,16 +4,60 @@ import Carrinho from "../screens/Carrinho/index";
 import Favorito from "../screens/Favorito/index";
 import Principal from "../screens/Home/index";
 import Opcoes from "../screens/Opcoes/index";
+import { Entypo } from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
 export default function Rotas({ navigation }) {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Principal" component={Principal} />
-      <Tab.Screen name="Carrinho" component={Carrinho} />
-      <Tab.Screen name="Favorito" component={Favorito} />
-      <Tab.Screen name="Opcoes" component={Opcoes} />
-    </Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: '#121212',
+          borderTopColor: 'transparent'
+        },
+        tabBarActiveTintColor: '#61882E'
+      }} >
+        
+      <Tab.Screen
+        name="Principal"
+        component={Principal}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="home" size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name="Carrinho"
+        component={Carrinho}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="shopping-cart" size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name="Favorito"
+        component={Favorito}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="star" size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name="Opcoes"
+        component={Opcoes}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="menu" size={size} color={color} />
+          )
+        }}
+      />
+    </Tab.Navigator >
   );
 }
