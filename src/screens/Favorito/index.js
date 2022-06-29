@@ -14,8 +14,4 @@ const Favoritos = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  root: {},
-});
-
 export default Favoritos;

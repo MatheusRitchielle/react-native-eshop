@@ -14,32 +14,31 @@ import logoGrande from "../../../assets/images/logo-grande.png";
 
 const Login = ({ navigation }) => {
   return (
-    <CustomContainer>
+    <CustomContainer style={{ marginTop: 50 }}>
       <LogoHorizontal source={logoGrande} />
 
       <View>
-        <InnerText placeholder="login" />
-        <InnerText placeholder="senha" secureTextEntry={true} />
+        <InnerText placeholder="Login" />
+        <InnerText placeholder="Senha" secureTextEntry={true} />
 
         <SecondaryButton onPress={() => navigation.navigate("Recuperar Senha")}>
           <CustomText
             style={{
               color: `${colors.secondary}`,
-              margin: 0,
               padding: 0,
-              fontSize: 17,
+              fontSize: 15,
             }}
           >
             Esqueci a senha
           </CustomText>
         </SecondaryButton>
-        <View style={{ marginVertical: 50 }}>
+        <View style={{ marginTop: 70 }}>
           <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
             <CustomText>Entrar</CustomText>
           </PrimaryButton>
 
           <SecondaryButton
-            style={{ alingSelf: "center" }}
+            style={{ alignItems: "center" }}
             onPress={() => navigation.navigate("Cadastro")}
           >
             <CustomText
@@ -48,7 +47,6 @@ const Login = ({ navigation }) => {
                 margin: 0,
                 padding: 0,
                 fontSize: 15,
-                marginTop: -17,
               }}
             >
               Criar Conta

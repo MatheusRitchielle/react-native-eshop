@@ -11,8 +11,4 @@ const Categoria = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  root: {},
-});
-
 export default Categoria;

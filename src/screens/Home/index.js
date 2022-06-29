@@ -14,8 +14,4 @@ const Principal = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  root: {},
-});
-
 export default Principal;

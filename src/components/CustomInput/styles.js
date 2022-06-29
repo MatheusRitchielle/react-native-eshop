@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const InnerText = styled.TextInput`
-  margin-top: 10px;
+  margin-top: 20px;
   height: 50px;
   width: 270px;
   font-size: 16px;
@@ -9,5 +9,4 @@ export const InnerText = styled.TextInput`
   background-color: #aba7a7;
   align-self: center;
   border-radius: 20px;
-  outline-style: none;
 `;

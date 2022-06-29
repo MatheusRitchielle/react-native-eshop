@@ -8,6 +8,7 @@ import RecuperarSenha from "../screens/RecuperarSenha/index";
 import Home from "../screens/Home/index";
 import Login from "../screens/Login/index";
 import Rotas from "../router/Rotas";
+import colors from "../theme/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,14 +17,14 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Login"
-        // screenOptions={{ headerShown: false }}
+        screenOptions={{ headerShown: false }}
       >
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
-            headerStyle: { backgroundColor: "#61882E" },
-            headerTintColor: "#fff",
+            headerStyle: { backgroundColor: `${colors.primary}` },
+            headerTintColor: `${colors.primary}`,
           }}
         />
 

@@ -11,8 +11,4 @@ const Produtos = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  root: {},
-});
-
 export default Produtos;
