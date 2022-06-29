@@ -21,3 +21,11 @@ export const SecondaryButton = styled.Pressable`
   align-self: center;
   align-items: center;
 `;
+
+export const ButtonContainer = styled.Pressable`
+  /* margin-top: 8px; */
+  font-weight: bold;
+  /* justify-content: center;
+  align-self: center;
+  align-items: center; */
+`;
