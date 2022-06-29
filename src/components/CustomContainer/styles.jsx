@@ -7,3 +7,12 @@ export const CustomContainer = styled.View`
   align-items: center;
   background-color: ${colors.tertiary};
 `;
+
+
+export const CustomContainerCS = styled.View`
+  flex:1;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  align-items: center;
+  justify-content: space-around;
+`;

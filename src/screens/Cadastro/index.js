@@ -17,7 +17,7 @@ const Cadastro = ({ navigation }) => {
         <InnerText placeholder="Senha" secureTextEntry={true} />
         <InnerText placeholder="Confirme sua senha" secureTextEntry={true} />
         <PrimaryButton onPress={() => navigation.navigate("Login")}>
-          <CustomText>Cadastrar</CustomText>
+          <CustomText onPress={() => navigation.navigate(' ')}>Cadastrar</CustomText>
         </PrimaryButton>
       </View>
     </CustomContainer>

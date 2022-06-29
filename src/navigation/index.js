@@ -2,6 +2,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Cadastro from "../screens/Cadastro/index";
+import CadastroSucesso from "../screens/CadastroSucesso/index";
 import Categoria from "../screens/Categoria/index";
 import Produto from "../screens/Produto/index";
 import RecuperarSenha from "../screens/RecuperarSenha/index";
@@ -28,6 +29,7 @@ const Navigation = () => {
         />
 
         <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name=" " component={CadastroSucesso} />
         <Stack.Screen name="Recuperar Senha" component={RecuperarSenha} />
         <Stack.Screen name="Principal" component={Home} />
         <Stack.Screen name="Menu Principal" component={Rotas} />
