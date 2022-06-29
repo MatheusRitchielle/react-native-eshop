@@ -6,3 +6,12 @@ export const CustomTitle = styled.Text`
   font-weight: bold;
   padding: 10px;
 `;
+
+export const CustomH1 = styled.Text`
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height:27px;
+  font-style: normal;
+  font-family: 'Amiko';
+`;
