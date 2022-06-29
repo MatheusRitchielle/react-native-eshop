@@ -18,7 +18,7 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Login"
-      // screenOptions={{ headerShown: false }}
+        //screenOptions={{ headerShown: false }}
       >
         <Stack.Screen
           name="Login"
@@ -38,6 +38,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
+            headerShown: false
           }}
         />
         <Stack.Screen name="Recuperar Senha" component={RecuperarSenha}
@@ -52,15 +53,17 @@ const Navigation = () => {
             headerTintColor: "#C8C5C5",
             title: false,
             orientation: false,
+            headerShown: false
           }}
         />
         <Stack.Screen name="Menu Principal" component={Rotas}
-         options={{
-          headerStyle: { backgroundColor: "#333" },
-          headerTintColor: "#C8C5C5",
-          title: false,
-          headerBackButtonMenuEnabled: false,
-        }}
+          options={{
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#C8C5C5",
+            title: false,
+            headerBackButtonMenuEnabled: false,
+            headerShown: false
+          }}
         />
         <Stack.Screen name="Pagina de Produtos" component={Produto}
           options={{
@@ -78,7 +81,7 @@ const Navigation = () => {
         />
         <Stack.Screen name="Opcoes" component={Opcoes}
           options={{
-            headerShadowVisible:false,
+            headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             title: false,
