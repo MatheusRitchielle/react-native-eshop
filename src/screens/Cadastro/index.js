@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
 import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
@@ -14,8 +14,8 @@ const Cadastro = ({ navigation }) => {
         <InnerText placeholder="Nome" />
         <InnerText placeholder="CPF" />
         <InnerText placeholder="Data de Nascimento" />
-        <InnerText placeholder="Senha" />
-        <InnerText placeholder="Confirme sua senha" />
+        <InnerText placeholder="Senha" secureTextEntry={true} />
+        <InnerText placeholder="Confirme sua senha" secureTextEntry={true} />
         <PrimaryButton onPress={() => navigation.navigate("Login")}>
           <CustomText>Cadastrar</CustomText>
         </PrimaryButton>
@@ -23,5 +23,9 @@ const Cadastro = ({ navigation }) => {
     </CustomContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  root: {},
+});
 
 export default Cadastro;

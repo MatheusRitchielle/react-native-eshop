@@ -1,17 +1,12 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import Navigation from "./src/navigation/index";
 
-export default function App() {
+const App = () => {
   return (
-    <SafeAreaView style={styles.root}>
+    <SafeAreaView style={{ flex: "1" }}>
       <Navigation />
     </SafeAreaView>
   );
-}
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: "#f9fbfc",
-  },
-});
+};
+export default App;

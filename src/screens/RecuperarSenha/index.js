@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
 import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
@@ -20,5 +20,9 @@ const RecuperaSenha = ({ navigation }) => {
     </CustomContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  root: {},
+});
 
 export default RecuperaSenha;

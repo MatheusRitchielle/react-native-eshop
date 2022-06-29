@@ -6,7 +6,7 @@ export const PrimaryButton = styled.Pressable`
   background-color: #61882e;
   align-self: center;
   margin-top: 22px;
-  border-radius: 50;
+  border-radius: 50px;
   font-weight: bold;
   align-items: center;
   justify-content: center;

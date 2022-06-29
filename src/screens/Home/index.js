@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { Ionicons } from "@expo/vector-icons";
@@ -13,5 +13,9 @@ const Principal = ({ navigation }) => {
     </CustomContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  root: {},
+});
 
 export default Principal;

@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { SecondaryButton } from "../../components/CustomButton/styles";
 import { CustomText } from "../../components/CustomText/styles";
@@ -25,4 +26,7 @@ const Opcoes = ({ navigation }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  root: {},
+});
 export default Opcoes;

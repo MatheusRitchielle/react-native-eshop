@@ -1,18 +1,21 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
 import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
-import {  PrimaryButton,  SecondaryButton } from "../../components/CustomButton/styles";
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from "../../components/CustomButton/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 
 const Login = ({ navigation }) => {
   return (
     <CustomContainer>
       <CustomTitle>Login</CustomTitle>
-      <View style={{ marginTop: 20 }}>
+      <View>
         <InnerText placeholder="username" />
-        <InnerText placeholder="password" />
+        <InnerText placeholder="password" secureTextEntry={true} />
 
         <SecondaryButton onPress={() => navigation.navigate("Recuperar Senha")}>
           <CustomText style={{ color: "#646464" }}>Esqueci a senha</CustomText>
