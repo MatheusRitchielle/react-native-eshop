@@ -9,6 +9,7 @@ import RecuperarSenha from "../screens/RecuperarSenha/index";
 import Home from "../screens/Home/index";
 import Login from "../screens/Login/index";
 import Rotas from "../router/Rotas";
+import Opcoes from "../screens/Opcoes";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,24 +18,72 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Login"
-        // screenOptions={{ headerShown: false }}
+      // screenOptions={{ headerShown: false }}
       >
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
-            headerStyle: { backgroundColor: "#61882E" },
             headerTintColor: "#fff",
+            headerShown: false
           }}
         />
-
-        <Stack.Screen name="Cadastro" component={Cadastro} />
-        <Stack.Screen name=" " component={CadastroSucesso} />
-        <Stack.Screen name="Recuperar Senha" component={RecuperarSenha} />
-        <Stack.Screen name="Principal" component={Home} />
-        <Stack.Screen name="Menu Principal" component={Rotas} />
-        <Stack.Screen name="Pagina de Produtos" component={Produto} />
-        <Stack.Screen name="Pagina de Categorias" component={Categoria} />
+        <Stack.Screen name="Cadastro" component={Cadastro}
+          options={{
+            headerStyle: { backgroundColor: "#d9d9d9" },
+            headerTintColor: "#121212",
+          }}
+        />
+        <Stack.Screen name=" " component={CadastroSucesso}
+          options={{
+            headerStyle: { backgroundColor: "#d9d9d9" },
+            headerTintColor: "#121212",
+          }}
+        />
+        <Stack.Screen name="Recuperar Senha" component={RecuperarSenha}
+          options={{
+            headerStyle: { backgroundColor: "#d9d9d9" },
+            headerTintColor: "#121212",
+          }}
+        />
+        <Stack.Screen name="Principal" component={Home}
+          options={{
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#C8C5C5",
+            title: false,
+            orientation: false,
+          }}
+        />
+        <Stack.Screen name="Menu Principal" component={Rotas}
+         options={{
+          headerStyle: { backgroundColor: "#333" },
+          headerTintColor: "#C8C5C5",
+          title: false,
+          headerBackButtonMenuEnabled: false,
+        }}
+        />
+        <Stack.Screen name="Pagina de Produtos" component={Produto}
+          options={{
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#C8C5C5",
+            title: false,
+          }}
+        />
+        <Stack.Screen name="Pagina de Categorias" component={Categoria}
+          options={{
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#C8C5C5",
+            title: false,
+          }}
+        />
+        <Stack.Screen name="Opcoes" component={Opcoes}
+          options={{
+            headerShadowVisible:false,
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#C8C5C5",
+            title: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

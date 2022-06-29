@@ -30,3 +30,11 @@ export const PrimaryButtonCS = styled.Pressable`
   box-shadow: 3px 4px 4px rgba(0, 0 , 0, 0.25);
   border-radius: 100px;
 `;
+
+export const ButtonContainer = styled.Pressable`
+  /* margin-top: 8px; */
+  font-weight: bold;
+  /* justify-content: center;
+  align-self: center;
+  align-items: center; */
+`;
