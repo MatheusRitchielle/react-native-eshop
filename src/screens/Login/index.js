@@ -8,29 +8,53 @@ import {
   SecondaryButton,
 } from "../../components/CustomButton/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
+import colors from "../../theme/index";
+import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
+import logoGrande from "../../../assets/images/logo-grande.png";
 
 const Login = ({ navigation }) => {
   return (
     <CustomContainer>
-      <CustomTitle>Login</CustomTitle>
+      <LogoHorizontal source={logoGrande} />
+
       <View>
-        <InnerText placeholder="username" />
-        <InnerText placeholder="password" secureTextEntry={true} />
+        <InnerText placeholder="login" />
+        <InnerText placeholder="senha" secureTextEntry={true} />
 
         <SecondaryButton onPress={() => navigation.navigate("Recuperar Senha")}>
-          <CustomText style={{ color: "#646464" }}>Esqueci a senha</CustomText>
+          <CustomText
+            style={{
+              color: `${colors.secondary}`,
+              margin: 0,
+              padding: 0,
+              fontSize: 17,
+            }}
+          >
+            Esqueci a senha
+          </CustomText>
         </SecondaryButton>
+        <View style={{ marginVertical: 50 }}>
+          <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
+            <CustomText>Entrar</CustomText>
+          </PrimaryButton>
 
-        <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
-          <CustomText>Login</CustomText>
-        </PrimaryButton>
-
-        <SecondaryButton
-          style={{ alingSelf: "center" }}
-          onPress={() => navigation.navigate("Cadastro")}
-        >
-          <CustomText style={{ color: "#646464" }}>Criar Conta</CustomText>
-        </SecondaryButton>
+          <SecondaryButton
+            style={{ alingSelf: "center" }}
+            onPress={() => navigation.navigate("Cadastro")}
+          >
+            <CustomText
+              style={{
+                color: `${colors.secondary}`,
+                margin: 0,
+                padding: 0,
+                fontSize: 15,
+                marginTop: -17,
+              }}
+            >
+              Criar Conta
+            </CustomText>
+          </SecondaryButton>
+        </View>
       </View>
     </CustomContainer>
   );

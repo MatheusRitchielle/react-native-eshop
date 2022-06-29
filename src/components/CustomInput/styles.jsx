@@ -5,8 +5,9 @@ export const InnerText = styled.TextInput`
   height: 50px;
   width: 270px;
   font-size: 16px;
-  padding-left: 15px;
+  padding: 15px;
   background-color: #aba7a7;
   align-self: center;
   border-radius: 20px;
+  outline-style: none;
 `;

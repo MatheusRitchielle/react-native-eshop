@@ -1,11 +1,11 @@
 import styled from "styled-components/native";
+import colors from "../../theme/index";
 
 export const PrimaryButton = styled.Pressable`
   height: 50px;
   width: 120px;
-  background-color: #61882e;
+  background-color: ${colors.primary};
   align-self: center;
-  margin-top: 22px;
   border-radius: 50px;
   font-weight: bold;
   align-items: center;
