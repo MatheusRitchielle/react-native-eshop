@@ -82,6 +82,8 @@ const Lista = [
   }
 ];
 
+
+
 const Adicionar = () => {
   return (setNumero(numero + 1))
 }
@@ -96,8 +98,6 @@ const Item = ({ produto, preco, estoque }) => (
   <CardGeneric>
     <Text>Nome do produto: {produto}</Text>
     <Text>R$ {preco}</Text>
-
-
     <ButtonContainer onClick={() => Adicionar} >
       <MaterialIcons name="add-box" size={24} color="black" />
     </ButtonContainer>
@@ -117,7 +117,7 @@ const Carrinho = () => {
       estoque={item.estoque}
     />
   );
-
+  
   return (
     <>
       <CustomContainer>
@@ -128,6 +128,8 @@ const Carrinho = () => {
           data={Lista}
           renderItem={itemRenderizado}
           keyExtractor={(item) => item.id} />
+
+        <Text>Valor</Text>
       </CustomContainer>
 
       <ContainerCarrinho>

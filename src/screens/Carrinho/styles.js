@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 
 export const ContainerCarrinho = styled.View`
   justify-content: space-around;
+  margin-top: 10px;
   padding: 15px;
   flex-direction: row;
   `;

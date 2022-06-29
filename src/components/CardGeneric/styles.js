@@ -5,7 +5,7 @@ export const CardGeneric = styled.View`
   width: 400px;
   justify-content: space-evenly;
   /* align-items: center;  */
-  background-color: #fff;
   border-radius: 5;
+  border: 2px solid;
   padding-left: 10 ;
 `;
