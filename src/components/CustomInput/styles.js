@@ -9,4 +9,5 @@ export const InnerText = styled.TextInput`
   background-color: #dfdede;
   align-self: center;
   border-radius: 12px;
+  font-family: "Blinker";
 `;

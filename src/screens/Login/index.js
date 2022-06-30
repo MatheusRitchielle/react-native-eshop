@@ -1,16 +1,13 @@
 import React from "react";
 import { View } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
-import { CustomText } from "../../components/CustomText/styles";
 import ContainerDinamico from "../../components/CustomContainer";
 import {
   PrimaryButton,
   SecondaryButton,
 } from "../../components/CustomButton/styles";
-
 import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import CustomButton from "../../components/CustomButton";
 import TextoDinamico from "../../components/CustomText";
 
 const Login = ({ navigation }) => {
@@ -29,7 +26,7 @@ const Login = ({ navigation }) => {
       </SecondaryButton>
       <View style={{ marginTop: 70 }}>
         <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
-          <CustomText>Entrar</CustomText>
+          <TextoDinamico>Entrar</TextoDinamico>
         </PrimaryButton>
 
         <SecondaryButton
