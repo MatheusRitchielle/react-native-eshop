@@ -10,13 +10,17 @@ const Login = ({ navigation }) => {
   return (
     <CustomContainer>
       <CustomTitle>Login</CustomTitle>
-      <View style={{ marginTop: 20 }}>
+      <View style={{ marginTop: 20 }}/>
         <InnerText placeholder="username" />
         <InnerText placeholder="password" />
 
         <SecondaryButton onPress={() => navigation.navigate("Recuperar Senha")}>
           <CustomText style={{ color: "#646464" }}>Esqueci a senha</CustomText>
         </SecondaryButton>
+        <View style={{ marginVertical: 50 }}>
+          <PrimaryButton onPress={() => navigation.navigate("Rotas")}>
+            <CustomText>Entrar</CustomText>
+          </PrimaryButton>
 
         <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
           <CustomText>Login</CustomText>

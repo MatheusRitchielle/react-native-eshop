@@ -44,7 +44,7 @@ const Navigation = () => {
             orientation: false,
           }}
         />
-        <Stack.Screen name="Menu Principal" component={Rotas}
+        <Stack.Screen name="Rotas" component={Rotas}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
@@ -66,7 +66,7 @@ const Navigation = () => {
             title: false,
           }}
         />
-        <Stack.Screen name="Opcoes" component={Opcoes}
+        <Stack.Screen name="Opcao" component={Opcoes}
           options={{
             headerShadowVisible:false,
             headerStyle: { backgroundColor: "#333" },

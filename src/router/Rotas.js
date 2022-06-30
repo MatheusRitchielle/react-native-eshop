@@ -40,7 +40,7 @@ const Tab = createBottomTabNavigator();
 //   },
 // });
 
-export default function Rotas() {
+const Rotas = () => {
 
   return (
     <Tab.Navigator
@@ -96,3 +96,5 @@ export default function Rotas() {
     </Tab.Navigator >
   );
 }
+
+export default Rotas;

@@ -1,11 +1,8 @@
 import React from "react";
-import { FlatList, View, Text } from "react-native";
+import { FlatList, Text } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
-import { CardGeneric } from '../../components/CardGeneric/styles'
-import { MaterialIcons, Octicons } from '@expo/vector-icons';
-import { ButtonContainer } from './../../components/CustomButton/styles';
-import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho } from "./styles";
+import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho, ContainerCabecalho, CardGeneric } from "./styles";
 
 const Lista = [
   {
@@ -96,20 +93,18 @@ const Item = ({ produto, preco, estoque }) => (
   <CardGeneric>
     <Text>Nome do produto: {produto}</Text>
     <Text>R$ {preco}</Text>
-
-
-    <ButtonContainer onClick={() => Adicionar} >
+    {/* <ButtonContainer onClick={() => Adicionar} >
       <MaterialIcons name="add-box" size={24} color="black" />
-    </ButtonContainer>
-    <Text>Quantidade {estoque}</Text>
-    <ButtonContainer onClick={() => Remover} >
+    </ButtonContainer>  */}
+    <Text>Quantidade: {estoque}</Text>
+    {/* <ButtonContainer onClick={() => Remover} >
       <Octicons name="diff-removed" size={24} color="black" />
-    </ButtonContainer>
+    </ButtonContainer> */}
     <Text>Valor total R$: {estoque * preco} </Text>
   </CardGeneric>
 );
 
-const Carrinho = () => {
+const Carrinho = ({navigation}) => {
   const itemRenderizado = ({ item }) => (
     <Item
       produto={item.produto}
@@ -120,10 +115,15 @@ const Carrinho = () => {
 
   return (
     <>
-      <CustomContainer>
-        <View style={{ marginTop: 20 }} />
-        <CustomTitle style={{ color: '#61882E' }}>Carrinho</CustomTitle>
+      <CustomTitle style={{ color: '#61882E', textAlign: 'center' }}>Carrinho</CustomTitle>
+      <ContainerCabecalho>
+       <Text style={{ fontWeight: 'bold' }}>Produto</Text>
+       <Text style={{ fontWeight: 'bold' }}>Quantidade</Text>
+       <Text style={{ fontWeight: 'bold' }}>Preço Unit</Text>
+       <Text style={{ fontWeight: 'bold' }}>Total</Text>
+      </ContainerCabecalho>
 
+      <CustomContainer>
         <FlatList
           data={Lista}
           renderItem={itemRenderizado}
@@ -131,14 +131,19 @@ const Carrinho = () => {
       </CustomContainer>
 
       <ContainerCarrinho>
-
-        <ButtonCarrinho >
-          <CustomTextCarrinho>Adicionar Itens</CustomTextCarrinho>
+        <ButtonCarrinho onPress={() => navigation.goBack()} >
+          <CustomTextCarrinho>
+            Adicionar Itens
+          </CustomTextCarrinho>
         </ButtonCarrinho>
 
-        <ButtonCarrinho >
-          <CustomTextCarrinho>Fechar Pedido</CustomTextCarrinho>
+
+        <ButtonCarrinho onPress={() => navigation.navigate("Pagina de Produtos")} >
+          <CustomTextCarrinho>
+            Fechar Pedido
+          </CustomTextCarrinho>
         </ButtonCarrinho>
+
 
       </ContainerCarrinho>
 

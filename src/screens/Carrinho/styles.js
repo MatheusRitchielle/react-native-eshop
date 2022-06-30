@@ -1,10 +1,31 @@
 import styled from "styled-components/native";
 
+export const ContainerCabecalho = styled.View`
+  justify-content: space-around;
+  margin-top: 10px;
+  padding: 5px;
+  flex-direction: row;
+  border: 2px solid;
+  border-radius: 5px;
+`;
+
+export const CardGeneric = styled.View`
+  display: flex;
+  align-items: stretch;
+  align-content: space-between;
+  margin: 5px; 
+  padding-left: 10 ;
+  border: 1px dotted;
+  border-left-color: transparent;
+  border-right-color : transparent;
+  border-top-color: transparent;
+`;
+
 export const ContainerCarrinho = styled.View`
   justify-content: space-around;
   padding: 15px;
   flex-direction: row;
-  `;
+`;
 
 export const ButtonCarrinho = styled.Pressable`
   height: 50px;
