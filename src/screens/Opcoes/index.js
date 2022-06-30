@@ -5,7 +5,6 @@ import { CustomText } from "../../components/CustomText/styles";
 import { AntDesign, FontAwesome5, FontAwesome, EvilIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { CardOpcoes } from "../../components/CardOpcoes/styles";
 
-
 const Opcoes = ({ navigation }) => {
   return (
     <CustomContainer>

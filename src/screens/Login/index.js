@@ -1,13 +1,9 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
 import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from "../../components/CustomButton/styles";
-import { CustomTitle } from "../../components/CustomTitle/styles";
+import { PrimaryButton, SecondaryButton} from "../../components/CustomButton/styles";
 import colors from "../../theme/index";
 import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
 import logoGrande from "../../../assets/images/logo-grande.png";
