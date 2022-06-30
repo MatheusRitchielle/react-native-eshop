@@ -1,8 +1,8 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+
 import { InnerText } from "../../components/CustomInput/styles";
 import { CustomText } from "../../components/CustomText/styles";
-import { CustomContainer } from "../../components/CustomContainer/styles";
+
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { PrimaryButton } from "../../components/CustomButton/styles";
 import ContainerDinamico from "../../components/CustomContainer";

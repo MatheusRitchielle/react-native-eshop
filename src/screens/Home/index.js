@@ -1,16 +1,16 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { CustomContainer } from "../../components/CustomContainer/styles";
+import { View } from "react-native";
+import ContainerDinamico from "../../components/CustomContainer";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { Ionicons } from "@expo/vector-icons";
 
 const Principal = ({ navigation }) => {
   return (
-    <CustomContainer>
+    <ContainerDinamico>
       <Ionicons name="home" size={24} color="black" />
       <CustomTitle>Pagina Principal</CustomTitle>
       <View style={{ marginTop: 20 }}></View>
-    </CustomContainer>
+    </ContainerDinamico>
   );
 };
 

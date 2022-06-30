@@ -10,14 +10,14 @@ export const PrimaryButton = styled.Pressable`
   border-radius: 50px;
   justify-content: center;
   background-color: ${colors.primary};
-  margin-top: ${(props) => props.margin || 0};
+  margin-top: 0;
 `;
 
 export const SecondaryButton = styled.Pressable`
-  height: 20px;
-  width: 250px;
-  margin-top: 10px;
+  width: ${(props) => props.size || "260px"};
+  margin-top: ${(props) => props.margin || "10px"};
   font-weight: bold;
   align-self: center;
   justify-content: center;
+  text-align: ${(props) => props.text || "center"};
 `;

@@ -3,5 +3,5 @@ import colors from "../../theme/index";
 
 export const CustomText = styled.Text`
   color: ${colors.secondary};
-  font-size: 20px;
+  font-size: ${(props) => props.font || "15px"};
 `;

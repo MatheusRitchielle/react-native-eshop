@@ -1,13 +1,13 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { CustomContainer } from "../../components/CustomContainer/styles";
+import ContainerDinamico from "../../components/CustomContainer";
+
 import { CustomTitle } from "../../components/CustomTitle/styles";
 
 const Categoria = () => {
   return (
-    <CustomContainer>
+    <ContainerDinamico>
       <CustomTitle>Pagina de Categorias</CustomTitle>
-    </CustomContainer>
+    </ContainerDinamico>
   );
 };
 

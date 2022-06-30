@@ -1,16 +1,16 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import { CustomContainer } from "../../components/CustomContainer/styles";
+import { View } from "react-native";
+import ContainerDinamico from "../../components/CustomContainer";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { AntDesign } from "@expo/vector-icons";
 
 const Favoritos = () => {
   return (
-    <CustomContainer>
+    <ContainerDinamico>
       <AntDesign name="star" size={24} color="black" />
       <CustomTitle>Pagina Favoritos</CustomTitle>
       <View style={{ marginTop: 20 }}></View>
-    </CustomContainer>
+    </ContainerDinamico>
   );
 };
 
