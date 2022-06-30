@@ -2,7 +2,6 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Cadastro from "../screens/Cadastro/index";
-import CadastroSucesso from "../screens/CadastroSucesso/index";
 import Categoria from "../screens/Categoria/index";
 import Produto from "../screens/Produto/index";
 import RecuperarSenha from "../screens/RecuperarSenha/index";
@@ -16,29 +15,19 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Login"
-        //screenOptions={{ headerShown: false }}
-      >
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
             headerTintColor: "#fff",
-            headerShown: false
+            headerShown: false,
           }}
         />
         <Stack.Screen name="Cadastro" component={Cadastro}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
-          }}
-        />
-        <Stack.Screen name=" " component={CadastroSucesso}
-          options={{
-            headerStyle: { backgroundColor: "#d9d9d9" },
-            headerTintColor: "#121212",
-            headerShown: false
           }}
         />
         <Stack.Screen name="Recuperar Senha" component={RecuperarSenha}
@@ -53,16 +42,14 @@ const Navigation = () => {
             headerTintColor: "#C8C5C5",
             title: false,
             orientation: false,
-            headerShown: false
           }}
         />
-        <Stack.Screen name="Menu Principal" component={Rotas}
+        <Stack.Screen name="Rotas" component={Rotas}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             title: false,
             headerBackButtonMenuEnabled: false,
-            headerShown: false
           }}
         />
         <Stack.Screen name="Pagina de Produtos" component={Produto}
@@ -72,16 +59,16 @@ const Navigation = () => {
             title: false,
           }}
         />
-        <Stack.Screen name="Pagina de Categorias" component={Categoria}
+        <Stack.Screen name="Pagina de Categirias" component={Categoria}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             title: false,
           }}
         />
-        <Stack.Screen name="Opcoes" component={Opcoes}
+        <Stack.Screen name="Opcao" component={Opcoes}
           options={{
-            headerShadowVisible: false,
+            headerShadowVisible:false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             title: false,

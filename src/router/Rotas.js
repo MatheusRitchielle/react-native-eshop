@@ -8,7 +8,40 @@ import { Entypo } from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
-export default function Rotas({ navigation }) {
+// const SettingsStack = createStackNavigator({
+//   SettingsList: {
+//     screen: Example,
+//     navigationOptions: {
+//       headerTitle: 'Settings List',
+//     },
+//   },
+//   Profile: {
+//     screen: Example,
+//     navigationOptions: {
+//       headerTitle: 'Profile',
+//     },
+//   },
+// });
+
+// const MainDrawer = createDrawerNavigator({
+//   MainTabs: MainTabs,
+//   Settings: SettingsStack,
+// });
+
+// const App = createSwitchNavigator({
+//   Loading: {
+//     screen: Example,
+//   },
+//   Auth: {
+//     screen: AuthStack,
+//   },
+//   App: {
+//     screen: MainDrawer,
+//   },
+// });
+
+const Rotas = () => {
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -17,7 +50,8 @@ export default function Rotas({ navigation }) {
           borderTopColor: 'transparent'
         },
         tabBarActiveTintColor: '#61882E',
-        headerShown: false
+          headerShown: false,
+        
       }} >
 
       <Tab.Screen
@@ -63,3 +97,4 @@ export default function Rotas({ navigation }) {
   );
 }
 
+export default Rotas;

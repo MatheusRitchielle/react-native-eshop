@@ -34,7 +34,7 @@ const Login = ({ navigation }) => {
           </CustomText>
         </SecondaryButton>
         <View style={{ marginVertical: 50 }}>
-          <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
+          <PrimaryButton onPress={() => navigation.navigate("Rotas")}>
             <CustomText>Entrar</CustomText>
           </PrimaryButton>
 
