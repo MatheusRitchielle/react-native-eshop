@@ -5,7 +5,6 @@ import iconeGrande from '../../../assets/images/iconeGrande.png';
 import { PrimaryButtonCS } from '../../components/CustomButton/styles';
 import { CustomTextCS } from '../../components/CustomText/styles';
 
-
 const CadastroSucesso = () => {
 
     return (
@@ -20,7 +19,6 @@ const CadastroSucesso = () => {
 }
 
 export default CadastroSucesso;
-
 
 export const Logo = styled.Image`
     width: 120px;
