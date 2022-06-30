@@ -1,22 +1,31 @@
 import React from "react";
 import { View } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
+<<<<<<< HEAD
 import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { PrimaryButton, SecondaryButton} from "../../components/CustomButton/styles";
 import colors from "../../theme/index";
+=======
+import ContainerDinamico from "../../components/CustomContainer";
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from "../../components/CustomButton/styles";
+>>>>>>> leonardo
 import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
 import logoGrande from "../../../assets/images/logo-grande.png";
+import TextoDinamico from "../../components/CustomText";
 
 const Login = ({ navigation }) => {
   return (
-    <CustomContainer>
+    <ContainerDinamico>
       <LogoHorizontal source={logoGrande} />
 
-      <View>
-        <InnerText placeholder="login" />
-        <InnerText placeholder="senha" secureTextEntry={true} />
+      <InnerText placeholder="Login" />
+      <InnerText placeholder="Senha" secureTextEntry={true} />
 
+<<<<<<< HEAD
         <SecondaryButton onPress={() => navigation.navigate("Recuperar Senha")}>
           <CustomText
             style={{
@@ -33,26 +42,27 @@ const Login = ({ navigation }) => {
           <PrimaryButton onPress={() => navigation.navigate("Rotas")}>
             <CustomText>Entrar</CustomText>
           </PrimaryButton>
+=======
+      <SecondaryButton
+        style={{ textAlign: "left" }}
+        onPress={() => navigation.navigate("Recuperar Senha")}
+      >
+        <TextoDinamico fSize="14px">Esqueci a senha</TextoDinamico>
+      </SecondaryButton>
+      <View style={{ marginTop: 70 }}>
+        <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
+          <TextoDinamico>Entrar</TextoDinamico>
+        </PrimaryButton>
+>>>>>>> leonardo
 
-          <SecondaryButton
-            style={{ alingSelf: "center" }}
-            onPress={() => navigation.navigate("Cadastro")}
-          >
-            <CustomText
-              style={{
-                color: `${colors.secondary}`,
-                margin: 0,
-                padding: 0,
-                fontSize: 15,
-                marginTop: -17,
-              }}
-            >
-              Criar Conta
-            </CustomText>
-          </SecondaryButton>
-        </View>
+        <SecondaryButton
+          style={{ width: 100 }}
+          onPress={() => navigation.navigate("Cadastro")}
+        >
+          <TextoDinamico fSize="14px">Criar Conta</TextoDinamico>
+        </SecondaryButton>
       </View>
-    </CustomContainer>
+    </ContainerDinamico>
   );
 };
 

@@ -1,13 +1,13 @@
 import styled from "styled-components/native";
 
 export const InnerText = styled.TextInput`
-  margin-top: 10px;
+  margin-top: 20px;
   height: 50px;
   width: 270px;
   font-size: 16px;
-  padding: 15px;
-  background-color: #aba7a7;
+  padding: 10px;
+  background-color: #dfdede;
   align-self: center;
-  border-radius: 20px;
-  outline-style: none;
+  border-radius: 12px;
+  font-family: "Blinker";
 `;

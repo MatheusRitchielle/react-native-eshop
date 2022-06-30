@@ -4,21 +4,21 @@ import colors from "../../theme/index";
 export const PrimaryButton = styled.Pressable`
   height: 50px;
   width: 120px;
-  background-color: ${colors.primary};
-  align-self: center;
-  border-radius: 50px;
   font-weight: bold;
+  align-self: center;
   align-items: center;
+  border-radius: 50px;
   justify-content: center;
+  background-color: ${colors.primary};
+  margin-top: 0;
 `;
 
 export const SecondaryButton = styled.Pressable`
-  height: 50px;
-  width: 250px;
-  margin-top: 8px;
+  width: ${(props) => props.size || "260px"};
+  margin-top: ${(props) => props.margin || "10px"};
   font-weight: bold;
-  justify-content: center;
   align-self: center;
+<<<<<<< HEAD:src/components/CustomButton/styles.js
   align-items: center;
   `;
 
@@ -37,4 +37,8 @@ export const ButtonContainer = styled.Pressable`
   /* justify-content: center;
   align-self: center;
   align-items: center; */
+=======
+  justify-content: center;
+  text-align: ${(props) => props.text || "center"};
+>>>>>>> leonardo:src/components/CustomButton/styles.js
 `;
