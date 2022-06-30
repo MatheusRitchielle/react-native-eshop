@@ -50,9 +50,19 @@ const Rotas = () => {
           borderTopColor: 'transparent'
         },
         tabBarActiveTintColor: '#61882E',
-          headerShown: false,
-        
+        headerShown: false,
+
       }} >
+    {/* Voltar para o segundo lugar */}
+      <Tab.Screen
+        name="Carrinho"
+        component={Carrinho}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="shopping-cart" size={size} color={color} />
+          )
+        }}
+      />
 
       <Tab.Screen
         name="Principal"
@@ -64,15 +74,7 @@ const Rotas = () => {
         }}
       />
 
-      <Tab.Screen
-        name="Carrinho"
-        component={Carrinho}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Entypo name="shopping-cart" size={size} color={color} />
-          )
-        }}
-      />
+
 
       <Tab.Screen
         name="Favorito"

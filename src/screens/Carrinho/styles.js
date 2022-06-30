@@ -10,20 +10,45 @@ export const ContainerCabecalho = styled.View`
 `;
 
 export const CardGeneric = styled.View`
-  display: flex;
-  align-items: stretch;
-  align-content: space-between;
-  margin: 5px; 
-  padding-left: 10 ;
-  border: 1px dotted;
-  border-left-color: transparent;
-  border-right-color : transparent;
-  border-top-color: transparent;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding: 5px;
+  flex-direction: row;
+`;
+
+export const ColumnProduct = styled.View`
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 180px;
+  padding: 2px;
+`;
+
+export const ColumnQtd = styled.View`
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 66px;
+  margin-left: 10px;
+`;
+
+export const ColumnPrUn = styled.View`
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 66px;
+`;
+
+export const ColumnTotal = styled.View`
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 66px;
 `;
 
 export const ContainerCarrinho = styled.View`
   justify-content: space-around;
-  padding: 15px;
+  padding: 3px;
   flex-direction: row;
 `;
 
