@@ -53,17 +53,6 @@ const Rotas = () => {
         headerShown: false,
 
       }} >
-    {/* Voltar para o segundo lugar */}
-      <Tab.Screen
-        name="Carrinho"
-        component={Carrinho}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Entypo name="shopping-cart" size={size} color={color} />
-          )
-        }}
-      />
-
       <Tab.Screen
         name="Principal"
         component={Principal}
@@ -73,9 +62,15 @@ const Rotas = () => {
           )
         }}
       />
-
-
-
+      <Tab.Screen
+        name="Carrinho"
+        component={Carrinho}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="shopping-cart" size={size} color={color} />
+          )
+        }}
+      />
       <Tab.Screen
         name="Favorito"
         component={Favorito}
