@@ -1,9 +1,9 @@
 import React from "react";
 import { CustomContainerLista } from "../../components/CustomContainer/styles";
-import { FlatList, Text, View } from "react-native";
+import { FlatList } from "react-native";
 import { ListText, MainTitle, PdColumn, AddButton } from "./styles";
-import { Feather } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import { Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Lista = [
   {
