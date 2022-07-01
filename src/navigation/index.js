@@ -18,8 +18,6 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        {/* <Stack.Navigator initialRouteName="Rotas"> */}
-
         <Stack.Screen
           name="Login"
           component={Login}
@@ -50,6 +48,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -58,8 +57,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-
-            orientation: false,
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -68,7 +66,6 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-
             headerShown: false,
           }}
         />
@@ -78,6 +75,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -86,6 +84,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -95,9 +94,7 @@ const Navigation = () => {
             headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-
-            headerStyle: { backgroundColor: `${colors.primary}` },
-            headerTintColor: `${colors.primary}`,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>
