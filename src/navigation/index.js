@@ -3,37 +3,25 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Cadastro from "../screens/Cadastro/index";
 import Categoria from "../screens/Categoria/index";
-import Produto from "../screens/Produto/index";
+import Produto from "../screens/ListaProduto/index";
 import RecuperarSenha from "../screens/RecuperarSenha/index";
 import Home from "../screens/Home/index";
 import Login from "../screens/Login/index";
 import Rotas from "../router/Rotas";
-<<<<<<< HEAD
 import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/CadastroSucesso/index"
-=======
-import colors from "../theme/index";
->>>>>>> leonardo
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-<<<<<<< HEAD
       <Stack.Navigator initialRouteName="Login">
       {/* <Stack.Navigator initialRouteName="Rotas"> */}
-=======
-      <Stack.Navigator
-        initialRouteName="Login"
-        screenOptions={{ headerShown: false }}
-      >
->>>>>>> leonardo
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
-<<<<<<< HEAD
             headerTintColor: "#fff",
             headerShown: false,
           }}
@@ -79,7 +67,7 @@ const Navigation = () => {
             title: false
           }}
         />
-        <Stack.Screen name="Pagina de Categirias" component={Categoria}
+        <Stack.Screen name="Pagina de Categorias" component={Categoria}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
@@ -92,10 +80,6 @@ const Navigation = () => {
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             title: false,
-=======
-            headerStyle: { backgroundColor: `${colors.primary}` },
-            headerTintColor: `${colors.primary}`,
->>>>>>> leonardo
           }}
         />
       </Stack.Navigator>

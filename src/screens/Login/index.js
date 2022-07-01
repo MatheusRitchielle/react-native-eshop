@@ -1,18 +1,10 @@
 import React from "react";
 import { View } from "react-native";
 import { InnerText } from "../../components/CustomInput/styles";
-<<<<<<< HEAD
 import { CustomText } from "../../components/CustomText/styles";
-import { CustomContainer } from "../../components/CustomContainer/styles";
+import ContainerDinamico from "../../components/CustomContainer/index";
 import { PrimaryButton, SecondaryButton} from "../../components/CustomButton/styles";
 import colors from "../../theme/index";
-=======
-import ContainerDinamico from "../../components/CustomContainer";
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from "../../components/CustomButton/styles";
->>>>>>> leonardo
 import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
 import logoGrande from "../../../assets/images/logo-grande.png";
 import TextoDinamico from "../../components/CustomText";
@@ -25,7 +17,6 @@ const Login = ({ navigation }) => {
       <InnerText placeholder="Login" />
       <InnerText placeholder="Senha" secureTextEntry={true} />
 
-<<<<<<< HEAD
         <SecondaryButton onPress={() => navigation.navigate("Recuperar Senha")}>
           <CustomText
             style={{
@@ -42,18 +33,6 @@ const Login = ({ navigation }) => {
           <PrimaryButton onPress={() => navigation.navigate("Rotas")}>
             <CustomText>Entrar</CustomText>
           </PrimaryButton>
-=======
-      <SecondaryButton
-        style={{ textAlign: "left" }}
-        onPress={() => navigation.navigate("Recuperar Senha")}
-      >
-        <TextoDinamico fSize="14px">Esqueci a senha</TextoDinamico>
-      </SecondaryButton>
-      <View style={{ marginTop: 70 }}>
-        <PrimaryButton onPress={() => navigation.navigate("Menu Principal")}>
-          <TextoDinamico>Entrar</TextoDinamico>
-        </PrimaryButton>
->>>>>>> leonardo
 
         <SecondaryButton
           style={{ width: 100 }}

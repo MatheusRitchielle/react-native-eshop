@@ -1,11 +1,6 @@
 import React from "react";
-<<<<<<< HEAD
 import { FlatList, Text } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
-=======
-import { View } from "react-native";
-import ContainerDinamico from "../../components/CustomContainer";
->>>>>>> leonardo
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho, ContainerCabecalho, CardGeneric, ColumnProduct, ColumnPrUn, ColumnQtd, ColumnTotal } from "./styles";
 import { AntDesign, Entypo, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
@@ -131,7 +126,6 @@ const Carrinho = ({ navigation }) => {
   );
 
   return (
-<<<<<<< HEAD
     <>
       <CustomTitle style={{ color: '#61882E', textAlign: 'center' }}>
         Carrinho
@@ -179,13 +173,6 @@ const Carrinho = ({ navigation }) => {
       </ContainerCarrinho>
 
     </>
-=======
-    <ContainerDinamico>
-      <AntDesign name="shoppingcart" size={24} color="black" />
-      <CustomTitle>Pagina Carrinho</CustomTitle>
-      <View style={{ marginTop: 20 }}></View>
-    </ContainerDinamico>
->>>>>>> leonardo
   );
 };
 

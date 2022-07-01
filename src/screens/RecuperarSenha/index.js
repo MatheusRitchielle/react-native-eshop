@@ -5,13 +5,12 @@ import { CustomText } from "../../components/CustomText/styles";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { PrimaryButton } from "../../components/CustomButton/styles";
-import { RecoverImage } from "../../components/CustomImageLogo/styles";
-import recoverImage from "../../../assets/images/recover.png";
+//import { RecoverImage } from "../../components/CustomImageLogo/styles";
+//import recoverImage from "../../../assets/images/recover.png";
 
 const RecuperaSenha = ({ navigation }) => {
   return (
     <CustomContainer>
-      <RecoverImage source={recoverImage} />
       <CustomTitle style={{ marginTop: 50 }}>Recuperar senha</CustomTitle>
       <View style={{ marginTop: 30 }}>
         <InnerText placeholder="E-mail" />
