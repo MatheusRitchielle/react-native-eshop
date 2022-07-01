@@ -6,11 +6,11 @@ import Categoria from "../screens/Categoria/index";
 import Produto from "../screens/ListaProduto/index";
 import RecuperarSenha from "../screens/RecuperarSenha/index";
 import Home from "../screens/Home/index";
-import Login from "../screens/Login/index";
 import Rotas from "../router/Rotas";
 import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/CadastroSucesso/index";
 import colors from "../theme/index";
+import Login from "../screens/Login";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +18,6 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        {/* <Stack.Navigator initialRouteName="Rotas"> */}
         <Stack.Screen
           name="Login"
           component={Login}
@@ -27,6 +26,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
+
         <Stack.Screen
           name="Cadastro"
           component={Cadastro}
@@ -49,6 +49,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -57,8 +58,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-
-            orientation: false,
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -67,7 +67,6 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-
             headerShown: false,
           }}
         />
@@ -77,6 +76,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -85,6 +85,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -94,9 +95,7 @@ const Navigation = () => {
             headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-            title: false,
-            headerStyle: { backgroundColor: `${colors.primary}` },
-            headerTintColor: `${colors.primary}`,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

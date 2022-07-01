@@ -121,6 +121,7 @@ const TextoDinamico = ({
   <CustomText
     text={tAlgin}
     font={fFamily}
+    git
     size={fSize}
     weight={fWeight}
     pdRight={pRight}
@@ -134,18 +135,16 @@ const Item = ({ produto, preco, estoque }) => (
     <ColumnProduct>
       <TextoDinamico>{produto}</TextoDinamico>
     </ColumnProduct>
-
+    3
     <ColumnPrUn>
       <Text>{preco}</Text>
     </ColumnPrUn>
-
     {/* <ButtonContainer onClick={() => Adicionar} >
       <MaterialIcons name="add-box" size={24} color="black" />
     </ButtonContainer>  */}
     <ColumnQtd>
       <TextoDinamico>{estoque}</TextoDinamico>
     </ColumnQtd>
-
     {/* <ButtonContainer onClick={() => Remover} >
       <Octicons name="diff-removed" size={24} color="black" />
     </ButtonContainer> */}

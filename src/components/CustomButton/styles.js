@@ -3,32 +3,32 @@ import colors from "../../theme/index";
 
 export const PrimaryButton = styled.Pressable`
   height: 50px;
-  width: 120px;
+  width: ${(props) => props.size || "120px"};
   font-weight: bold;
   align-self: center;
-  align-items: center;
+  align-items: ${(props) => props.text || "center"};
   border-radius: 50px;
   justify-content: center;
-  background-color: ${(props) => props.buttonColor || `${colors.primary}`};
-  margin-top: 0;
+  margin-top: ${(props) => props.margin || "0px"};
+  background-color: ${(props) => props.buttonCollor || `${colors.primary}`};
 `;
 
 export const SecondaryButton = styled.Pressable`
-  width: ${(props) => props.size || "260px"};
+  width: ${(props) => props.widthSize || "260px"};
   margin-top: ${(props) => props.margin || "10px"};
   font-weight: bold;
   align-self: center;
-  justify-content: center;
-  text-align: ${(props) => props.text || "center"};
+  align-items: ${(props) => props.text || "center"};
+  background-color: ${(props) => props.buttonColor || "none"};
 `;
 
 export const PrimaryButtonCS = styled.Pressable`
   width: 204px;
   height: 50px;
-  background-color: #61882e;
+  background-color: ${colors.primary};
   mix-blend-mode: normal;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 100px;
+  border-radius: 50px;
 `;
 
 export const ButtonContainer = styled.Pressable`
