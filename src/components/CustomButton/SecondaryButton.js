@@ -1,9 +1,17 @@
 import React from "react";
 import { SecondaryButton } from "./styles";
 
-const CustomButton = ({ children, sizeWidht, mTop, tAlign, bColor }) => {
+const CustomButton = ({
+  children,
+  onUserPress,
+  sizeWidht,
+  mTop,
+  tAlign,
+  bColor,
+}) => {
   return (
     <SecondaryButton
+      onPress={onUserPress}
       widthSize={sizeWidht}
       margin={mTop}
       text={tAlign}

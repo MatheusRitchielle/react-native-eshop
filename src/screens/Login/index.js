@@ -4,8 +4,8 @@ import ContainerDinamico from "../../components/CustomContainer";
 import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
 import logoGrande from "../../../assets/images/logo-grande.png";
 import TextoDinamico from "../../components/CustomText";
-import PrincipalButton from "../../components/CustomButton/MainButton";
-import CustomButton from "../../components/CustomButton/CustomButton";
+import PrincipalButton from "../../components/CustomButton/PrimaryButton";
+import CustomButton from "../../components/CustomButton/SecondaryButton";
 
 const Login = ({ navigation }) => {
   return (
@@ -17,17 +17,22 @@ const Login = ({ navigation }) => {
 
       <CustomButton
         tAlign="left"
-        onPress={() => navigation.navigate("Recuperar Senha")}
+        onUserPress={() => {
+          navigation.navigate("Recuperar Senha");
+        }}
       >
         <TextoDinamico fSize="15px">Esqueci a senha</TextoDinamico>
       </CustomButton>
 
-      <PrincipalButton onPress={() => navigation.navigate("Rotas")}>
+      <PrincipalButton
+        mTop="5rem"
+        onUserPress={() => navigation.navigate("Rotas")}
+      >
         <TextoDinamico>Entrar</TextoDinamico>
       </PrincipalButton>
       <CustomButton
         sizeWidht="90px"
-        onPress={() => navigation.navigate("Cadastro")}
+        onUserPress={() => navigation.navigate("Cadastro")}
       >
         <TextoDinamico fSize="15px">Criar Conta</TextoDinamico>
       </CustomButton>

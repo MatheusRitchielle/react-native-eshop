@@ -5,6 +5,7 @@ import { CustomText } from "../../components/CustomText/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 import { PrimaryButton } from "../../components/CustomButton/styles";
 import ContainerDinamico from "../../components/CustomContainer";
+import PrincipalButton from "../../components/CustomButton/PrimaryButton";
 
 const Cadastro = ({ navigation }) => {
   return (
@@ -16,18 +17,19 @@ const Cadastro = ({ navigation }) => {
         <InnerText placeholder="Data de Nascimento" />
         <InnerText placeholder="Senha" secureTextEntry={true} />
         <InnerText placeholder="Confirme sua senha" secureTextEntry={true} />
-        <PrimaryButton onPress={() => navigation.navigate("Login")}>
+
+        <PrincipalButton onPress={() => navigation.navigate("Login")}>
           <CustomText onPress={() => navigation.navigate(" ")}>
             Cadastrar
           </CustomText>
-        </PrimaryButton>
+        </PrincipalButton>
       </View>
-      <PrimaryButton
+      <PrincipalButton
         onPress={() => navigation.navigate("Login")}
         style={{ marginTop: 20 }}
       >
         <CustomText>Cadastrar</CustomText>
-      </PrimaryButton>
+      </PrincipalButton>
     </ContainerDinamico>
   );
 };

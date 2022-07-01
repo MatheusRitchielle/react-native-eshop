@@ -6,11 +6,11 @@ import Categoria from "../screens/Categoria/index";
 import Produto from "../screens/Produto/index";
 import RecuperarSenha from "../screens/RecuperarSenha/index";
 import Home from "../screens/Home/index";
-import Login from "../screens/Login/index";
 import Rotas from "../router/Rotas";
 import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/CadastroSucesso/index";
 import colors from "../theme/index";
+import Login from "../screens/Login";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +26,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
+
         <Stack.Screen
           name="Cadastro"
           component={Cadastro}
