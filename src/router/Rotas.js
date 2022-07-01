@@ -33,6 +33,7 @@ const Rotas = () => {
         name="Carrinho"
         component={Carrinho}
         options={{
+          headerShown: false,
           tabBarIcon: ({ size, color }) => (
             <Entypo name="shopping-cart" size={size} color={color} />
           ),
