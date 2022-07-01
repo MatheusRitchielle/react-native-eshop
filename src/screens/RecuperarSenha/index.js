@@ -7,10 +7,13 @@ import { CustomTitle } from "../../components/CustomTitle/styles";
 import { PrimaryButton } from "../../components/CustomButton/styles";
 //import { RecoverImage } from "../../components/CustomImageLogo/styles";
 //import recoverImage from "../../../assets/images/recover.png";
+import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
+import recoverImage from "../../../assets/images/recover.png";
 
 const RecuperaSenha = ({ navigation }) => {
   return (
     <CustomContainer>
+      <LogoHorizontal source={recoverImage} />
       <CustomTitle style={{ marginTop: 50 }}>Recuperar senha</CustomTitle>
       <View style={{ marginTop: 30 }}>
         <InnerText placeholder="E-mail" />

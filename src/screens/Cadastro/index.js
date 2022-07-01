@@ -10,11 +10,18 @@ const Cadastro = ({ navigation }) => {
   return (
     <ContainerDinamico tAlign="center">
       <CustomTitle>Preencha suas informações</CustomTitle>
-      <InnerText placeholder="Nome" />
-      <InnerText placeholder="CPF" keyboardType="numeric" />
-      <InnerText placeholder="Data de Nascimento" keyboardType="numeric" />
-      <InnerText placeholder="Senha" secureTextEntry={true} />
-      <InnerText placeholder="Confirme sua senha" secureTextEntry={true} />
+      <View style={{ marginTop: 20 }}>
+        <InnerText placeholder="Nome" />
+        <InnerText placeholder="CPF" />
+        <InnerText placeholder="Data de Nascimento" />
+        <InnerText placeholder="Senha" secureTextEntry={true} />
+        <InnerText placeholder="Confirme sua senha" secureTextEntry={true} />
+        <PrimaryButton onPress={() => navigation.navigate("Login")}>
+          <CustomText onPress={() => navigation.navigate(" ")}>
+            Cadastrar
+          </CustomText>
+        </PrimaryButton>
+      </View>
       <PrimaryButton
         onPress={() => navigation.navigate("Login")}
         style={{ marginTop: 20 }}

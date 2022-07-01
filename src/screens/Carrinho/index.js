@@ -5,6 +5,26 @@ import { CustomTitle } from "../../components/CustomTitle/styles";
 import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho, ContainerCabecalho, CardGeneric, ColumnProduct, ColumnPrUn, ColumnQtd, ColumnTotal , CustomText } from "./styles";
 import { AntDesign, Entypo, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 
+import {
+  ContainerCarrinho,
+  ButtonCarrinho,
+  CustomTextCarrinho,
+  ContainerCabecalho,
+  CardGeneric,
+  ColumnProduct,
+  ColumnPrUn,
+  ColumnQtd,
+  ColumnTotal,
+  CustomText,
+} from "./styles";
+import {
+  AntDesign,
+  Entypo,
+  MaterialCommunityIcons,
+  FontAwesome5,
+} from "@expo/vector-icons";
+
+
 const Lista = [
   {
     id: 1,
@@ -32,7 +52,8 @@ const Lista = [
   },
   {
     id: 5,
-    produto: "Zíper (fecho éclair) - Sim, Zíper é uma marca da YKK, e aposto que você falou esse nome a vida inteira e não sabia! :)",
+    produto:
+      "Zíper (fecho éclair) - Sim, Zíper é uma marca da YKK, e aposto que você falou esse nome a vida inteira e não sabia! :)",
     preco: 40,
     estoque: 20,
   },
@@ -74,43 +95,55 @@ const Lista = [
   },
   {
     id: 12,
-    produto: "Chiclete (goma de mascar) - Essa é uma versão aportuguesada da palavra Chiclets, marca da Adams.",
+    produto:
+      "Chiclete (goma de mascar) - Essa é uma versão aportuguesada da palavra Chiclets, marca da Adams.",
     preco: 20,
     estoque: 8,
-  }
+  },
 ];
 
 const Adicionar = () => {
-  return (setNumero(numero + 1))
-}
+  return setNumero(numero + 1);
+};
 
 const Remover = () => {
-  return (
-    setNumero(numero - 1)
-  )
-}
-const TextoDinamico = ({ children, tAlgin, fFamily, fSize, fWeight }) => (
-  <CustomText text={tAlgin} font={fFamily} size={fSize} weight={fWeight}>
+
+  return setNumero(numero - 1);
+};
+const TextoDinamico = ({
+  children,
+  tAlgin,
+  fFamily,
+  fSize,
+  fWeight,
+  pRight,
+}) => (
+  <CustomText
+    text={tAlgin}
+    font={fFamily}
+    size={fSize}
+    weight={fWeight}
+    pdRight={pRight}
+  >
     {children}
   </CustomText>
- 
 );
 
 const Item = ({ produto, preco, estoque }) => (
   <CardGeneric>
     <ColumnProduct>
-      <Text style={{ textAlign: 'center' }}>{produto}</Text>
+      <TextoDinamico>{produto}</TextoDinamico>
     </ColumnProduct>
 
     <ColumnPrUn>
-      <Text >{preco}</Text>
+      <Text>{preco}</Text>
     </ColumnPrUn>
 
     {/* <ButtonContainer onClick={() => Adicionar} >
       <MaterialIcons name="add-box" size={24} color="black" />
     </ButtonContainer>  */}
     <ColumnQtd>
-      <Text style={{ fontStyle: 'italic' }}>{estoque}</Text>
+      <TextoDinamico>{estoque}</TextoDinamico>
     </ColumnQtd>
 
     {/* <ButtonContainer onClick={() => Remover} >
@@ -124,16 +157,12 @@ const Item = ({ produto, preco, estoque }) => (
 
 const Carrinho = ({ navigation }) => {
   const itemRenderizado = ({ item }) => (
-    <Item
-      produto={item.produto}
-      preco={item.preco}
-      estoque={item.estoque}
-    />
+    <Item produto={item.produto} preco={item.preco} estoque={item.estoque} />
   );
 
   return (
     <>
-      <CustomTitle style={{ color: '#61882E', textAlign: 'center' }}>
+      <CustomTitle style={{ color: "#61882E", textAlign: "center" }}>
         Carrinho
       </CustomTitle>
       <ContainerCabecalho>
@@ -141,23 +170,24 @@ const Carrinho = ({ navigation }) => {
           <TextoDinamico fWeight="bold">Produto</TextoDinamico>
         </ColumnProduct>
         <ColumnQtd>
-          <Text style={{ fontWeight: 'bold', textAlign: 'left', paddingRight: '20px' }}>Quantidade</Text>
+          <TextoDinamico pRight="20px">Quantidade</TextoDinamico>
         </ColumnQtd>
         <ColumnPrUn>
         <TextoDinamico fWeight="bold">Preço Unit</TextoDinamico>
         </ColumnPrUn>
         <ColumnTotal>
-          <Text style={{ fontWeight: 'bold' }}>Total</Text>
+          <TextoDinamico>Total</TextoDinamico>
         </ColumnTotal>
       </ContainerCabecalho>
       <CustomContainer>
         <FlatList
           data={Lista}
           renderItem={itemRenderizado}
-          keyExtractor={(item) => item.id} />
+          keyExtractor={(item) => item.id}
+        />
       </CustomContainer>
-      <Text style={{ fontWeight: 'bold', textAlign: 'center' }} >Valor Total: R$</Text>
-      <Text style={{ textAlign: 'center' }}>Formas de pagamento</Text>
+      <TextoDinamico>Valor Total: R$</TextoDinamico>
+      <TextoDinamico>Formas de pagamento</TextoDinamico>
       <ContainerCarrinho>
         <AntDesign name="qrcode" size={24} color="black" />
         <Entypo name="paypal" size={24} color="black" />
@@ -166,18 +196,15 @@ const Carrinho = ({ navigation }) => {
         <Entypo name="credit-card" size={24} color="black" />
       </ContainerCarrinho>
       <ContainerCarrinho>
-        <ButtonCarrinho onPress={() => navigation.goBack()} >
-          <CustomTextCarrinho>
-            Adicionar Itens
-          </CustomTextCarrinho>
+        <ButtonCarrinho onPress={() => navigation.goBack()}>
+          <CustomTextCarrinho>Adicionar Itens</CustomTextCarrinho>
         </ButtonCarrinho>
-        <ButtonCarrinho onPress={() => navigation.navigate("Pagina de Produtos")} >
-          <CustomTextCarrinho>
-            Fechar Pedido
-          </CustomTextCarrinho>
+        <ButtonCarrinho
+          onPress={() => navigation.navigate("Pagina de Produtos")}
+        >
+          <CustomTextCarrinho>Fechar Pedido</CustomTextCarrinho>
         </ButtonCarrinho>
       </ContainerCarrinho>
-
     </>
   );
 };

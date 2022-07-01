@@ -36,7 +36,7 @@ const Slider = () => {
         onMomentumScrollEnd={(event) => {
           setActiveIndex(parseInt(event.nativeEvent.contentOffset.x / width));
         }}
-        scrollEventThrottle={16}
+        scrollEventThrottle={1}
         showsHorizontalScrollIndicator={false}
         keyExtractor={({ item }) => String(item?.id)}
         renderItem={({ item }) => <OnBoardingItem item={item} />}

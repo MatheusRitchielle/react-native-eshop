@@ -13,6 +13,7 @@ export const CustomText = styled.Text`
   font-family: ${(props) => props.font || "Amiko"};
   font-weight: ${(props) => props.weight || "normal"};
   font-size: ${(props) => props.size || "15"};
+  padding-right: ${(props) => props.pdRight || "0"};
 `;
 
 export const CardGeneric = styled.View`
