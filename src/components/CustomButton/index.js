@@ -1,12 +1,19 @@
-// import React from "react";
-// import { SecondaryButton } from "./styles";
+import React from "react";
+import { PrimaryButton, SecondaryButton } from "./styles";
 
-// const CustomButton = ({ children, width, marginTop, tAlign }) => {
-//   return (
-//     <SecondaryButton size={width} margin={marginTop} text={tAlign}>
-//       {children}
-//     </SecondaryButton>
-//   );
-// };
+export const MainButton = ({children, bColor}) => {
+   
+   (<PrimaryButton buttonColor={bColor}>
+         {children}
+   </PrimaryButton>)
+   }
+  
+  const CustomButton = ({ children, width, marginTop, tAlign }) => {
 
-// export default CustomButton;
+    <SecondaryButton size={width} margin={marginTop} text={tAlign}>
+      {children}
+    </SecondaryButton>
+
+};
+
+export default CustomButton;

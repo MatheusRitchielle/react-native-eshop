@@ -8,6 +8,12 @@ export const CustomContainer = styled.View`
   background-color: ${colors.tertiary};
 `;
 
+export const CustomContainerLista = styled.View`
+  flex: 1;
+  justify-content: flex-start;
+  background-color: ${colors.tertiary};
+`;
+
 export const CustomContainerCS = styled.View`
   flex:1;
   flex-direction: column;

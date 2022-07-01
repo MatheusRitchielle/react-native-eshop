@@ -2,7 +2,7 @@ import { CustomH1 } from '../../components/CustomTitle/styles';
 import { CustomContainerCS } from './../../components/CustomContainer/styles';
 import styled from "styled-components/native";
 import iconeGrande from '../../../assets/images/iconeGrande.png';
-import { PrimaryButtonCS } from '../../components/CustomButton/styles';
+import CustomButton from '../../components/CustomButton/index';
 import { CustomTextCS } from '../../components/CustomText/styles';
 
 const CadastroSucesso = () => {
@@ -11,9 +11,9 @@ const CadastroSucesso = () => {
         <CustomContainerCS>
             <Logo source={iconeGrande} />
             <CustomH1>Usuário cadastrado com sucesso!</CustomH1>
-            <PrimaryButtonCS style={{}} onPress={() => navigation.navigate("Menu Principal")}>
+                <CustomButton style={{}} onPress={() => navigation.navigate("Menu Principal")}>
                 <CustomTextCS>LOGIN</CustomTextCS>
-            </PrimaryButtonCS>
+            </CustomButton>
         </CustomContainerCS>
     );
 }

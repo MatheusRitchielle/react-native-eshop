@@ -8,37 +8,6 @@ import { Entypo } from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
-// const SettingsStack = createStackNavigator({
-//   SettingsList: {
-//     screen: Example,
-//     navigationOptions: {
-//       headerTitle: 'Settings List',
-//     },
-//   },
-//   Profile: {
-//     screen: Example,
-//     navigationOptions: {
-//       headerTitle: 'Profile',
-//     },
-//   },
-// });
-
-// const MainDrawer = createDrawerNavigator({
-//   MainTabs: MainTabs,
-//   Settings: SettingsStack,
-// });
-
-// const App = createSwitchNavigator({
-//   Loading: {
-//     screen: Example,
-//   },
-//   Auth: {
-//     screen: AuthStack,
-//   },
-//   App: {
-//     screen: MainDrawer,
-//   },
-// });
 
 const Rotas = () => {
 

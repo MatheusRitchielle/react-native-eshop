@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, Text } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
-import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho, ContainerCabecalho, CardGeneric, ColumnProduct, ColumnPrUn, ColumnQtd, ColumnTotal } from "./styles";
+import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho, ContainerCabecalho, CardGeneric, ColumnProduct, ColumnPrUn, ColumnQtd, ColumnTotal , CustomText } from "./styles";
 import { AntDesign, Entypo, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 
 const Lista = [
@@ -89,6 +89,12 @@ const Remover = () => {
     setNumero(numero - 1)
   )
 }
+const TextoDinamico = ({ children, tAlgin, fFamily, fSize, fWeight }) => (
+  <CustomText text={tAlgin} font={fFamily} size={fSize} weight={fWeight}>
+    {children}
+  </CustomText>
+ 
+);
 
 const Item = ({ produto, preco, estoque }) => (
   <CardGeneric>
@@ -132,13 +138,13 @@ const Carrinho = ({ navigation }) => {
       </CustomTitle>
       <ContainerCabecalho>
         <ColumnProduct>
-          <Text style={{ fontWeight: 'bold' }}>Produto</Text>
+          <TextoDinamico fWeight="bold">Produto</TextoDinamico>
         </ColumnProduct>
         <ColumnQtd>
           <Text style={{ fontWeight: 'bold', textAlign: 'left', paddingRight: '20px' }}>Quantidade</Text>
         </ColumnQtd>
         <ColumnPrUn>
-          <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>Preço Unit</Text>
+        <TextoDinamico fWeight="bold">Preço Unit</TextoDinamico>
         </ColumnPrUn>
         <ColumnTotal>
           <Text style={{ fontWeight: 'bold' }}>Total</Text>

@@ -9,7 +9,7 @@ export const PrimaryButton = styled.Pressable`
   align-items: center;
   border-radius: 50px;
   justify-content: center;
-  background-color: ${colors.primary};
+  background-color: ${(props) => props.buttonColor || `${colors.primary}`};
   margin-top: 0;
 `;
 
@@ -18,27 +18,6 @@ export const SecondaryButton = styled.Pressable`
   margin-top: ${(props) => props.margin || "10px"};
   font-weight: bold;
   align-self: center;
-<<<<<<< HEAD:src/components/CustomButton/styles.js
-  align-items: center;
-  `;
-
-export const PrimaryButtonCS = styled.Pressable`
-  width: 204px;
-  height: 50px;
-  background-color: #61882e;
-  mix-blend-mode: normal;
-  box-shadow: 3px 4px 4px rgba(0, 0 , 0, 0.25);
-  border-radius: 100px;
-`;
-
-export const ButtonContainer = styled.Pressable`
-  /* margin-top: 8px; */
-  font-weight: bold;
-  /* justify-content: center;
-  align-self: center;
-  align-items: center; */
-=======
   justify-content: center;
   text-align: ${(props) => props.text || "center"};
->>>>>>> leonardo:src/components/CustomButton/styles.js
 `;
