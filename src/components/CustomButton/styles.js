@@ -9,7 +9,7 @@ export const PrimaryButton = styled.Pressable`
   align-items: center;
   border-radius: 50px;
   justify-content: center;
-  background-color: ${colors.primary};
+  background-color: ${(props) => props.buttonColor || `${colors.primary}`};
   margin-top: 0;
 `;
 
@@ -18,7 +18,8 @@ export const SecondaryButton = styled.Pressable`
   margin-top: ${(props) => props.margin || "10px"};
   font-weight: bold;
   align-self: center;
-  align-items: center;
+  justify-content: center;
+  text-align: ${(props) => props.text || "center"};
 `;
 
 export const PrimaryButtonCS = styled.Pressable`

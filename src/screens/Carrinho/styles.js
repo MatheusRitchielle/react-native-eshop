@@ -21,7 +21,7 @@ export const CardGeneric = styled.View`
   margin-top: 10px;
   padding: 5px;
   flex-direction: row;
-`;
+`; 
 
 export const ColumnProduct = styled.View`
   align-items: center;

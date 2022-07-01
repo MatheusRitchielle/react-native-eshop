@@ -8,7 +8,7 @@ import ContainerDinamico from "../../components/CustomContainer";
 
 const Cadastro = ({ navigation }) => {
   return (
-    <ContainerDinamico tAlign="center" style={{}}>
+    <ContainerDinamico tAlign="center">
       <CustomTitle>Preencha suas informações</CustomTitle>
       <View style={{ marginTop: 20 }}>
         <InnerText placeholder="Nome" />

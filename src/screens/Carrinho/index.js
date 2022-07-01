@@ -2,6 +2,9 @@ import React from "react";
 import { FlatList, Text } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
+import { ContainerCarrinho, ButtonCarrinho, CustomTextCarrinho, ContainerCabecalho, CardGeneric, ColumnProduct, ColumnPrUn, ColumnQtd, ColumnTotal , CustomText } from "./styles";
+import { AntDesign, Entypo, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
+
 import {
   ContainerCarrinho,
   ButtonCarrinho,
@@ -20,6 +23,7 @@ import {
   MaterialCommunityIcons,
   FontAwesome5,
 } from "@expo/vector-icons";
+
 
 const Lista = [
   {
@@ -103,6 +107,7 @@ const Adicionar = () => {
 };
 
 const Remover = () => {
+
   return setNumero(numero - 1);
 };
 const TextoDinamico = ({
@@ -168,7 +173,7 @@ const Carrinho = ({ navigation }) => {
           <TextoDinamico pRight="20px">Quantidade</TextoDinamico>
         </ColumnQtd>
         <ColumnPrUn>
-          <TextoDinamico fWeight="bold">Preço Unit</TextoDinamico>
+        <TextoDinamico fWeight="bold">Preço Unit</TextoDinamico>
         </ColumnPrUn>
         <ColumnTotal>
           <TextoDinamico>Total</TextoDinamico>

@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Cadastro from "../screens/Cadastro/index";
 import Categoria from "../screens/Categoria/index";
-import Produto from "../screens/Produto/index";
+import Produto from "../screens/ListaProduto/index";
 import RecuperarSenha from "../screens/RecuperarSenha/index";
 import Home from "../screens/Home/index";
 import Login from "../screens/Login/index";
@@ -19,7 +19,6 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         {/* <Stack.Navigator initialRouteName="Rotas"> */}
-
         <Stack.Screen
           name="Login"
           component={Login}
@@ -95,7 +94,7 @@ const Navigation = () => {
             headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-
+            title: false,
             headerStyle: { backgroundColor: `${colors.primary}` },
             headerTintColor: `${colors.primary}`,
           }}
