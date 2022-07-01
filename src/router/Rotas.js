@@ -4,62 +4,29 @@ import Carrinho from "../screens/Carrinho/index";
 import Favorito from "../screens/Favorito/index";
 import Principal from "../screens/Home/index";
 import Opcoes from "../screens/Opcoes/index";
-import { Entypo } from "@expo/vector-icons"
+import { Entypo } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
-// const SettingsStack = createStackNavigator({
-//   SettingsList: {
-//     screen: Example,
-//     navigationOptions: {
-//       headerTitle: 'Settings List',
-//     },
-//   },
-//   Profile: {
-//     screen: Example,
-//     navigationOptions: {
-//       headerTitle: 'Profile',
-//     },
-//   },
-// });
-
-// const MainDrawer = createDrawerNavigator({
-//   MainTabs: MainTabs,
-//   Settings: SettingsStack,
-// });
-
-// const App = createSwitchNavigator({
-//   Loading: {
-//     screen: Example,
-//   },
-//   Auth: {
-//     screen: AuthStack,
-//   },
-//   App: {
-//     screen: MainDrawer,
-//   },
-// });
-
 const Rotas = () => {
-
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: '#121212',
-          borderTopColor: 'transparent'
+          backgroundColor: "#121212",
+          borderTopColor: "transparent",
         },
-        tabBarActiveTintColor: '#61882E',
+        tabBarActiveTintColor: "#61882E",
         headerShown: false,
-
-      }} >
+      }}
+    >
       <Tab.Screen
         name="Principal"
         component={Principal}
         options={{
           tabBarIcon: ({ size, color }) => (
             <Entypo name="home" size={size} color={color} />
-          )
+          ),
         }}
       />
       <Tab.Screen
@@ -68,7 +35,7 @@ const Rotas = () => {
         options={{
           tabBarIcon: ({ size, color }) => (
             <Entypo name="shopping-cart" size={size} color={color} />
-          )
+          ),
         }}
       />
       <Tab.Screen
@@ -77,7 +44,7 @@ const Rotas = () => {
         options={{
           tabBarIcon: ({ size, color }) => (
             <Entypo name="star" size={size} color={color} />
-          )
+          ),
         }}
       />
 
@@ -87,11 +54,11 @@ const Rotas = () => {
         options={{
           tabBarIcon: ({ size, color }) => (
             <Entypo name="menu" size={size} color={color} />
-          )
+          ),
         }}
       />
-    </Tab.Navigator >
+    </Tab.Navigator>
   );
-}
+};
 
 export default Rotas;

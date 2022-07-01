@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { CustomTitle } from "../../components/CustomTitle/styles";
 

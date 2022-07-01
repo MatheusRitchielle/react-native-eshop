@@ -8,6 +8,13 @@ export const ContainerCabecalho = styled.View`
   border: 2px solid;
   border-radius: 5px;
 `;
+export const CustomText = styled.Text`
+  text-align: ${(props) => props.text || "center"};
+  font-family: ${(props) => props.font || "Amiko"};
+  font-weight: ${(props) => props.weight || "normal"};
+  font-size: ${(props) => props.size || "15"};
+  padding-right: ${(props) => props.pdRight || "0"};
+`;
 
 export const CardGeneric = styled.View`
   justify-content: space-around;
