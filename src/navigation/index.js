@@ -11,6 +11,7 @@ import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/CadastroSucesso/index";
 import colors from "../theme/index";
 import Login from "../screens/Login";
+import Usuarios from "../screens/Usuarios"
 
 const Stack = createNativeStackNavigator();
 
@@ -96,6 +97,15 @@ const Navigation = () => {
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             headerShown: false,
+          }}
+        />
+              <Stack.Screen
+          name="Usuarios"
+          component={Usuarios}
+          options={{
+            headerShadowVisible: false,
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#61882E",
           }}
         />
       </Stack.Navigator>

@@ -6,6 +6,7 @@ const PrincipalButton = ({
   onUserPress,
   width,
   mTop,
+  mBottom,
   tAlign,
   bColor,
   height,
@@ -15,7 +16,8 @@ const PrincipalButton = ({
     <PrimaryButton
       onPress={onUserPress}
       widthSize={width}
-      margin={mTop}
+      marginT={mTop}
+      marginB={mBottom}
       text={tAlign}
       buttonColor={bColor}
       heightSize={height}
