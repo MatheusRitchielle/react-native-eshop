@@ -9,8 +9,9 @@ export const PaginationContainer = styled.View`
   justify-content: space-around;
 `;
 export const ButtonsContainer = styled.View`
+  margin-top: 2rem;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;
 
 export const ImagesContainer = styled.View`
