@@ -1,7 +1,7 @@
 import { CustomContainerCS } from "./../../components/CustomContainer/styles";
 import styled from "styled-components/native";
 import iconeGrande from "../../../assets/images/iconeGrande.png";
-import CustomButton from "../../components/CustomButton/index";
+import { Button } from "react-native-paper";
 import { CustomTextCS } from "../../components/CustomText/styles";
 
 const CadastroSucesso = () => {
@@ -9,12 +9,12 @@ const CadastroSucesso = () => {
     <CustomContainerCS>
       <Logo source={iconeGrande} />
       <CustomH1>Usuário cadastrado com sucesso!</CustomH1>
-      <CustomButton
+      <Button
         style={{}}
         onPress={() => navigation.navigate("Menu Principal")}
       >
         <CustomTextCS>LOGIN</CustomTextCS>
-      </CustomButton>
+      </Button>
     </CustomContainerCS>
   );
 };
