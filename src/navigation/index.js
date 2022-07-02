@@ -9,7 +9,6 @@ import Home from "../screens/Home/index";
 import Rotas from "../router/Rotas";
 import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/CadastroSucesso/index";
-import colors from "../theme/index";
 import Login from "../screens/Login";
 import Usuarios from "../screens/Usuarios"
 
@@ -27,21 +26,23 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
-
         <Stack.Screen
           name="Cadastro"
           component={Cadastro}
           options={{
-            headerStyle: { backgroundColor: "#d9d9d9" },
-            headerTintColor: "#121212",
+            headerTintColor: "#474747",
+            headerTransparent: true,
+            title: false
           }}
         />
         <Stack.Screen
-          name=" "
+          name="CadastroSucesso"
           component={CadastroSucesso}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
+            headerTransparent: true,
+            title: false
           }}
         />
         <Stack.Screen
@@ -49,8 +50,8 @@ const Navigation = () => {
           component={RecuperarSenha}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
-            headerTintColor: "#121212",
-            headerShown: false,
+            headerTransparent: true,
+            title: false
           }}
         />
         <Stack.Screen
@@ -93,17 +94,15 @@ const Navigation = () => {
           name="Opcao"
           component={Opcoes}
           options={{
-            headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             headerShown: false,
           }}
         />
-              <Stack.Screen
+        <Stack.Screen
           name="Usuarios"
           component={Usuarios}
           options={{
-            headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#61882E",
           }}

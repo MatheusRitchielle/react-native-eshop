@@ -130,7 +130,6 @@ const Item = ({ produto, preco, estoque }) => (
     <ColumnProduct>
       <TextoDinamico>{produto}</TextoDinamico>
     </ColumnProduct>
-    3
     <ColumnPrUn>
       <Text>{preco}</Text>
     </ColumnPrUn>
