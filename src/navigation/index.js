@@ -11,6 +11,7 @@ import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/CadastroSucesso/index";
 import Login from "../screens/Login";
 import Usuarios from "../screens/Usuarios"
+import CriarSenha from "../screens/CriarSenha"
 
 const Stack = createNativeStackNavigator();
 
@@ -48,6 +49,15 @@ const Navigation = () => {
         <Stack.Screen
           name="Recuperar Senha"
           component={RecuperarSenha}
+          options={{
+            headerStyle: { backgroundColor: "#d9d9d9" },
+            headerTransparent: true,
+            title: false
+          }}
+        />
+        <Stack.Screen
+          name="CriarSenha"
+          component={CriarSenha}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTransparent: true,
