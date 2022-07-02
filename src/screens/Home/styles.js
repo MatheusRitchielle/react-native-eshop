@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import colors from "../../theme/index";
 
 export const PaginationContainer = styled.View`
   display: flex;
@@ -9,13 +8,13 @@ export const PaginationContainer = styled.View`
   flex-direction: row;
   justify-content: space-around;
 `;
-
-export const OptionsContainer = styled.View`
-  display: flex;
-  text-align: center;
+export const ButtonsContainer = styled.View`
   flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+`;
+
+export const ImagesContainer = styled.View`
+  flex-direction: column;
 `;
 export const ImagePagination = styled.Image`
   margin: 20px;

@@ -1,8 +1,13 @@
 import React from "react";
 import { Flex } from "@react-native-material/core";
 import TextoDinamico from "../../components/CustomText";
-import { ImagePagination, PaginationContainer } from "./styles";
-import { ScrollView, Text, View } from "react-native-web";
+import {
+  ImagePagination,
+  ImagesContainer,
+  PaginationContainer,
+  ButtonsContainer,
+} from "./styles";
+import { ScrollView, View } from "react-native-web";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/CustomButton/PrimaryButton";
 
@@ -14,7 +19,7 @@ const Principal = ({ navigation }) => {
           Produtos
         </TextoDinamico>
         <PaginationContainer>
-          <View style={{ flexDirection: "column" }}>
+          <ImagesContainer>
             <ImagePagination
               source={{
                 uri: "https://images.lojanike.com.br/320x320/produto/tenis-w-air-max-97-DH8016-100-1-11638986395.jpg",
@@ -25,7 +30,7 @@ const Principal = ({ navigation }) => {
               style={{ flexDirection: "row", justifyContent: "space-around" }}
             >
               <PrincipalButton
-                height="30px"
+                height="40px"
                 width="90px"
                 border="5px"
                 bColor={`${colors.fourth}`}
@@ -35,26 +40,24 @@ const Principal = ({ navigation }) => {
                 </TextoDinamico>
               </PrincipalButton>
 
-              <PrincipalButton height="30px" width="90px" border="5px">
+              <PrincipalButton height="40px" width="90px" border="5px">
                 <TextoDinamico fColor={`${colors.tertiary}`} fSize="13px">
                   COMPRAR
                 </TextoDinamico>
               </PrincipalButton>
             </View>
-          </View>
+          </ImagesContainer>
 
-          <View style={{ flexDirection: "column" }}>
+          <ImagesContainer>
             <ImagePagination
               source={{
                 uri: "https://images.lojanike.com.br/320x320/produto/tenis-w-air-max-97-DH8016-100-1-11638986395.jpg",
               }}
             />
 
-            <View
-              style={{ flexDirection: "row", justifyContent: "space-around" }}
-            >
+            <ButtonsContainer>
               <PrincipalButton
-                height="30px"
+                height="40px"
                 width="90px"
                 border="5px"
                 bColor={`${colors.fourth}`}
@@ -64,25 +67,24 @@ const Principal = ({ navigation }) => {
                 </TextoDinamico>
               </PrincipalButton>
 
-              <PrincipalButton height="30px" width="90px" border="5px">
+              <PrincipalButton height="40px" width="90px" border="5px">
                 <TextoDinamico fColor={`${colors.tertiary}`} fSize="13px">
                   COMPRAR
                 </TextoDinamico>
               </PrincipalButton>
-            </View>
-          </View>
-          <View style={{ flexDirection: "column" }}>
+            </ButtonsContainer>
+          </ImagesContainer>
+
+          <ImagesContainer>
             <ImagePagination
               source={{
                 uri: "https://images.lojanike.com.br/320x320/produto/tenis-w-air-max-97-DH8016-100-1-11638986395.jpg",
               }}
             />
 
-            <View
-              style={{ flexDirection: "row", justifyContent: "space-around" }}
-            >
+            <ButtonsContainer>
               <PrincipalButton
-                height="30px"
+                height="40px"
                 width="90px"
                 border="5px"
                 bColor={`${colors.fourth}`}
@@ -92,25 +94,23 @@ const Principal = ({ navigation }) => {
                 </TextoDinamico>
               </PrincipalButton>
 
-              <PrincipalButton height="30px" width="90px" border="5px">
+              <PrincipalButton height="40px" width="90px" border="5px">
                 <TextoDinamico fColor={`${colors.tertiary}`} fSize="13px">
                   COMPRAR
                 </TextoDinamico>
               </PrincipalButton>
-            </View>
-          </View>
-          <View style={{ flexDirection: "column" }}>
+            </ButtonsContainer>
+          </ImagesContainer>
+          <ImagesContainer>
             <ImagePagination
               source={{
                 uri: "https://images.lojanike.com.br/320x320/produto/tenis-w-air-max-97-DH8016-100-1-11638986395.jpg",
               }}
             />
 
-            <View
-              style={{ flexDirection: "row", justifyContent: "space-around" }}
-            >
+            <ButtonsContainer>
               <PrincipalButton
-                height="30px"
+                height="40px"
                 width="90px"
                 border="5px"
                 bColor={`${colors.fourth}`}
@@ -120,13 +120,13 @@ const Principal = ({ navigation }) => {
                 </TextoDinamico>
               </PrincipalButton>
 
-              <PrincipalButton height="30px" width="90px" border="5px">
+              <PrincipalButton height="40px" width="90px" border="5px">
                 <TextoDinamico fColor={`${colors.tertiary}`} fSize="13px">
                   COMPRAR
                 </TextoDinamico>
               </PrincipalButton>
-            </View>
-          </View>
+            </ButtonsContainer>
+          </ImagesContainer>
         </PaginationContainer>
 
         <TextoDinamico mTop="5rem" fSize="35px">
