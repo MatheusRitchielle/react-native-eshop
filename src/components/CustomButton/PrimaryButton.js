@@ -8,14 +8,18 @@ const PrincipalButton = ({
   mTop,
   tAlign,
   bColor,
+  height,
+  border,
 }) => {
   return (
     <PrimaryButton
       onPress={onUserPress}
-      size={width}
+      widthSize={width}
       margin={mTop}
       text={tAlign}
       buttonColor={bColor}
+      heightSize={height}
+      bRadius={border}
     >
       {children}
     </PrimaryButton>
