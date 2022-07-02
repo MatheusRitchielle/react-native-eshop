@@ -2,15 +2,16 @@ import styled from "styled-components/native";
 import colors from "../../theme/index";
 
 export const PrimaryButton = styled.Pressable`
-  height: 50px;
-  width: ${(props) => props.size || "120px"};
+  height: ${(props) => props.heightSize || "50px"};
+  width: ${(props) => props.widthSize || "120px"};
   font-weight: bold;
   align-self: center;
   align-items: ${(props) => props.text || "center"};
-  border-radius: 50px;
+  border-radius: ${(props) => props.bRadius || "50px"};
   justify-content: center;
   margin-top: ${(props) => props.margin || "0px"};
-  background-color: ${(props) => props.buttonCollor || `${colors.primary}`};
+  background-color: ${(props) => props.buttonColor || `${colors.primary}`};
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const SecondaryButton = styled.Pressable`
