@@ -26,14 +26,14 @@ const Lista = [
     produto: "produto c",
     estoque: "3 un",
     preco: "R$ 120",
-    foto: "https://secure-static.vans.com.br/medias/sys_master/vans/vans/h1f/hc6/h00/h00/9592308957214/1002001070011U-01-BASEIMAGE-Midres.jpg"
+    foto: "https://youridstore.com.br/media/catalog/product/cache/1/image/750x/472321edac810f9b2465a359d8cdc0b5/c/t/ct2255-325.jpg"
   },
   {
     id: 4,
     produto: "produto d",
     estoque: "8 un",
     preco: "R$ 20",
-    foto: "https://secure-static.vans.com.br/medias/sys_master/vans/vans/h1f/hc6/h00/h00/9592308957214/1002001070011U-01-BASEIMAGE-Midres.jpg"
+    foto: "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-max-90-se-masculino-DN4155-001-1-11645629632.jpg"
   },
   {
     id: 5,
@@ -60,7 +60,7 @@ const Item = ({ produto, estoque, preco, foto }) => (
     </View>
 
   <TouchableOpacity>
-    <Text>Delete</Text>
+    <Text>Excluir</Text>
   </TouchableOpacity>
   </ListaEstilizada>
 );
