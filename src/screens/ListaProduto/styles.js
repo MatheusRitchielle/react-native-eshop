@@ -33,3 +33,25 @@ export const AddButton = styled.Pressable`
   margin-top: 0;
   color: ${colors.tertiary};
 `;
+
+export const Container = styled.View`
+  flex: 1;
+  padding: 24px;
+`;
+
+export const ListaEstilizada = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ${colors.primary};
+    margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 5px;
+`;
+
+export const FotoEstilizada = styled.View`
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;

@@ -16,7 +16,7 @@ export const ButtonsContainer = styled.View`
 
 export const ImagesContainer = styled.View`
   flex-direction: column;
-`;
+`
 export const ImagePagination = styled.Image`
   margin: 10px;
   width: 170px;
