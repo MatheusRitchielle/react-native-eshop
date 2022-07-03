@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import colors from "../../theme/index"
+import colors from "../../theme/index";
 
 export const MainTitle = styled.Text`
   color: ${colors.secondary};
@@ -11,6 +11,8 @@ export const MainTitle = styled.Text`
 
 export const ListText = styled.Text`
   font-size: 16px;
+  font-family: "Blinker";
+  margin-top: 10;
 `;
 
 export const PdColumn = styled.View`

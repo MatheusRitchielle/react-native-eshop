@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import {
   View,
+  StatusBar,
   FlatList,
-  SafeAreaView,
   StyleSheet,
   Image,
   Dimensions,
 } from "react-native";
 
-const { width } = Dimensions.get("window");
+const { height, width } = Dimensions.get("window");
+
 const images = [
   {
     id: 1,
@@ -25,35 +26,17 @@ const OnBoardingItem = ({ item }) => {
 };
 
 const Slider = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <StatusBar hidden />
       <FlatList
         data={images}
-        style={{ maxHeight: width }}
         paddingEnable
         horizontal
-        onMomentumScrollEnd={(event) => {
-          setActiveIndex(parseInt(event.nativeEvent.contentOffset.x / width));
-        }}
-        scrollEventThrottle={1}
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={({ item }) => String(item?.id)}
+        keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => <OnBoardingItem item={item} />}
       />
-      {images.length > 1 ? (
-        <View style={styles.dotsContainer}>
-          {images.map((_, i) => (
-            <View
-              style={[
-                styles.dot,
-                { backgroundColor: i === activeIndex ? "green" : "gray" },
-              ]}
-            />
-          ))}
-        </View>
-      ) : null}
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -62,8 +45,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    width,
-    height: width,
+    width: 200,
+    height: 200,
   },
   dotsContainer: {
     flexDirection: "row",
