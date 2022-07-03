@@ -54,9 +54,7 @@ const Opcoes = ({ navigation }) => {
           <CustomText style={{ color: "black" }}>Sair</CustomText>
         </SecondaryButton>
       </CardOpcoes>
-
     </CustomContainer>
-
   );
 };
 

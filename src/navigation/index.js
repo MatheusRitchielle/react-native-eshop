@@ -13,6 +13,7 @@ import Login from "../screens/Login";
 import Usuarios from "../screens/Usuarios"
 import SenhaAlterada from "../screens/SenhaAlterda"
 import CriarSenha from './../screens/CriarSenha/index';
+import EditarUsuario from "../screens/EditarUsuario/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -122,6 +123,15 @@ const Navigation = () => {
         <Stack.Screen
           name="Usuarios"
           component={Usuarios}
+          options={{
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#61882E",
+            title: "Usuários"
+          }}
+        />
+        <Stack.Screen
+          name="EditarUsuario"
+          component={EditarUsuario}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#61882E",
