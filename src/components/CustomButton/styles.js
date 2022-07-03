@@ -15,6 +15,7 @@ export const PrimaryButton = styled.Pressable`
   margin-bottom: ${(props) => props.marginB || "0px"};
   background-color: ${(props) => props.buttonColor || `${colors.primary}`};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: ${(props) => props.marginB || "0px"};
 `;
 
 export const SecondaryButton = styled.Pressable`
@@ -43,4 +44,9 @@ export const ButtonContainer = styled.Pressable`
   align-items: center; */
   justify-content: center;
   text-align: ${(props) => props.text || "center"};
+`;
+
+export const ButtonEditDelete = styled.Pressable`
+  mix-blend-mode: normal;
+  padding-left: ${(props) => props.pdRight || "15"};
 `;

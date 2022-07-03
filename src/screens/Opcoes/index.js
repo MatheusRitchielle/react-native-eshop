@@ -2,7 +2,7 @@ import React from "react";
 import { CustomContainer } from "../../components/CustomContainer/styles";
 import { SecondaryButton } from "../../components/CustomButton/styles";
 import { CustomText } from "../../components/CustomText/styles";
-import { AntDesign, FontAwesome5, FontAwesome, EvilIcons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { FontAwesome5, FontAwesome, EvilIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { CardOpcoes } from "../../components/CardOpcoes/styles";
 
 const Opcoes = ({ navigation }) => {
@@ -33,9 +33,9 @@ const Opcoes = ({ navigation }) => {
       </CardOpcoes>
 
       <CardOpcoes>
-        <SecondaryButton onPress={() => navigation.navigate("Pagina de Categirias")}>
+        <SecondaryButton onPress={() => navigation.navigate("Usuarios")}>
           <CustomText style={{ color: "black" }}>
-          <AntDesign name="staro" size={24} color="black" /> Favoritos
+          <FontAwesome5 name="users" size={24} color="black" /> Usuários
             </CustomText>
         </SecondaryButton>
       </CardOpcoes>
@@ -54,9 +54,7 @@ const Opcoes = ({ navigation }) => {
           <CustomText style={{ color: "black" }}>Sair</CustomText>
         </SecondaryButton>
       </CardOpcoes>
-
     </CustomContainer>
-
   );
 };
 
