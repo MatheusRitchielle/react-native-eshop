@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, Button, StyleSheet, Text, View, Modal } from "react-native";
+import { FlatList, Button, View, Modal } from "react-native";
 import { CardGeneric, NomeUsuario, CustomText } from "./styles";
 import { Feather, AntDesign } from '@expo/vector-icons';
 import { LogoHorizontal } from './../../components/CustomImageLogo/styles';
