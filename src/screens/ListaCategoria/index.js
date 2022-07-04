@@ -3,7 +3,6 @@ import { FlatList, View, Text } from "react-native";
 import { ListaEstilizada, FotoEstilizada, Container, Shadow } from "../ListaProduto/styles";
 import { TouchableOpacity } from "react-native-web";
 import { SeparatorItem } from "../../components/SeparatorItem/index";
-import { ProductHeader } from "../../components/ProductsHeader/index";
 
 const Lista = [
   {
@@ -72,7 +71,6 @@ const ListaProduto = () => {
   return (
     <Container>
         <FlatList
-          ListHeaderComponent={ProductHeader}
           data={Lista}
           renderItem={itemRenderizado}
           keyExtractor={(item) => item.id}

@@ -99,7 +99,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-            headerShown: false,
+            title: "Produtos"
           }}
         />
         <Stack.Screen
