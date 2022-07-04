@@ -44,14 +44,17 @@ export const ListaEstilizada = styled.View`
     justify-content: space-between;
     align-items: center;
     background-color: ${colors.primary};
-    margin-bottom: 16px;
     padding: 8px;
     border-radius: 5px;
 `;
 
-export const FotoEstilizada = styled.View`
-    width: 80px;
-    height: 80px;
+export const FotoEstilizada = styled.Image`
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+`;
+
+export const Shadow = styled.View`
     border-radius: 40px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
