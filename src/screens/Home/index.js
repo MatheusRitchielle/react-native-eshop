@@ -5,11 +5,12 @@ import {
   PaginationContainer,
   ButtonsContainer,
   AlignItemsContainer,
+  FavoriteIcon,
+  AlignPriceContainer,
 } from "./styles";
 import { ScrollView, FlatList } from "react-native";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/CustomButton/PrimaryButton";
-import { ListText } from "../ListaProduto/styles";
 import { ProductHeader } from "../../components/ProductsHeader";
 import { SeparatorItem } from "../../components/SeparatorItem/index";
 
@@ -25,12 +26,12 @@ const Product = [
   },
   {
     id: 2,
-    produto: "Nike Air Force ",
+    produto: "Adidas Super Star ",
     descricao:
       "O esplendor continua reinando no original do basquete. Combinando conforto em quadra com brilho fora dela, o tênis atualiza aspectos já conhecidos: construção dos anos 80 e detalhes arrojados. Dos excelentes materiais ao design do cupsole, o tênis proporciona estilo durável, mais polido que o vidro da tabela.",
     preco: "R$ 780,99",
     imageUrl:
-      "https://images.lojanike.com.br/1024x1024/produto/tenis-air-force-1-07-lv8-ath-DH7568-002-1-11638986221.jpg",
+      "https://static.netshoes.com.br/produtos/tenis-couro-adidas-superstar-foundation-masculino/14/D13-0488-114/D13-0488-114_zoom1.jpg?ts=1616594021",
   },
   {
     id: 3,
@@ -64,18 +65,33 @@ const Product = [
 const ProductItem = ({ produto, descricao, preco, imageUrl }) => (
   <PaginationContainer>
     <AlignItemsContainer>
-      <ListText>{produto}</ListText>
+      <TextoDinamico fontWeight="bold" fSize="22px" mTop="0.5rem">
+        {produto}
+      </TextoDinamico>
+
       <ImagePagination source={{ uri: imageUrl }} />
-      <ListText>Descrição: </ListText>
-      <ListText>{descricao}</ListText>
-      <ListText>Preço: </ListText>
-      <ListText>{preco}</ListText>
+    </AlignItemsContainer>
+    <AlignItemsContainer>
+      <FavoriteIcon
+        source={{
+          uri: "https://cdn-icons.flaticon.com/png/512/4208/premium/4208420.png?token=exp=1656976382~hmac=06663dd7e88a6bb188ebf1096c68227b",
+        }}
+      />
+      <TextoDinamico mTop="3rem">{descricao}</TextoDinamico>
+      <AlignPriceContainer>
+        <TextoDinamico fontWeight="bold" fSize="20px" alignSelf="start">
+          Preço:{" "}
+        </TextoDinamico>
+        <TextoDinamico mTop="3.5px" fSize="17px">
+          {preco}
+        </TextoDinamico>
+      </AlignPriceContainer>
       <ButtonsContainer>
         <PrincipalButton
           height="30px"
           width="70px"
           border="5px"
-          mRight="2rem"
+          mRight="3rem"
           mBottom="2rem"
           bColor={`${colors.fourth}`}
         >

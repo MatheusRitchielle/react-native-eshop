@@ -7,7 +7,9 @@ const TextoDinamico = ({
   fColor,
   mTop,
   mBottom,
+  mRight,
   alignSelf,
+  fontWeight,
 }) => {
   return (
     <CustomText
@@ -16,6 +18,8 @@ const TextoDinamico = ({
       marginTop={mTop}
       marginBottom={mBottom}
       aSelf={alignSelf}
+      fWeight={fontWeight}
+      marginRight={mRight}
     >
       {children}
     </CustomText>
