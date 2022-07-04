@@ -5,6 +5,7 @@ export const ContainerHeader = styled.View`
   text-align: center;
   padding-top: 10px;
   margin-bottom: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const ImageHeader = styled.Image`

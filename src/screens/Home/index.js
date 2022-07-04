@@ -91,7 +91,7 @@ const ProductItem = ({ produto, descricao, preco, imageUrl }) => (
           height="30px"
           width="70px"
           border="5px"
-          mRight="3rem"
+          mRight="2.1rem"
           mBottom="2rem"
           bColor={`${colors.fourth}`}
         >

@@ -9,6 +9,7 @@ export const PaginationContainer = styled.View`
 export const ButtonsContainer = styled.View`
   margin-top: 2rem;
   text-align: center;
+  align-self: flex-start;
   flex-direction: row;
 `;
 
@@ -20,11 +21,10 @@ export const AlignItemsContainer = styled.View`
 
 export const ImagePagination = styled.Image`
   margin: 10px;
-  margin-top: 3rem;
+  margin-top: 2.9rem;
   width: 170px;
   height: 170px;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const FavoriteIcon = styled.Image`
@@ -32,6 +32,7 @@ export const FavoriteIcon = styled.Image`
   height: 30px;
   margin-top: 0.5rem;
   align-self: start;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 `;
 
 export const AlignPriceContainer = styled.View`
