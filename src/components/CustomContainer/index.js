@@ -6,7 +6,7 @@ const ContainerDinamico = ({
   jContent,
   aItem,
   mTop,
-  tAlign,
+
   fDirection,
 }) => {
   return (
@@ -14,7 +14,6 @@ const ContainerDinamico = ({
       justify={jContent}
       align={aItem}
       margin={mTop}
-      text={tAlign}
       flex={fDirection}
     >
       {children}

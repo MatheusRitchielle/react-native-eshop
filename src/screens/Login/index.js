@@ -21,7 +21,9 @@ const Login = ({ navigation }) => {
           navigation.navigate("Recuperar Senha");
         }}
       >
-        <TextoDinamico fSize="15px">Esqueci a senha</TextoDinamico>
+        <TextoDinamico fSize="15px" alignSelf="left">
+          Esqueci a senha
+        </TextoDinamico>
       </CustomButton>
 
       <PrincipalButton

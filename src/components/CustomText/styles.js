@@ -6,6 +6,7 @@ export const CustomText = styled.Text`
   font-size: ${(props) => props.fontSize || "15px"};
   margin-top: ${(props) => props.marginTop || "0px"};
   margin-bottom: ${(props) => props.marginBottom || "0px"};
+  align-self: ${(props) => props.aSelf || "center"};
   font-family: "Blinker";
 `;
 

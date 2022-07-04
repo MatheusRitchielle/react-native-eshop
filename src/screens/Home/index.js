@@ -11,6 +11,7 @@ import colors from "../../theme/index";
 import PrincipalButton from "../../components/CustomButton/PrimaryButton";
 import { ListText } from "../ListaProduto/styles";
 import { ProductHeader } from "../../components/ProductsHeader";
+import { SeparatorItem } from "../../components/SeparatorItem/index";
 
 const Product = [
   {
@@ -105,10 +106,11 @@ const Principal = ({ navigation }) => {
   return (
     <ScrollView>
       <FlatList
-        ListHeaderComponent={ProductHeader}
         data={Product}
         renderItem={productRender}
         keyExtractor={(item) => item.id}
+        ListHeaderComponent={ProductHeader}
+        ItemSeparatorComponent={SeparatorItem}
       />
     </ScrollView>
   );

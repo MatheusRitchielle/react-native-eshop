@@ -2,10 +2,11 @@ import styled from "styled-components/native";
 import colors from "../../theme/index";
 
 export const CustomContainer = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  flex: ${(props) => props.flex || "1"};
+  justify-content: ${(props) => props.justify || "center"};
+  align-items: ${(props) => props.align || "center"};
   background-color: ${colors.tertiary};
+  margin-top: ${(props) => props.margin || "0px"};
 `;
 
 export const CustomContainerLista = styled.View`
@@ -15,7 +16,7 @@ export const CustomContainerLista = styled.View`
 `;
 
 export const CustomContainerCS = styled.View`
-  flex:1;
+  flex: 1;
   flex-direction: column;
   background-color: #d9d9d9;
   align-items: center;
