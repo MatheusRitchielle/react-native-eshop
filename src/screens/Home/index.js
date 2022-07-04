@@ -1,16 +1,16 @@
 import React from "react";
-import { Flex } from "@react-native-material/core";
 import TextoDinamico from "../../components/CustomText";
 import {
   ImagePagination,
   PaginationContainer,
   ButtonsContainer,
+  AlignItemsContainer,
 } from "./styles";
-import { ScrollView, FlatList, Image } from "react-native";
+import { ScrollView, FlatList } from "react-native";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/CustomButton/PrimaryButton";
 import { ListText } from "../ListaProduto/styles";
-import { View } from "react-native";
+import { ProductHeader } from "../../components/ProductsHeader";
 
 const Product = [
   {
@@ -59,13 +59,16 @@ const Product = [
       "https://images.tcdn.com.br/img/img_prod/779675/testeira_nike_swoosh_227_variacao_223_1_20211013113835.jpg",
   },
 ];
+
 const ProductItem = ({ produto, descricao, preco, imageUrl }) => (
   <PaginationContainer>
-    <ImagePagination source={{ uri: imageUrl }} />
-    <View style={{ flex: 1, flexDirection: "column" }}>
+    <AlignItemsContainer>
       <ListText>{produto}</ListText>
+      <ImagePagination source={{ uri: imageUrl }} />
+      <ListText>Descrição: </ListText>
       <ListText>{descricao}</ListText>
-      <ListText>Preço: {preco}</ListText>
+      <ListText>Preço: </ListText>
+      <ListText>{preco}</ListText>
       <ButtonsContainer>
         <PrincipalButton
           height="30px"
@@ -85,7 +88,7 @@ const ProductItem = ({ produto, descricao, preco, imageUrl }) => (
           </TextoDinamico>
         </PrincipalButton>
       </ButtonsContainer>
-    </View>
+    </AlignItemsContainer>
   </PaginationContainer>
 );
 
@@ -102,6 +105,7 @@ const Principal = ({ navigation }) => {
   return (
     <ScrollView>
       <FlatList
+        ListHeaderComponent={ProductHeader}
         data={Product}
         renderItem={productRender}
         keyExtractor={(item) => item.id}
