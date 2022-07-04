@@ -10,6 +10,7 @@ import CustomButton from "../../components/CustomButton/SecondaryButton";
 const Login = ({ navigation }) => {
   return (
     <ContainerDinamico>
+      
       <LogoHorizontal source={logoGrande} />
 
       <InnerText placeholder="Login" />
