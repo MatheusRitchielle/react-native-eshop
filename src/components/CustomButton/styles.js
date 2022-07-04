@@ -10,6 +10,9 @@ export const PrimaryButton = styled.Pressable`
   border-radius: ${(props) => props.bRadius || "50px"};
   justify-content: center;
   margin-top: ${(props) => props.marginT || "0px"};
+  margin-left: ${(props) => props.marginL || "0px"};
+  margin-right: ${(props) => props.marginR || "0px"};
+  margin-bottom: ${(props) => props.marginB || "0px"};
   background-color: ${(props) => props.buttonColor || `${colors.primary}`};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: ${(props) => props.marginB || "0px"};

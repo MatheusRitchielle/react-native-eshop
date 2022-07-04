@@ -1,20 +1,22 @@
 import { CustomContainerCS } from "./../../components/CustomContainer/styles";
 import styled from "styled-components/native";
-import iconeGrande from "../../../assets/images/iconeGrande.png";
-import { Button } from "react-native-paper";
-import { CustomTextCS } from "../../components/CustomText/styles";
+import PrincipalButton from './../../components/CustomButton/PrimaryButton';
+import { LogoHorizontal } from './../../components/CustomImageLogo/styles';
+import logoGrande from "../../../assets/images/logo-grande.png";
+import TextoDinamico from './../../components/CustomText/index';
+import { CustomH1 } from "../../components/CustomTitle/styles";
 
 const CadastroSucesso = () => {
   return (
     <CustomContainerCS>
-      <Logo source={iconeGrande} />
+     <LogoHorizontal source={logoGrande} />
       <CustomH1>Usuário cadastrado com sucesso!</CustomH1>
-      <Button
-        style={{}}
-        onPress={() => navigation.navigate("Menu Principal")}
+      <PrincipalButton
+        mTop="5rem"
+        onUserPress={() => navigation.navigate("Login")}
       >
-        <CustomTextCS>LOGIN</CustomTextCS>
-      </Button>
+        <TextoDinamico>Login</TextoDinamico>
+      </PrincipalButton>
     </CustomContainerCS>
   );
 };

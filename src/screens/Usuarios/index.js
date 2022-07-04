@@ -1,21 +1,18 @@
-import React from "react";
-import { FlatList } from "react-native";
-import {
-  CardGeneric,
-  NomeUsuario,
-  CustomText,
-} from "./styles";
+import React, { useState } from "react";
+import { FlatList, Button, View, Modal } from "react-native";
+import { CardGeneric, NomeUsuario, CustomText } from "./styles";
 import { Feather, AntDesign } from '@expo/vector-icons';
-import ButtonIcon from '../../components/CustomButton/ButtonIcon';
 import { LogoHorizontal } from './../../components/CustomImageLogo/styles';
 import logoGrande from "../../../assets/images/logo-grande.png";
 import ContainerDinamico from './../../components/CustomContainer/index';
 import PrincipalButton from './../../components/CustomButton/PrimaryButton';
+import ButtonIcon from './../../components/CustomButton/ButtonIcon';
+import { Overlay } from "react-native-elements";
 
 const Lista = [
   {
     id: 1,
-    nome: "Vitória Emilly Duarte Vitória Emilly Duarte Vitória Emilly Duarte Vitória Emilly DuarteVitória Emilly Duarte Vitória Emilly DuarteVitória Emilly Duarte",
+    nome: "Vitória Emilly Duarte",
     cpf: "017.103.546-15",
     data_nasc: "22/04/1980",
     login: "Vitória",
@@ -86,34 +83,44 @@ const Item = ({ nome }) => (
     <NomeUsuario>
       <TextoDinamico tAlgin="left" >{nome}</TextoDinamico>
     </NomeUsuario>
-    <ButtonIcon>
-      <AntDesign name="edit" size={24} color="#A6771B" />
-    </ButtonIcon>
-    <ButtonIcon>
-      <Feather name="trash" size={24} color="#A6771B" />
-    </ButtonIcon>
   </CardGeneric>
 );
 
 const Usuarios = ({ navigation }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const handleModal = () => setIsModalVisible(() => !isModalVisible);
+
   const itemRenderizado = ({ item }) => (
-    <Item nome={item.nome} preco={item.preco} estoque={item.estoque} />
+    <CardGeneric>
+      <Item nome={item.nome} />
+      <ButtonIcon onUserPress={handleModal} >
+        <AntDesign name="edit" size={24} color="#A6771B" />
+      </ButtonIcon>
+      <ButtonIcon >
+        <Feather name="trash" size={24} color="#A6771B" />
+      </ButtonIcon>
+      <View >
+        <Modal isVisible={isModalVisible}
+          visible={isModalVisible}
+          animationType="slide"
+          transparent={true}
+        >
+          <Overlay >
+            <TextoDinamico>Nome: <Item nome={item.nome} /></TextoDinamico>
+            <TextoDinamico>CPF: <Item nome={item.cpf} /></TextoDinamico>
+            <TextoDinamico>Data de Nascimento: <Item nome={item.data_nasc} /></TextoDinamico>
+            <TextoDinamico>Usuário: <Item nome={item.login} /></TextoDinamico>
+            <TextoDinamico>Status: <Item nome={item.status} /></TextoDinamico>
+            <TextoDinamico>Senha: <Item nome={item.senha} /></TextoDinamico>
+            <Button title="Hide modal" onPress={handleModal} />
+          </Overlay>
+        </Modal>
+      </View>
+    </CardGeneric>
   );
 
   return (
     <>
-      {/* <ContainerCabecalho>
-        <NomeUsuario>
-          <TextoDinamico fWeight="bold">Nome do Usuário</TextoDinamico>
-        </NomeUsuario>
-        <EditDelete>
-          <TextoDinamico fWeight="bold">Editar</TextoDinamico>
-        </EditDelete>
-        <EditDelete >
-          <TextoDinamico fWeight="bold">Apagar</TextoDinamico>
-        </EditDelete>
-      </ContainerCabecalho> */}
-
       <ContainerDinamico>
         <LogoHorizontal source={logoGrande} />
         <FlatList
@@ -125,11 +132,12 @@ const Usuarios = ({ navigation }) => {
           mTop="1rem"
           mBottom="1rem"
           bColor={"#333333"}
-          onUserPress={() => navigation.navigate("Rotas")}
+          onUserPress={() => navigation.navigate("EditarUsuario")}
         >
           <TextoDinamico
-            color={"#fff"}
-          >Adicionar</TextoDinamico>
+            color={"#fff"}>
+            Adicionar
+          </TextoDinamico>
         </PrincipalButton>
       </ContainerDinamico>
 

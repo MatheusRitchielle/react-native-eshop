@@ -6,7 +6,9 @@ const PrincipalButton = ({
   onUserPress,
   width,
   mTop,
+  mLeft,
   mBottom,
+  mRight,
   tAlign,
   bColor,
   height,
@@ -14,14 +16,16 @@ const PrincipalButton = ({
 }) => {
   return (
     <PrimaryButton
-      onPress={onUserPress}
-      widthSize={width}
+      text={tAlign}
       marginT={mTop}
       marginB={mBottom}
-      text={tAlign}
-      buttonColor={bColor}
-      heightSize={height}
+      marginR={mRight}
+      marginL={mLeft}
       bRadius={border}
+      widthSize={width}
+      heightSize={height}
+      buttonColor={bColor}
+      onPress={onUserPress}
     >
       {children}
     </PrimaryButton>
