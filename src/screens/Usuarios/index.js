@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { FlatList, Button, View, Modal } from "react-native";
 import { CardGeneric, NomeUsuario, CustomText } from "./styles";
-import { Feather, AntDesign } from '@expo/vector-icons';
-import { LogoHorizontal } from './../../components/CustomImageLogo/styles';
+import { Feather, AntDesign } from "@expo/vector-icons";
+import { LogoHorizontal } from "./../../components/CustomImageLogo/styles";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import ContainerDinamico from './../../components/CustomContainer/index';
-import PrincipalButton from './../../components/CustomButton/PrimaryButton';
-import ButtonIcon from './../../components/CustomButton/ButtonIcon';
-import { Overlay } from "react-native-elements";
+import ContainerDinamico from "./../../components/CustomContainer/index";
+import PrincipalButton from "./../../components/CustomButton/PrimaryButton";
+import ButtonIcon from "./../../components/CustomButton/ButtonIcon";
+import { Overlay } from "react-native";
 
 const Lista = [
   {
@@ -81,7 +81,7 @@ const TextoDinamico = ({
 const Item = ({ nome }) => (
   <CardGeneric>
     <NomeUsuario>
-      <TextoDinamico tAlgin="left" >{nome}</TextoDinamico>
+      <TextoDinamico tAlgin="left">{nome}</TextoDinamico>
     </NomeUsuario>
   </CardGeneric>
 );
@@ -93,25 +93,38 @@ const Usuarios = ({ navigation }) => {
   const itemRenderizado = ({ item }) => (
     <CardGeneric>
       <Item nome={item.nome} />
-      <ButtonIcon onUserPress={handleModal} >
+      <ButtonIcon onUserPress={handleModal}>
         <AntDesign name="edit" size={24} color="#A6771B" />
       </ButtonIcon>
-      <ButtonIcon >
+      <ButtonIcon>
         <Feather name="trash" size={24} color="#A6771B" />
       </ButtonIcon>
-      <View >
-        <Modal isVisible={isModalVisible}
+      <View>
+        <Modal
+          isVisible={isModalVisible}
           visible={isModalVisible}
           animationType="slide"
           transparent={true}
         >
-          <Overlay >
-            <TextoDinamico>Nome: <Item nome={item.nome} /></TextoDinamico>
-            <TextoDinamico>CPF: <Item nome={item.cpf} /></TextoDinamico>
-            <TextoDinamico>Data de Nascimento: <Item nome={item.data_nasc} /></TextoDinamico>
-            <TextoDinamico>Usuário: <Item nome={item.login} /></TextoDinamico>
-            <TextoDinamico>Status: <Item nome={item.status} /></TextoDinamico>
-            <TextoDinamico>Senha: <Item nome={item.senha} /></TextoDinamico>
+          <Overlay>
+            <TextoDinamico>
+              Nome: <Item nome={item.nome} />
+            </TextoDinamico>
+            <TextoDinamico>
+              CPF: <Item nome={item.cpf} />
+            </TextoDinamico>
+            <TextoDinamico>
+              Data de Nascimento: <Item nome={item.data_nasc} />
+            </TextoDinamico>
+            <TextoDinamico>
+              Usuário: <Item nome={item.login} />
+            </TextoDinamico>
+            <TextoDinamico>
+              Status: <Item nome={item.status} />
+            </TextoDinamico>
+            <TextoDinamico>
+              Senha: <Item nome={item.senha} />
+            </TextoDinamico>
             <Button title="Hide modal" onPress={handleModal} />
           </Overlay>
         </Modal>
@@ -134,13 +147,9 @@ const Usuarios = ({ navigation }) => {
           bColor={"#333333"}
           onUserPress={() => navigation.navigate("EditarUsuario")}
         >
-          <TextoDinamico
-            color={"#fff"}>
-            Adicionar
-          </TextoDinamico>
+          <TextoDinamico color={"#fff"}>Adicionar</TextoDinamico>
         </PrincipalButton>
       </ContainerDinamico>
-
     </>
   );
 };
