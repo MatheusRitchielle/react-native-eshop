@@ -17,7 +17,7 @@ export const AlignItemsContainer = styled.View`
   flex: 1;
   align-items: center;
   flex-direction: column;
-`;
+`
 export const ImagePagination = styled.Image`
   margin: 10px;
   width: 170px;
