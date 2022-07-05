@@ -1,16 +1,15 @@
 import React from "react";
-import { InnerText } from "../../components/CustomInput/styles";
-import ContainerDinamico from "../../components/CustomContainer";
-import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
+import { InnerText } from "../../components/Inputs/styled";
+import ContainerDinamico from "../../components/Containers/index";
+import { LogoHorizontal } from "../../components/Images/styled";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import TextoDinamico from "../../components/CustomText";
-import PrincipalButton from "../../components/CustomButton/PrimaryButton";
-import CustomButton from "../../components/CustomButton/SecondaryButton";
+import TextoDinamico from "../../components/Texts/index";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import CustomButton from "../../components/Buttons/SecondaryButton";
 
 const Login = ({ navigation }) => {
   return (
     <ContainerDinamico>
-      
       <LogoHorizontal source={logoGrande} />
 
       <InnerText placeholder="Login" />

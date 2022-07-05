@@ -1,27 +1,27 @@
 import React from "react";
 import { View } from "react-native";
-import { InnerText } from "../../components/CustomInput/styles";
-import { CustomText } from "../../components/CustomText/styles";
-import { CustomContainer } from "../../components/CustomContainer/styles";
-import { CustomTitle } from "../../components/CustomTitle/styles";
-import { PrimaryButton } from "../../components/CustomButton/styles";
-import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
+import { InnerText } from "../../components/Inputs/styled";
+import { CustomText } from "../../components/Texts/styled";
+import { CustomContainer } from "../../components/Containers/styled";
+import { CustomTitle } from "../../components/Texts/styled";
+import { LogoRecover } from "../../components/Images/styled";
 import recoverImage from "../../../assets/images/recover.png";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
 
 const RecuperaSenha = ({ navigation }) => {
   return (
     <CustomContainer>
-      <LogoHorizontal source={recoverImage} />
-      <CustomTitle style={{ marginTop: 50 }}>Recuperar senha</CustomTitle>
-      <View style={{ marginTop: 30 }}>
+      <LogoRecover source={recoverImage} />
+      <CustomTitle>Recuperar senha</CustomTitle>
+      <View>
         <InnerText placeholder="E-mail" />
         <InnerText placeholder="CPF" keyboardType="numeric" />
-        <PrimaryButton
-          onPress={() => navigation.navigate("CriarSenha")}
-          style={{ marginTop: 80, padding: 0 }}
+        <PrincipalButton
+          mTop="5rem"
+          onUserPress={() => navigation.navigate("CriarSenha")}
         >
           <CustomText>Recuperar</CustomText>
-        </PrimaryButton>
+        </PrincipalButton>
       </View>
     </CustomContainer>
   );

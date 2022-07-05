@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomContainer } from "./styles";
+import { CustomContainer } from "./styled";
 
 const ContainerDinamico = ({
   children,

@@ -3,7 +3,6 @@ import colors from "../../theme/index";
 
 export const ContainerCabecalho = styled.View`
   flex-direction: row;
-  /* justify-content: space-around; */
   margin-top: 10px;
   padding: 5px;
   border: 2px solid;

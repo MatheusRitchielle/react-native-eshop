@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FlatList, Button, View, Modal } from "react-native";
-import { CardGeneric, NomeUsuario, CustomText } from "./styles";
+import { CardGeneric, NomeUsuario, CustomText } from "./styled";
 import { Feather, AntDesign } from "@expo/vector-icons";
-import { LogoHorizontal } from "./../../components/CustomImageLogo/styles";
+import { LogoHorizontal } from "../../components/Images/styled";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import ContainerDinamico from "./../../components/CustomContainer/index";
-import PrincipalButton from "./../../components/CustomButton/PrimaryButton";
-import ButtonIcon from "./../../components/CustomButton/ButtonIcon";
+import ContainerDinamico from "../../components/Containers/index";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import ButtonIcon from "../../components/Buttons/ButtonIcon";
 import { Overlay } from "react-native";
 
 const Lista = [

@@ -1,5 +1,5 @@
 import React from "react";
-import TextoDinamico from "../../components/CustomText";
+import TextoDinamico from "../../components/Texts";
 import {
   ImagePagination,
   PaginationContainer,
@@ -7,11 +7,11 @@ import {
   AlignItemsContainer,
   FavoriteIcon,
   AlignPriceContainer,
-} from "./styles";
+} from "./styled";
 import { ScrollView, FlatList } from "react-native";
 import colors from "../../theme/index";
-import PrincipalButton from "../../components/CustomButton/PrimaryButton";
-import { ProductHeader } from "../../components/ProductsHeader";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import { ProductHeader } from "../../components/ProductsHeader/index";
 import { SeparatorItem } from "../../components/SeparatorItem/index";
 
 const Product = [

@@ -1,8 +1,6 @@
 import React from "react";
-import ContainerDinamico from "../../components/CustomContainer";
-
-import { CustomTitle } from "../../components/CustomTitle/styles";
-
+import ContainerDinamico from "../../components/Containers/index";
+import { CustomTitle } from "../../components/Texts/styled";
 
 const Categoria = () => {
   return (

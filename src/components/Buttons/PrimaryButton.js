@@ -1,5 +1,5 @@
 import React from "react";
-import { PrimaryButton } from "./styles";
+import { PrimaryButton } from "./styled";
 
 const PrincipalButton = ({
   children,

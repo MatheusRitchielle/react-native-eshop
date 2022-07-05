@@ -18,3 +18,19 @@ export const CustomTextCS = styled.Text`
   padding: 10px;
   align-self: center;
 `;
+
+export const CustomTitle = styled.Text`
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Blinker";
+`;
+
+export const CustomH1 = styled.Text`
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  font-style: normal;
+  font-family: "Amiko";
+`;

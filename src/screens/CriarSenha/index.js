@@ -1,29 +1,30 @@
 import React from "react";
-import ContainerDinamico from "../../components/CustomContainer";
-import { FontAwesome5, Ionicons } from '@expo/vector-icons';
-import { CustomTitle } from "../../components/CustomTitle/styles";
-import { View } from 'react-native';
-import { InnerText } from "../../components/CustomInput/styles";
-import { CustomText } from "../../components/CustomText/styles";
-import { PrimaryButton } from "../../components/CustomButton/styles";
+import ContainerDinamico from "../../components/Containers";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { CustomTitle } from "../../components/Texts/styled";
+import { InnerText } from "../../components/Inputs/styled";
+import { CustomText } from "../../components/Texts/index";
+import { AlignContainerCadastro } from "../Cadastro/styled";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
 
 const CriarSenha = ({ navigation }) => {
   return (
     <ContainerDinamico tAlign="center">
-    <FontAwesome5 name="user-lock" size={24} color="black" />
-      <CustomTitle>Criar senha</CustomTitle>
-      <View style={{ marginTop: 20 }}>
+      <FontAwesome5 name="user-lock" size={30} color="black" />
+
+      <CustomTitle>Digite sua nova senha</CustomTitle>
+      <AlignContainerCadastro>
         <InnerText placeholder="Senha" secureTextEntry={true} />
-        <Ionicons name="ios-eye-off" size={24} color="black" />
+        <Ionicons name="ios-eye-off" size={18} color="black" />
         <InnerText placeholder="Nova senha" secureTextEntry={true} />
-        <Ionicons name="ios-eye-off" size={24} color="black" />
-        <PrimaryButton
-          onPress={() => navigation.navigate("SenhaAlterada")}
-          style={{ marginTop: 80, padding: 0 }}
+        <Ionicons name="ios-eye-off" size={18} color="black" />
+        <PrincipalButton
+          mTop="3rem"
+          onUserPress={() => navigation.navigate("SenhaAlterada")}
         >
           <CustomText>Alterar Senha</CustomText>
-        </PrimaryButton>
-      </View>
+        </PrincipalButton>
+      </AlignContainerCadastro>
     </ContainerDinamico>
   );
 };

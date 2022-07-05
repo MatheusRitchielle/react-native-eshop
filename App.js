@@ -1,6 +1,6 @@
 import * as React from "react";
 import Navigation from "./src/navigation/index";
-import { FontStyles, MySafeAreaView } from "./styles";
+import { FontStyles, MySafeAreaView } from "./styled";
 
 const App = () => {
   return (

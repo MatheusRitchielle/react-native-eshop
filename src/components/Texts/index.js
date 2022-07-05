@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomText } from "./styles";
+import { CustomText } from "./styled";
 
 const TextoDinamico = ({
   children,

@@ -1,23 +1,21 @@
-import { CustomTitle } from "../../components/CustomTitle/styles";
-import ContainerDinamico from "../../components/CustomContainer";
-import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
+import { CustomTitle } from "../../components/Texts/styled";
+import ContainerDinamico from "../../components/Containers/index";
+import { LogoRecover } from "../../components/Images/styled";
 import recoverImage from "../../../assets/images/recover.png";
-import { CustomText } from './../../components/CustomText/styles';
-import { PrimaryButton } from './../../components/CustomButton/styles';
+import { CustomText } from "../../components/Texts/styled";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
 
 const SenhaAlterada = () => {
-    return (
-        <ContainerDinamico tAlign="center">
-            <LogoHorizontal source={recoverImage} />
-            <CustomTitle>Senha alterada com sucesso!</CustomTitle>
-            <PrimaryButton
-                onPress={() => navigation.navigate("Login")}
-                style={{ marginTop: 80, padding: 0 }}
-            >
-                <CustomText>Login</CustomText>
-            </PrimaryButton>
-        </ContainerDinamico>
-    );
-}
+  return (
+    <ContainerDinamico tAlign="center">
+      <LogoRecover source={recoverImage} />
+
+      <CustomTitle>Senha alterada com sucesso!</CustomTitle>
+      <PrincipalButton mTop="5rem" onPress={() => navigation.navigate("Login")}>
+        <CustomText>Login</CustomText>
+      </PrincipalButton>
+    </ContainerDinamico>
+  );
+};
 
 export default SenhaAlterada;

@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, Text } from "react-native";
-import { CustomContainer } from "../../components/CustomContainer/styles";
-import { CustomTitle } from "../../components/CustomTitle/styles";
+import { CustomContainer } from "../../components/Containers/styled";
+import { CustomTitle } from "../../components/Texts/styled";
 import {
   ContainerCarrinho,
   ButtonCarrinho,
@@ -13,7 +13,7 @@ import {
   ColumnQtd,
   ColumnTotal,
   CustomText,
-} from "./styles";
+} from "./styled";
 import {
   AntDesign,
   Entypo,

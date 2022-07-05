@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, useWindowDimensions } from "react-native";
-import TextoDinamico from "../CustomText";
-import { ContainerHeader, ImageHeader } from "./styled";
+import TextoDinamico from "../Texts/index";
+import { ContainerHeader } from "./styled";
 
 const cover = require("../../../assets/images/logo-product.png");
 const dimensions = {

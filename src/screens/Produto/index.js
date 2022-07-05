@@ -1,6 +1,6 @@
 import React from "react";
-import { CustomContainer } from "../../components/CustomContainer/styles";
-import { CustomTitle } from "../../components/CustomTitle/styles";
+import { CustomContainer } from "../../components/Containers/styled";
+import { CustomTitle } from "../../components/Titles/styled";
 
 const Produtos = () => {
   return (

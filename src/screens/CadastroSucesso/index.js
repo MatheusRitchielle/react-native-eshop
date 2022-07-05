@@ -1,15 +1,15 @@
-import { CustomContainerCS } from "./../../components/CustomContainer/styles";
+import { CustomContainerCS } from "./../../components/Containers/styled";
 import styled from "styled-components/native";
-import PrincipalButton from './../../components/CustomButton/PrimaryButton';
-import { LogoHorizontal } from './../../components/CustomImageLogo/styles';
+import PrincipalButton from "./../../components/Buttons/PrimaryButton";
+import { LogoHorizontal } from "./../../components/Images/styled";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import TextoDinamico from './../../components/CustomText/index';
-import { CustomH1 } from "../../components/CustomTitle/styles";
+import TextoDinamico from "./../../components/Texts/index";
+import { CustomH1 } from "../../components/Texts/styled";
 
 const CadastroSucesso = () => {
   return (
     <CustomContainerCS>
-     <LogoHorizontal source={logoGrande} />
+      <LogoHorizontal source={logoGrande} />
       <CustomH1>Usuário cadastrado com sucesso!</CustomH1>
       <PrincipalButton
         mTop="5rem"

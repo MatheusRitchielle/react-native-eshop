@@ -1,25 +1,25 @@
 import React from "react";
-import { ButtonEditDelete } from "./styles";
+import { SecondaryButton } from "./styled";
 
-const ButtonIcon = ({
+const CustomButton = ({
   children,
   onUserPress,
-  width,
+  sizeWidht,
   mTop,
   tAlign,
   bColor,
 }) => {
   return (
-    <ButtonEditDelete
+    <SecondaryButton
       onPress={onUserPress}
-      size={width}
+      widthSize={sizeWidht}
       margin={mTop}
       text={tAlign}
       buttonColor={bColor}
     >
       {children}
-    </ButtonEditDelete>
+    </SecondaryButton>
   );
 };
 
-export default ButtonIcon;
+export default CustomButton;
