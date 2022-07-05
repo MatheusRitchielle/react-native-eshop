@@ -11,7 +11,7 @@ const SenhaAlterada = () => {
       <LogoRecover source={recoverImage} />
       <CustomTitle>Senha alterada com sucesso!</CustomTitle>
       <PrincipalButton
-        mTop="5rem"
+        mTop="80px"
         onUserPress={() => navigation.navigate("Login")}
       >
         <TextoDinamico>Login</TextoDinamico>

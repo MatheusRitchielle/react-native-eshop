@@ -17,7 +17,7 @@ const RecuperaSenha = ({ navigation }) => {
         <InnerText placeholder="E-mail" />
         <InnerText placeholder="CPF" keyboardType="numeric" />
         <PrincipalButton
-          mTop="5rem"
+          mTop="80px"
           onUserPress={() => navigation.navigate("CriarSenha")}
         >
           <TextoDinamico>Recuperar</TextoDinamico>

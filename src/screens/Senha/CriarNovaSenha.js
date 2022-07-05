@@ -19,7 +19,7 @@ const CriarSenha = ({ navigation }) => {
         <InnerText placeholder="Nova senha" secureTextEntry={true} />
         <Ionicons name="ios-eye-off" size={18} color="black" />
         <PrincipalButton
-          mTop="3rem"
+          mTop="48px"
           onUserPress={() => navigation.navigate("SenhaAlterada")}
         >
           <CustomText>Alterar Senha</CustomText>

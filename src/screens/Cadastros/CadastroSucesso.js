@@ -12,7 +12,7 @@ const CadastroSucesso = () => {
       <LogoHorizontal source={logoGrande} />
       <CustomH1>Usuário cadastrado com sucesso!</CustomH1>
       <PrincipalButton
-        mTop="5rem"
+        mTop="80px"
         onUserPress={() => navigation.navigate("Login")}
       >
         <TextoDinamico>Login</TextoDinamico>

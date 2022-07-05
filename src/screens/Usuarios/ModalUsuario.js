@@ -142,8 +142,8 @@ const Usuarios = ({ navigation }) => {
           keyExtractor={(item) => item.id}
         />
         <PrincipalButton
-          mTop="1rem"
-          mBottom="1rem"
+          mTop="16px"
+          mBottom="16px"
           bColor={"#333333"}
           onUserPress={() => navigation.navigate("EditarUsuario")}
         >

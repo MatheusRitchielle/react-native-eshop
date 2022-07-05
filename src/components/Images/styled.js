@@ -8,5 +8,5 @@ export const LogoHorizontal = styled.Image`
 export const LogoRecover = styled.Image`
   width: 100px;
   height: 86px;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 `;

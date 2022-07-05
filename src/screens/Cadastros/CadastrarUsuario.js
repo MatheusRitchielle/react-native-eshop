@@ -18,7 +18,7 @@ const Cadastro = ({ navigation }) => {
         <InnerText placeholder="Senha" secureTextEntry={true} />
         <InnerText placeholder="Confirme sua senha" secureTextEntry={true} />
         <PrincipalButton
-          mTop="3rem"
+          mTop="48px"
           onUserPress={() => navigation.navigate("CadastroSucesso")}
         >
           <TextoDinamico>Cadastrar</TextoDinamico>

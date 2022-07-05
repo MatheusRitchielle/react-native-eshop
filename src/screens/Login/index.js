@@ -16,18 +16,17 @@ const Login = ({ navigation }) => {
       <InnerText placeholder="Senha" secureTextEntry={true} />
 
       <CustomButton
-        tAlign="left"
         onUserPress={() => {
           navigation.navigate("Recuperar Senha");
         }}
       >
-        <TextoDinamico fSize="15px" alignSelf="left">
+        <TextoDinamico fSize="15px" alignSelf="flex-start">
           Esqueci a senha
         </TextoDinamico>
       </CustomButton>
 
       <PrincipalButton
-        mTop="5rem"
+        mTop="80px"
         onUserPress={() => navigation.navigate("Rotas")}
       >
         <TextoDinamico>Entrar</TextoDinamico>
