@@ -6,9 +6,9 @@ export const MySafeAreaView = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const FontStyles = createGlobalStyle`
-@font-face {
-  font-family: 'Blinker';
-  src: url(${Blinker}) ;
-}
-`;
+// export const FontStyles = createGlobalStyle`
+// @font-face {
+//   font-family: 'Blinker';
+//   src: url(${Blinker}) ;
+// }
+// `;

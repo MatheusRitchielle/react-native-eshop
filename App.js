@@ -1,14 +1,13 @@
 import * as React from "react";
-import { SafeAreaView } from "react-native";
 import Navigation from "./src/navigation/index";
-// import { MySafeAreaView } from "./styled";
+import { MySafeAreaView } from "./Styled";
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <MySafeAreaView>
       {/* <FontStyles /> */}
       <Navigation />
-    </SafeAreaView>
+    </MySafeAreaView>
   );
 };
 export default App;
