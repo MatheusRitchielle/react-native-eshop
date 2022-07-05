@@ -9,7 +9,7 @@ export const CustomText = styled.Text`
   margin-right: ${(props) => props.marginRight || "0px"};
   align-self: ${(props) => props.aSelf || "center"};
   font-weight: ${(props) => props.fWeight || "none"};
-  font-family: "Blinker";
+  font-family: ${(props) => props.fFamily || "Blinker"};
 `;
 
 export const CustomTextCS = styled.Text`

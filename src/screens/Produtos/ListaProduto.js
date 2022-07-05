@@ -1,9 +1,9 @@
 import React from "react";
-import { FlatList, View, Text } from "react-native";
-import { ListaEstilizada, FotoEstilizada, Container, Shadow } from "./styled";
+import { FlatList, View } from "react-native";
+import { ListaEstilizada, FotoEstilizada, Container, Shadow, SeparadorList, FotoContainer } from "./styled";
 import { TouchableOpacity } from "react-native-web";
-import { SeparatorItem } from "../../components/SeparatorItem/index";
-import { ProductHeader } from "../../components/ProductsHeader/index";
+import TextoDinamico from "../../components/Texts";
+import colors from "../../theme/index";
 
 const Lista = [
   {
@@ -45,19 +45,22 @@ const Lista = [
 
 const Item = ({ produto, estoque, preco, foto }) => (
   <ListaEstilizada>
-    <View style={{ flexDirection: "row" }}>
+    <FotoContainer>
       <Shadow>
         <FotoEstilizada source={{ uri: foto }} />
       </Shadow>
-    </View>
-    <View style={{ marginLeft: 8 }}>
-      <Text>{produto}</Text>
-      <Text>{estoque}</Text>
-      <Text>{preco}</Text>
+    </FotoContainer>
+    <View>
+      <TextoDinamico fColor={`${colors.secondary}`} fSize="12px" fontFamily="Verdana" >{produto}</TextoDinamico>
+      <TextoDinamico fColor={`${colors.secondary}`} fSize="12px" fontFamily="Verdana" >{estoque}</TextoDinamico>
+      <TextoDinamico fColor={`${colors.secondary}`} fSize="12px" fontFamily="Verdana" >{preco}</TextoDinamico>
     </View>
 
     <TouchableOpacity>
-      <Text>Excluir</Text>
+    <TextoDinamico fColor={`${colors.primary}`} fSize="12px" fontFamily="Verdana" >Editar</TextoDinamico>
+    </TouchableOpacity>
+    <TouchableOpacity>
+    <TextoDinamico fColor={`${colors.primary}`} fSize="12px" fontFamily="Verdana" >Excluir</TextoDinamico>
     </TouchableOpacity>
   </ListaEstilizada>
 );
@@ -75,11 +78,10 @@ const ListaProduto = () => {
   return (
     <Container>
       <FlatList
-        ListHeaderComponent={ProductHeader}
         data={Lista}
         renderItem={itemRenderizado}
         keyExtractor={(item) => item.id}
-        ItemSeparatorComponent={SeparatorItem}
+        ItemSeparatorComponent={SeparadorList}
       />
     </Container>
   );

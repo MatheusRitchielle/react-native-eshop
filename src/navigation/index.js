@@ -2,7 +2,6 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CadastrarUsuario from "../screens/Cadastros/CadastrarUsuario";
-import PaginaCategoria from "../screens/Categorias/PaginaCategoria";
 import ListaProduto from "../screens/Produtos/ListaProduto";
 import RecuperarSenha from "../screens/Senha/RecuperarSenha";
 import Home from "../screens/Home/index";
@@ -14,6 +13,7 @@ import ModalUsuario from "../screens/Usuarios/ModalUsuario";
 import SenhaAlterada from "../screens/Senha/SenhaAlterada";
 import CriarNovaSenha from "./../screens/Senha/CriarNovaSenha";
 import EditarUsuario from "../screens/Usuarios/EditarUsuario";
+import Categoria from "../screens/Produtos/Categoria";
 
 const Stack = createNativeStackNavigator();
 
@@ -100,15 +100,16 @@ const Navigation = () => {
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             title: "Produtos",
+            headerTitleAlign: "center",
           }}
         />
         <Stack.Screen
-          name="Pagina de Categirias"
-          component={PaginaCategoria}
+          name="Categorias"
+          component={Categoria}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-            headerShown: false,
+            headerTitleAlign: "center",
           }}
         />
         <Stack.Screen

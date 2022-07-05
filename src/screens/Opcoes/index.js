@@ -35,7 +35,7 @@ const Opcoes = ({ navigation }) => {
 
       <CardOpcoes>
         <SecondaryButton
-          onPress={() => navigation.navigate("Pagina de Categirias")}
+          onPress={() => navigation.navigate("Categorias")}
         >
           <CustomText>
             <FontAwesome5 name="boxes" size={24} color="black" /> Categorias

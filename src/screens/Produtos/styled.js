@@ -9,18 +9,6 @@ export const MainTitle = styled.Text`
   margin-bottom: 20px;
 `;
 
-export const ListText = styled.Text`
-  font-size: 16px;
-  font-family: "Blinker";
-  margin-top: 10;
-`;
-
-export const PdColumn = styled.View`
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 10px;
-`;
-
 export const AddButton = styled.Pressable`
   height: 50px;
   width: 120px;
@@ -37,15 +25,20 @@ export const AddButton = styled.Pressable`
 export const Container = styled.View`
   flex: 1;
   padding: 24px;
+  background-color: ${colors.tertiary};
 `;
 
 export const ListaEstilizada = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: ${colors.primary};
+    background-color: ${colors.sixth};
     padding: 8px;
     border-radius: 5px;
+`;
+
+export const FotoContainer = styled.View`
+    flex-direction: row;
 `;
 
 export const FotoEstilizada = styled.Image`
@@ -58,3 +51,12 @@ export const Shadow = styled.View`
     border-radius: 40px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
+
+export const SeparadorList = styled.View`
+height: ${(props) => props.height || "16px"};
+width: ${(props) => props.width || "100%"};
+margin-top: ${(props) => props.marginTop || "0px"};
+margin-bottom: ${(props) => props.marginBottom || "0px"};
+background-color: ${(props) => props.backgroundColor || `${colors.tertiary}`};
+`;
+
