@@ -1,19 +1,19 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Cadastro from "../screens/Cadastro/index";
-import Categoria from "../screens/Categoria/index";
-import Produto from "../screens/ListaProduto/index";
-import RecuperarSenha from "../screens/RecuperarSenha/index";
+import CadastrarUsuario from "../screens/Cadastros/CadastrarUsuario";
+import PaginaCategoria from "../screens/Categorias/PaginaCategoria";
+import ListaProduto from "../screens/Produtos/ListaProduto";
+import RecuperarSenha from "../screens/Senha/RecuperarSenha";
 import Home from "../screens/Home/index";
 import Rotas from "../router/Rotas";
 import Opcoes from "../screens/Opcoes";
-import CadastroSucesso from "../screens/CadastroSucesso/index";
-import Login from "../screens/Login";
-import Usuarios from "../screens/Usuarios"
-import SenhaAlterada from "../screens/SenhaAlterda"
-import CriarSenha from './../screens/CriarSenha/index';
-import EditarUsuario from "../screens/EditarUsuario/index";
+import CadastroSucesso from "../screens/Cadastros/CadastroSucesso";
+import Login from "../screens/Login/index";
+import ModalUsuario from "../screens/Usuarios/ModalUsuario";
+import SenhaAlterada from "../screens/Senha/SenhaAlterada";
+import CriarNovaSenha from "./../screens/Senha/CriarNovaSenha";
+import EditarUsuario from "../screens/Usuarios/EditarUsuario";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,11 +31,11 @@ const Navigation = () => {
         />
         <Stack.Screen
           name="Cadastro"
-          component={Cadastro}
+          component={CadastrarUsuario}
           options={{
             headerTintColor: "#474747",
             headerTransparent: true,
-            title: false
+            title: false,
           }}
         />
         <Stack.Screen
@@ -45,7 +45,7 @@ const Navigation = () => {
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
             headerTransparent: true,
-            title: false
+            title: false,
           }}
         />
         <Stack.Screen
@@ -54,7 +54,7 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTransparent: true,
-            title: false
+            title: false,
           }}
         />
         <Stack.Screen
@@ -63,16 +63,16 @@ const Navigation = () => {
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTransparent: true,
-            title: false
+            title: false,
           }}
         />
         <Stack.Screen
           name="CriarSenha"
-          component={CriarSenha}
+          component={CriarNovaSenha}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTransparent: true,
-            title: false
+            title: false,
           }}
         />
         <Stack.Screen
@@ -95,16 +95,16 @@ const Navigation = () => {
         />
         <Stack.Screen
           name="Pagina de Produtos"
-          component={Produto}
+          component={ListaProduto}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-            title: "Produtos"
+            title: "Produtos",
           }}
         />
         <Stack.Screen
           name="Pagina de Categirias"
-          component={Categoria}
+          component={PaginaCategoria}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
@@ -122,11 +122,11 @@ const Navigation = () => {
         />
         <Stack.Screen
           name="Usuarios"
-          component={Usuarios}
+          component={ModalUsuario}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#61882E",
-            title: "Usuários"
+            title: "Usuários",
           }}
         />
         <Stack.Screen

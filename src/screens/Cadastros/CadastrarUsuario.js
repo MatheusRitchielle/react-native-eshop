@@ -3,7 +3,7 @@ import { InnerText } from "../../components/Inputs/styled";
 import { CustomTitle } from "../../components/Texts/styled";
 import ContainerDinamico from "../../components/Containers/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
-import TextoDinamico from "./../../components/Texts/index";
+import TextoDinamico from "../../components/Texts/index";
 import { AlignContainerCadastro } from "./styled";
 
 const Cadastro = ({ navigation }) => {

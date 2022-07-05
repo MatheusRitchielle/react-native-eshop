@@ -3,8 +3,8 @@ import ContainerDinamico from "../../components/Containers";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { CustomTitle } from "../../components/Texts/styled";
 import { InnerText } from "../../components/Inputs/styled";
-import { CustomText } from "../../components/Texts/index";
-import { AlignContainerCadastro } from "../Cadastro/styled";
+import { CustomText } from "../../components/Texts/styled";
+import { AlignContainerCadastro } from "../Cadastros/styled";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 
 const CriarSenha = ({ navigation }) => {

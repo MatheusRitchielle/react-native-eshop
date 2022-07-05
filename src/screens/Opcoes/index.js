@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomContainer } from "../../components/Containers/styled";
 import { SecondaryButton } from "../../components/Buttons/styled";
-import { CustomText } from "../../components/Texts/index";
+import { CustomText } from "../../components/Texts/styled";
 import {
   FontAwesome5,
   FontAwesome,

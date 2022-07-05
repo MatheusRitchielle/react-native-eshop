@@ -1,11 +1,6 @@
 import React from "react";
 import { FlatList, View, Text } from "react-native";
-import {
-  ListaEstilizada,
-  FotoEstilizada,
-  Container,
-  Shadow,
-} from "../ListaProduto/styled";
+import { ListaEstilizada, FotoEstilizada, Container, Shadow } from "./styled";
 import { TouchableOpacity } from "react-native-web";
 import { SeparatorItem } from "../../components/SeparatorItem/index";
 import { ProductHeader } from "../../components/ProductsHeader/index";

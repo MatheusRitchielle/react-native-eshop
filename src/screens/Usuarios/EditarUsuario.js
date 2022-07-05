@@ -1,4 +1,4 @@
-import { CustomText } from "./../../components/Texts/styled";
+import { CustomText } from "../../components/Texts/styled";
 
 const EditarUsuario = ({ navigation }) => {
   return (

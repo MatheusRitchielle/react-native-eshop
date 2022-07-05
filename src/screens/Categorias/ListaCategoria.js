@@ -5,7 +5,7 @@ import {
   FotoEstilizada,
   Container,
   Shadow,
-} from "../ListaProduto/styled";
+} from "../Produto/styled";
 import { TouchableOpacity } from "react-native-web";
 import { SeparatorItem } from "../../components/SeparatorItem/index";
 

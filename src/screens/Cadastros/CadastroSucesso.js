@@ -1,9 +1,9 @@
-import { CustomContainerCS } from "./../../components/Containers/styled";
+import { CustomContainerCS } from "../../components/Containers/styled";
 import styled from "styled-components/native";
-import PrincipalButton from "./../../components/Buttons/PrimaryButton";
-import { LogoHorizontal } from "./../../components/Images/styled";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import { LogoHorizontal } from "../../components/Images/styled";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import TextoDinamico from "./../../components/Texts/index";
+import TextoDinamico from "../../components/Texts/index";
 import { CustomH1 } from "../../components/Texts/styled";
 
 const CadastroSucesso = () => {
