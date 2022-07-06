@@ -1,26 +1,15 @@
 import React from "react";
-import { Image, useWindowDimensions } from "react-native";
 import TextoDinamico from "../Texts/index";
-import { ContainerHeader } from "./styled";
+import { ContainerHeader, ImageHeader } from "./styled";
 
 const cover = require("../../../assets/images/category.png");
-const dimensions = {
-  with: 900,
-  height: 450,
-};
 
-const ratio = dimensions.height / dimensions.with;
 export function CategoryHeader() {
-  const window = useWindowDimensions();
-
-  const width = window.width;
-  const height = width * ratio;
-
   return (
     <>
-      <Image style={{ width, height }} source={cover} />
+      <ImageHeader source={cover} />
       <ContainerHeader>
-        <TextoDinamico fColor="#fff" fSize="30px" mBottom=" 10px">
+        <TextoDinamico fColor="#fff" fSize="25px" mBottom=" 10px">
           Lista de Categoria
         </TextoDinamico>
       </ContainerHeader>
