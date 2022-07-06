@@ -11,7 +11,7 @@ import {
 import { ScrollView, FlatList } from "react-native";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
-import { ProductHeader } from "../../components/ProductsHeader/index";
+import { ProductHeader } from "../../components/Headers/ProductHeader";
 import { SeparatorItem } from "../../components/SeparatorItem/index";
 
 const Product = [
