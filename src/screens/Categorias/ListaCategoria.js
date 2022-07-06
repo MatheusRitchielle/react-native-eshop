@@ -55,7 +55,7 @@ const MyRenderItem = ({ name, image }) => (
   </ListaEstilizada>
 );
 
-const ListaCategoria = () => {
+const ListaCategoria = () => { 
   const [categoria, setCategoria] = useState([]);
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
