@@ -22,3 +22,9 @@ export const CustomContainerCS = styled.View`
   align-items: center;
   justify-content: space-around;
 `;
+
+export const ContainerCatProd = styled.View`
+  flex: 1;
+  padding: 24px;
+  background-color: ${colors.tertiary};
+`;

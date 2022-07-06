@@ -1,25 +1,19 @@
-import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import {
-  ListaEstilizada,
-  FotoEstilizada,
-  Container,
-  Shadow,
-  SeparadorList,
-  FotoContainer,
-} from "../Produtos/styled";
+import React, {useState, useEffect} from "react";
+import { FlatList } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import herokuApi from "../../service";
-
+import { FotoContainer, FotoEstilizada, ListaEstilizada, SeparadorLista, SombraFoto } from "../../components/FlatList";
+import { ContainerCatProd } from "../../components/Containers/styled";
+ 
 const MyRenderItem = ({ name, image }) => (
   <ListaEstilizada>
     <FotoContainer>
-      <Shadow>
+      <SombraFoto>
         <FotoEstilizada source={{ uri: image }} />
-      </Shadow>
+      </SombraFoto>
     </FotoContainer>
     <TextoDinamico
       fColor={`${colors.secondary}`}
@@ -54,32 +48,32 @@ const ListaCategoria = () => {
     <MyRenderItem name={item.nome} image={item.foto} />
   );
 
-  const [categoria, setCategoria] = React.useState([]);
+  const [categoria, setCategoria] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     herokuApi.get("/categoria").then((response) => setCategoria(response.data));
   }, []);
 
   return (
-    <Container>
+    <ContainerCatProd>
       <FlatList
         data={categoria}
         renderItem={responseItem}
         keyExtractor={(item) => item.id}
-        ItemSeparatorComponent={SeparadorList}
+        ItemSeparatorComponent={SeparadorLista}
       />
       <PrincipalButton
+        mTop="26px"
         height="50px"
         width="120px"
         border="50px"
-        mBottom="32px"
         bColor={`${colors.secondary}`}
       >
         <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
           <TouchableOpacity>Adicionar</TouchableOpacity>
         </TextoDinamico>
       </PrincipalButton>
-    </Container>
+    </ContainerCatProd>
   );
 };
 

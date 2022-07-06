@@ -6,7 +6,6 @@ const ContainerDinamico = ({
   jContent,
   aItem,
   mTop,
-
   fDirection,
 }) => {
   return (
