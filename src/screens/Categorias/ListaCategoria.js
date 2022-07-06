@@ -83,12 +83,4 @@ const ListaCategoria = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  image: {
-    height: 100,
-    width: 100,
-  },
-  container: { flex: 1 },
-});
-
 export default ListaCategoria;
