@@ -14,6 +14,7 @@ import {
 } from "../../components/FlatList/styled";
 import { ContainerCatProd } from "../../components/Containers/styled";
 import herokuApi from "../../service";
+import { InnerText } from "../../components/Inputs/styled";
 
 const Item = ({ nome, qtdEstoque, preco, foto }) => (
   <ListaEstilizada>
@@ -70,6 +71,22 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
 );
 
 const ListaProduto = () => {
+  const [produto, setProduto] = useState([]);
+  const [foto, setFoto] = useState("");
+  const [nome, setNome] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [qtdEstoque, setQtdEstoque] = useState("");
+  const [preco, setPreco] = useState("");
+  const [visible, setVisible] = useState(false);
+
+const handleClick = () => {
+  if (nome && foto && qtdEstoque && preco ) {
+    postProduct();
+    return;
+  }
+  setVisible(!visible);
+};
+
   const itemRenderizado = ({ item }) => (
     <Item
       foto={item.foto}
@@ -79,11 +96,20 @@ const ListaProduto = () => {
     />
   );
 
-  const [produto, setProduto] = useState([]);
-
   useEffect(() => {
     herokuApi.get("/produto").then((response) => setProduto(response.data));
   }, []);
+
+const postProduct = () => {
+  let postBodyRequest = {
+    foto: foto,
+    nome: nome,
+    qtdEstoque: qtdEstoque,
+    preco: preco,
+    descricao: descricao,
+  };
+  herokuApi.post("/produto", postBodyRequest);
+};
 
   return (
     <ContainerCatProd>
@@ -93,7 +119,45 @@ const ListaProduto = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorLista}
       />
+    <InnerText
+        onChangeText={(e) => {
+          setNome(e);
+        }}
+        placeholder="Nome do produto"
+        style={{ display: visible ? "flex" : "none" }}
+    />
+       <InnerText
+        onChangeText={(e) => {
+          setDescricao(e);
+        }}
+        placeholder="Descrição"
+        style={{ display: visible ? "flex" : "none" }}
+    />
+
+      <InnerText
+        onChangeText={(e) => {
+          setFoto(e);
+        }}
+        placeholder="URL da foto"
+        style={{ display: visible ? "flex" : "none" }}
+      />
+      <InnerText
+        onChangeText={(e) => {
+          setQtdEstoque(e);
+        }}
+        placeholder="Quantidade em estoque"
+        style={{ display: visible ? "flex" : "none" }}
+    />
+    <InnerText
+        onChangeText={(e) => {
+          setPreco(e);
+        }}
+        placeholder="Preco"
+        style={{ display: visible ? "flex" : "none" }}
+    />
+
       <PrincipalButton
+        onUserPress={handleClick}
         mTop="26px"
         height="50px"
         width="120px"
