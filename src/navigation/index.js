@@ -13,7 +13,7 @@ import ModalUsuario from "../screens/Usuarios/ModalUsuario";
 import SenhaAlterada from "../screens/Senha/SenhaAlterada";
 import CriarNovaSenha from "./../screens/Senha/CriarNovaSenha";
 import EditarUsuario from "../screens/Usuarios/EditarUsuario";
-import Categoria from "../screens/Produtos/Categoria";
+import Categoria from "../screens/Categorias/ListaCategoria";
 
 const Stack = createNativeStackNavigator();
 

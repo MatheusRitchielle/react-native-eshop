@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import {
   ListaEstilizada,
   FotoEstilizada,
@@ -7,45 +7,18 @@ import {
   Shadow,
   SeparadorList,
   FotoContainer,
-} from "./styled";
+} from "../Produtos/styled";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import herokuApi from "../../service";
 
-const Lista = [
-  {
-    id: 1,
-    categoria: "categoria a",
-    foto: "https://images.tcdn.com.br/img/img_prod/779675/testeira_nike_swoosh_227_variacao_223_1_20211013113835.jpg",
-  },
-  {
-    id: 2,
-    categoria: "categoria b",
-    foto: "https://secure-static.vans.com.br/medias/sys_master/vans/vans/h1f/hc6/h00/h00/9592308957214/1002001070011U-01-BASEIMAGE-Midres.jpg",
-  },
-  {
-    id: 3,
-    categoria: "categoria c",
-    foto: "https://youridstore.com.br/media/catalog/product/cache/1/image/750x/472321edac810f9b2465a359d8cdc0b5/c/t/ct2255-325.jpg",
-  },
-  {
-    id: 4,
-    categoria: "categoria d",
-    foto: "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-max-90-se-masculino-DN4155-001-1-11645629632.jpg",
-  },
-  {
-    id: 5,
-    categoria: "categoria e",
-    foto: "https://secure-static.vans.com.br/medias/sys_master/vans/vans/h1f/hc6/h00/h00/9592308957214/1002001070011U-01-BASEIMAGE-Midres.jpg",
-  },
-];
-
-const Item = ({ categoria, foto }) => (
+const MyRenderItem = ({ name, image }) => (
   <ListaEstilizada>
     <FotoContainer>
       <Shadow>
-        <FotoEstilizada source={{ uri: foto }} />
+        <FotoEstilizada source={{ uri: image }} />
       </Shadow>
     </FotoContainer>
     <TextoDinamico
@@ -53,7 +26,7 @@ const Item = ({ categoria, foto }) => (
       fSize="12px"
       fontFamily="Verdana"
     >
-      {categoria}
+      {name}
     </TextoDinamico>
     <TouchableOpacity>
       <TextoDinamico
@@ -76,16 +49,22 @@ const Item = ({ categoria, foto }) => (
   </ListaEstilizada>
 );
 
-const Categoria = () => {
-  const itemRenderizado = ({ item }) => (
-    <Item foto={item.foto} categoria={item.categoria} />
+const ListaCategoria = () => {
+  const responseItem = ({ item }) => (
+    <MyRenderItem name={item.nome} image={item.foto} />
   );
+
+  const [categoria, setCategoria] = React.useState([]);
+
+  React.useEffect(() => {
+    herokuApi.get("/categoria").then((response) => setCategoria(response.data));
+  }, []);
 
   return (
     <Container>
       <FlatList
-        data={Lista}
-        renderItem={itemRenderizado}
+        data={categoria}
+        renderItem={responseItem}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorList}
       />
@@ -104,4 +83,12 @@ const Categoria = () => {
   );
 };
 
-export default Categoria;
+const styles = StyleSheet.create({
+  image: {
+    height: 100,
+    width: 100,
+  },
+  container: { flex: 1 },
+});
+
+export default ListaCategoria;
