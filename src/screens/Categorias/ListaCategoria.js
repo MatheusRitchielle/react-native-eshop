@@ -13,6 +13,7 @@ import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import herokuApi from "../../service";
+import { InnerText } from "../../components/Inputs/styled";
 
 const MyRenderItem = ({ name, image }) => (
   <ListaEstilizada>
@@ -50,15 +51,34 @@ const MyRenderItem = ({ name, image }) => (
 );
 
 const ListaCategoria = () => {
+  const [categoria, setCategoria] = React.useState([]);
+  const [photo, setPhoto] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [visible, setVisible] = React.useState(false);
+
+  const handleClick = () => {
+    if (photo && name) {
+      postCategory();
+      return;
+    }
+    setVisible(!visible);
+  };
+
   const responseItem = ({ item }) => (
     <MyRenderItem name={item.nome} image={item.foto} />
   );
 
-  const [categoria, setCategoria] = React.useState([]);
-
   React.useEffect(() => {
     herokuApi.get("/categoria").then((response) => setCategoria(response.data));
   }, []);
+
+  const postCategory = () => {
+    let postBodyRequest = {
+      nome: name,
+      foto: photo,
+    };
+    herokuApi.post("/categoria", postBodyRequest);
+  };
 
   return (
     <Container>
@@ -68,15 +88,31 @@ const ListaCategoria = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorList}
       />
+      <InnerText
+        onChangeText={(e) => {
+          setName(e);
+        }}
+        placeholder="teste"
+        style={{ display: visible ? "flex" : "none" }}
+      />
+      <InnerText
+        onChangeText={(e) => {
+          setPhoto(e);
+        }}
+        placeholder="teste"
+        style={{ display: visible ? "flex" : "none" }}
+      />
       <PrincipalButton
+        onUserPress={handleClick}
         height="50px"
         width="120px"
         border="50px"
         mBottom="32px"
+        mTop="10px"
         bColor={`${colors.secondary}`}
       >
         <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
-          <TouchableOpacity>Adicionar</TouchableOpacity>
+          Adicionar
         </TextoDinamico>
       </PrincipalButton>
     </Container>

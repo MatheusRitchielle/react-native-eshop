@@ -1,14 +1,18 @@
-import { useState } from "react";
-
-export const getAll = () => {
-  const [category, setCategory] = useStateate(null);
-  const [resposta, setResposta] = useState(null);
-  const [nome, setNome] = useState("");
-
+const postProducts = (e) => {
+  e.preventDefault();
+  const postBodyRequest = {
+    id,
+    nome,
+    categoriaId,
+    descricao,
+    qtdEstoque,
+    foto,
+    preco,
+  };
   axios
-    .get("https://reactnative.herokuapp.com/reactnative/")
+    .post("https://reactnative.herokuapp.com/reactnative/", postBodyRequest)
     .then((response) => {
-      setCategory(response.data);
+      setResposta(response);
     });
 };
 
@@ -16,7 +20,7 @@ export const postCategory = (e) => {
   e.preventDefault();
   const postBodyRequest = {
     nome,
-    categoria,
+    foto,
   };
   axios
     .post("https://reactnative.herokuapp.com/reactnative/", postBodyRequest)
