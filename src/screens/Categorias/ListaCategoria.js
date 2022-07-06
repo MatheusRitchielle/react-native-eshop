@@ -1,34 +1,38 @@
-import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import {
-  ListaEstilizada,
-  FotoEstilizada,
-  Container,
-  Shadow,
-  SeparadorList,
-  FotoContainer,
-} from "../Produtos/styled";
+import React, { useState, useEffect } from "react";
+import { FlatList } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import herokuApi from "../../service";
 import { InnerText } from "../../components/Inputs/styled";
+import { ContainerCatProd } from "../../components/Containers/styled";
+import {
+  SeparadorLista,
+  ListaEstilizada,
+  FotoContainer,
+  SombraFoto,
+  FotoEstilizada,
+  NomeProduto,
+} from "../../components/FlatList/styled";
 
 const MyRenderItem = ({ name, image }) => (
   <ListaEstilizada>
     <FotoContainer>
-      <Shadow>
+      <SombraFoto>
         <FotoEstilizada source={{ uri: image }} />
-      </Shadow>
+      </SombraFoto>
     </FotoContainer>
-    <TextoDinamico
-      fColor={`${colors.secondary}`}
-      fSize="12px"
-      fontFamily="Verdana"
-    >
-      {name}
-    </TextoDinamico>
+    <NomeProduto>
+      <TextoDinamico
+        fColor={`${colors.secondary}`}
+        fSize="12px"
+        fontFamily="Verdana"
+      >
+        {name}
+      </TextoDinamico>
+    </NomeProduto>
+
     <TouchableOpacity>
       <TextoDinamico
         fColor={`${colors.primary}`}
@@ -51,10 +55,10 @@ const MyRenderItem = ({ name, image }) => (
 );
 
 const ListaCategoria = () => {
-  const [categoria, setCategoria] = React.useState([]);
-  const [photo, setPhoto] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [visible, setVisible] = React.useState(false);
+  const [categoria, setCategoria] = useState([]);
+  const [photo, setPhoto] = useState("");
+  const [name, setName] = useState("");
+  const [visible, setVisible] = useState(false);
 
   const handleClick = () => {
     if (photo && name) {
@@ -68,7 +72,7 @@ const ListaCategoria = () => {
     <MyRenderItem name={item.nome} image={item.foto} />
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     herokuApi.get("/categoria").then((response) => setCategoria(response.data));
   }, []);
 
@@ -81,25 +85,25 @@ const ListaCategoria = () => {
   };
 
   return (
-    <Container>
+    <ContainerCatProd>
       <FlatList
         data={categoria}
         renderItem={responseItem}
         keyExtractor={(item) => item.id}
-        ItemSeparatorComponent={SeparadorList}
+        ItemSeparatorComponent={SeparadorLista}
       />
       <InnerText
         onChangeText={(e) => {
           setName(e);
         }}
-        placeholder="teste"
+        placeholder="Nome da Categoria"
         style={{ display: visible ? "flex" : "none" }}
       />
       <InnerText
         onChangeText={(e) => {
           setPhoto(e);
         }}
-        placeholder="teste"
+        placeholder="URL da foto"
         style={{ display: visible ? "flex" : "none" }}
       />
       <PrincipalButton
@@ -115,7 +119,7 @@ const ListaCategoria = () => {
           Adicionar
         </TextoDinamico>
       </PrincipalButton>
-    </Container>
+    </ContainerCatProd>
   );
 };
 
