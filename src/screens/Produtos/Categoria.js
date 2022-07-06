@@ -1,9 +1,17 @@
 import React from "react";
-import { FlatList, View } from "react-native";
-import { ListaEstilizada, FotoEstilizada, Container, Shadow, SeparadorList, FotoContainer } from "./styled";
+import { FlatList } from "react-native";
+import {
+  ListaEstilizada,
+  FotoEstilizada,
+  Container,
+  Shadow,
+  SeparadorList,
+  FotoContainer,
+} from "./styled";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
 
 const Lista = [
   {
@@ -40,22 +48,37 @@ const Item = ({ categoria, foto }) => (
         <FotoEstilizada source={{ uri: foto }} />
       </Shadow>
     </FotoContainer>
-    <TextoDinamico fColor={`${colors.secondary}`} fSize="12px" fontFamily="Verdana" >{categoria}</TextoDinamico>
+    <TextoDinamico
+      fColor={`${colors.secondary}`}
+      fSize="12px"
+      fontFamily="Verdana"
+    >
+      {categoria}
+    </TextoDinamico>
     <TouchableOpacity>
-    <TextoDinamico fColor={`${colors.primary}`} fSize="12px" fontFamily="Verdana" >Editar</TextoDinamico>
-      </TouchableOpacity>
-      <TouchableOpacity>
-      <TextoDinamico fColor={`${colors.primary}`} fSize="12px" fontFamily="Verdana" >Excluir</TextoDinamico>
+      <TextoDinamico
+        fColor={`${colors.primary}`}
+        fSize="12px"
+        fontFamily="Verdana"
+      >
+        Editar
+      </TextoDinamico>
+    </TouchableOpacity>
+    <TouchableOpacity>
+      <TextoDinamico
+        fColor={`${colors.primary}`}
+        fSize="12px"
+        fontFamily="Verdana"
+      >
+        Excluir
+      </TextoDinamico>
     </TouchableOpacity>
   </ListaEstilizada>
 );
 
 const Categoria = () => {
   const itemRenderizado = ({ item }) => (
-    <Item
-      foto={item.foto}
-      categoria={item.categoria}
-    />
+    <Item foto={item.foto} categoria={item.categoria} />
   );
 
   return (
@@ -66,6 +89,17 @@ const Categoria = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorList}
       />
+      <PrincipalButton
+        height="50px"
+        width="120px"
+        border="50px"
+        mBottom="32px"
+        bColor={`${colors.secondary}`}
+      >
+        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+          <TouchableOpacity>Adicionar</TouchableOpacity>
+        </TextoDinamico>
+      </PrincipalButton>
     </Container>
   );
 };

@@ -4,6 +4,7 @@ import { ListaEstilizada, FotoEstilizada, Container, Shadow, SeparadorList, Foto
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
 
 const Lista = [
   {
@@ -83,6 +84,12 @@ const ListaProduto = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorList}
       />
+      <PrincipalButton height="50px" width="120px" border="50px" mBottom="32px" bColor={`${colors.secondary}`}>
+        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+          <TouchableOpacity>
+          Adicionar
+          </TouchableOpacity>
+        </TextoDinamico></PrincipalButton>
     </Container>
   );
 };
