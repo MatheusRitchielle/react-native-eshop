@@ -34,3 +34,8 @@ export const ContainerCarrinho = styled.View`
   padding: 3px;
   flex-direction: row;
 `;
+
+export const Cadastro = styled.View`
+  justify-content: space-around;
+  width: 350px;
+`;
