@@ -4,5 +4,6 @@ export default {
   tertiary: "#fff",
   fourth: "#451D07",
   fifth: "#121212",
-  sixth: "#D9D9D9"
+  sixth: "#D9D9D9",
+  seventh: "#3c6255",
 };
