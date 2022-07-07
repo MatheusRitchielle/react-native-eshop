@@ -17,50 +17,49 @@ import {
 } from "../../components/FlatList/styled";
 import { CategoryHeader } from "../../components/Headers/CategoryHeader";
 
-const MyRenderItem = ({ name, image }) => (
-  <ListaEstilizada>
-    <FotoContainer>
-      <SombraFoto>
-        <FotoEstilizada source={{ uri: image }} />
-      </SombraFoto>
-    </FotoContainer>
-    <NomeProduto>
-      <TextoDinamico
-        fColor={`${colors.secondary}`}
-        fSize="12px"
-        fontFamily="Verdana"
-      >
-        {name}
-      </TextoDinamico>
-    </NomeProduto>
-
-    <TouchableOpacity>
-      <TextoDinamico
-        fColor="rgb(60, 98, 85);"
-        fSize="12px"
-        fontFamily="Verdana"
-      >
-        Editar
-      </TextoDinamico>
-    </TouchableOpacity>
-    <TouchableOpacity>
-      <TextoDinamico
-        fColor="rgb(60, 98, 85);"
-        fSize="12px"
-        fontFamily="Verdana"
-      >
-        Excluir
-      </TextoDinamico>
-    </TouchableOpacity>
-  </ListaEstilizada>
-);
-
-const ListaCategoria = () => { 
+const ListaCategoria = () => {
   const [categoria, setCategoria] = useState([]);
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
-  const [returnApi, setReturnApi] = useState("");
+
+  const MyRenderItem = ({ id, name, image }) => (
+    <ListaEstilizada>
+      <FotoContainer>
+        <SombraFoto>
+          <FotoEstilizada source={{ uri: image }} />
+        </SombraFoto>
+      </FotoContainer>
+      <NomeProduto>
+        <TextoDinamico
+          fColor={`${colors.secondary}`}
+          fSize="12px"
+          fontFamily="Verdana"
+        >
+          {name}
+        </TextoDinamico>
+      </NomeProduto>
+
+      <TouchableOpacity>
+        <TextoDinamico
+          fColor="rgb(60, 98, 85);"
+          fSize="12px"
+          fontFamily="Verdana"
+        >
+          Editar
+        </TextoDinamico>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => deleteCategory(id)}>
+        <TextoDinamico
+          fColor="rgb(60, 98, 85);"
+          fSize="12px"
+          fontFamily="Verdana"
+        >
+          Excluir
+        </TextoDinamico>
+      </TouchableOpacity>
+    </ListaEstilizada>
+  );
 
   const handleClick = () => {
     if (photo && name) {
@@ -71,7 +70,7 @@ const ListaCategoria = () => {
   };
 
   const responseItem = ({ item }) => (
-    <MyRenderItem name={item.nome} image={item.foto} />
+    <MyRenderItem name={item.nome} image={item.foto} id={item.id} />
   );
 
   useEffect(() => {
@@ -90,6 +89,20 @@ const ListaCategoria = () => {
           ? alert("Categoria adicionada com sucesso")
           : alert("Verifique as informações passadas.")
       );
+  };
+
+  const deleteCategory = (id) => {
+    const delBodyRequest = {
+      id: id,
+      nome: name,
+      foto: photo,
+    };
+    herokuApi.delete(`/categoria/${id}`, delBodyRequest).then((res) => {
+      setCategoria((oldCategory) => oldCategory.filter((item) => item.id)),
+        res.status == 200
+          ? alert("Categoria deletada com sucesso")
+          : alert("Verifique as informações passadas.");
+    });
   };
 
   return (
