@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { InputContainer, WrapperInputEye } from "./styled";
-import colors from "../../Theme/colors";
+import colors from "../../theme/index";
 
 const InputEye = ({ placeholder }) => {
   return (
@@ -9,7 +9,7 @@ const InputEye = ({ placeholder }) => {
       <Ionicons
         name="eye"
         size={24}
-        color={colors.primary}
+        color={`${colors.verde}`}
         style={{
           position: "absolute",
           marginStart: 240,

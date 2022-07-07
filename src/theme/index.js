@@ -1,9 +1,7 @@
 export default {
-  primary: "#61882E",
-  secondary: "#333333",
-  tertiary: "#fff",
-  fourth: "#451D07",
-  fifth: "#121212",
-  sixth: "#D9D9D9",
-  seventh: "#3c6255",
+  branco: "#fff",
+  creme: "#D9D9D9",
+  cinza: "#333333",
+  preto: "#121212",
+  verde: "#3c6255",
 };

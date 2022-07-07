@@ -27,7 +27,7 @@ const RenderUsuario = ({ nome, image }) => (
     </FotoContainer>
     <NomeProduto>
       <TextoDinamico
-        fColor={`${colors.secondary}`}
+        fColor={`${colors.cinza}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -37,7 +37,7 @@ const RenderUsuario = ({ nome, image }) => (
 
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor={`${colors.verde}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -46,7 +46,7 @@ const RenderUsuario = ({ nome, image }) => (
     </TouchableOpacity>
     <TouchableOpacity onClick={() => onDelete(data.id)}>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor={`${colors.verde}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -168,9 +168,9 @@ const ListaUsuario = () => {
             height="50px"
             width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Fechar
             </TextoDinamico>
           </PrincipalButton>
@@ -180,9 +180,9 @@ const ListaUsuario = () => {
             height="50px"
             width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Cadastrar
             </TextoDinamico>
           </PrincipalButton>
@@ -195,9 +195,9 @@ const ListaUsuario = () => {
         border="50px"
         mBottom="32px"
         mTop="10px"
-        bColor={`${colors.seventh}`}
+        bColor={`${colors.verde}`}
       >
-        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+        <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
           Adicionar
         </TextoDinamico>
       </PrincipalButton>

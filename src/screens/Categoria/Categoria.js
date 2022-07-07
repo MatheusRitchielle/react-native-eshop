@@ -88,7 +88,7 @@ const ListaCategoria = ({ navigation }) => {
             </FotoContainer>
             <NomeProduto>
               <TextoDinamico
-                fColor={`${colors.secondary}`}
+                fColor={`${colors.cinza}`}
                 fSize="12px"
                 fontFamily="Verdana"
               >
@@ -98,7 +98,7 @@ const ListaCategoria = ({ navigation }) => {
 
             <TouchableOpacity>
               <TextoDinamico
-                fColor={`${colors.seventh}`}
+                fColor={`${colors.verde}`}
                 fSize="12px"
                 fontFamily="Verdana"
               >
@@ -107,7 +107,7 @@ const ListaCategoria = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => deleteCategory(item.id)}>
               <TextoDinamico
-                fColor={`${colors.seventh}`}
+                fColor={`${colors.verde}`}
                 fSize="12px"
                 fontFamily="Verdana"
               >
@@ -145,9 +145,9 @@ const ListaCategoria = ({ navigation }) => {
             height="50px"
             width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Fechar
             </TextoDinamico>
           </PrincipalButton>
@@ -157,9 +157,9 @@ const ListaCategoria = ({ navigation }) => {
             height="50px"
             width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Cadastrar
             </TextoDinamico>
           </PrincipalButton>
@@ -172,9 +172,9 @@ const ListaCategoria = ({ navigation }) => {
         border="50px"
         mBottom="32px"
         mTop="10px"
-        bColor={`${colors.seventh}`}
+        bColor={`${colors.verde}`}
       >
-        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+        <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
           Adicionar
         </TextoDinamico>
       </PrincipalButton>

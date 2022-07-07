@@ -102,9 +102,9 @@ const Cadastro = ({ navigation }) => {
           border="50px"
           mBottom="32px"
           mTop="10px"
-          bColor={`${colors.secondary}`}
+          bColor={`${colors.cinza}`}
         >
-          <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+          <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
             Cadastrar
           </TextoDinamico>
         </PrincipalButton>

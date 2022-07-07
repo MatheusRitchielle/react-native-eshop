@@ -5,20 +5,20 @@ export const CustomContainer = styled.View`
   flex: ${(props) => props.flex || "1"};
   justify-content: ${(props) => props.justify || "center"};
   align-items: ${(props) => props.align || "center"};
-  background-color: ${colors.tertiary};
+  background-color: ${colors.branco};
   margin-top: ${(props) => props.margin || "0px"};
 `;
 
 export const CustomContainerLista = styled.View`
   flex: 1;
   justify-content: flex-start;
-  background-color: ${colors.tertiary};
+  background-color: ${colors.branco};
 `;
 
 export const CustomContainerCS = styled.View`
   flex: 1;
   flex-direction: column;
-  background-color: #d9d9d9;
+  background-color: ${colors.creme};
   align-items: center;
   justify-content: space-around;
 `;
@@ -26,7 +26,7 @@ export const CustomContainerCS = styled.View`
 export const ContainerCatProd = styled.View`
   flex: 1;
   padding: 24px;
-  background-color: ${colors.tertiary};
+  background-color: ${colors.branco};
 `;
 
 export const ContainerCadastro = styled.View`

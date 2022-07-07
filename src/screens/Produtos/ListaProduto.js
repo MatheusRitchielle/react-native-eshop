@@ -28,7 +28,7 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
     <View>
       <NomeProduto>
         <TextoDinamico
-          fColor={`${colors.secondary}`}
+          fColor={`${colors.cinza}`}
           fSize="12px"
           fontFamily="Verdana"
         >
@@ -36,14 +36,14 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
         </TextoDinamico>
       </NomeProduto>
       <TextoDinamico
-        fColor={`${colors.secondary}`}
+        fColor={`${colors.cinza}`}
         fSize="12px"
         fontFamily="Verdana"
       >
         {qtdEstoque} unidades
       </TextoDinamico>
       <TextoDinamico
-        fColor={`${colors.secondary}`}
+        fColor={`${colors.cinza}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -53,7 +53,7 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
 
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor={`${colors.verde}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -62,7 +62,7 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
     </TouchableOpacity>
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor={`${colors.verde}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -168,9 +168,9 @@ const ListaProduto = () => {
             height="50px"
             width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Fechar
             </TextoDinamico>
           </PrincipalButton>
@@ -180,9 +180,9 @@ const ListaProduto = () => {
             height="50px"
             width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Cadastrar
             </TextoDinamico>
           </PrincipalButton>
@@ -194,9 +194,9 @@ const ListaProduto = () => {
         height="50px"
         width="120px"
         border="50px"
-        bColor={`${colors.seventh}`}
+        bColor={`${colors.verde}`}
       >
-        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+        <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
           Adicionar
         </TextoDinamico>
       </PrincipalButton>
