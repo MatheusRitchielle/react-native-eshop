@@ -2,10 +2,10 @@ import React from "react";
 import ContainerDinamico from "../../components/Containers";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { CustomTitle } from "../../components/Texts/styled";
-import { InnerText } from "../../components/Inputs/styled";
 import { CustomText } from "../../components/Texts/styled";
 import { AlignContainerCadastro } from "../Cadastros/styled";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import InputEye from "../../components/InputEye";
 
 const CriarSenha = ({ navigation }) => {
   return (
@@ -14,10 +14,8 @@ const CriarSenha = ({ navigation }) => {
 
       <CustomTitle>Digite sua nova senha</CustomTitle>
       <AlignContainerCadastro>
-        <InnerText placeholder="Senha" secureTextEntry={true} />
-        <Ionicons name="ios-eye-off" size={18} color="black" />
-        <InnerText placeholder="Nova senha" secureTextEntry={true} />
-        <Ionicons name="ios-eye-off" size={18} color="black" />
+        <InputEye placeholder="Senha" secureTextEntry={true} />
+        <InputEye placeholder="Nova senha" secureTextEntry={true} />
         <PrincipalButton
           mTop="48px"
           onUserPress={() => navigation.navigate("SenhaAlterada")}
