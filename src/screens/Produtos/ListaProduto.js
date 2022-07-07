@@ -190,10 +190,11 @@ const ListaProduto = () => {
       </Modal>
       <PrincipalButton
         onUserPress={handleModal}
-        mTop="26px"
         height="50px"
         width="120px"
         border="50px"
+        mBottom="32px"
+        mTop="10px"
         bColor={`${colors.verde}`}
       >
         <TextoDinamico fColor={`${colors.branco}`} fSize="16px">

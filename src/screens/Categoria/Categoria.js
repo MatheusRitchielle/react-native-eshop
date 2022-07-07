@@ -24,6 +24,7 @@ const ListaCategoria = ({ navigation }) => {
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(true);
+  
   const [isModalVisible, setIsModalVisible] = useState(false);
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
