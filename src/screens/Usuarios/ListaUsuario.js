@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { FlatList, Modal } from "react-native";
+import { FlatList } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
@@ -16,7 +16,7 @@ import {
   NomeProduto,
 } from "../../components/FlatList/styled";
 import { Section } from './../../components/Section/styled';
-import { Overlay } from "react-native-elements";
+import Modal from "react-native-modal"
 
 const RenderUsuario = ({ nome, image }) => (
   <ListaEstilizada>
@@ -118,84 +118,75 @@ const ListaUsuario = () => {
         ItemSeparatorComponent={SeparadorLista}
       />
       <Modal
+        style={{ alignItems: "center" }}
         isVisible={isModalVisible}
         visible={isModalVisible}
         animationType="slide"
         transparent={true}
       >
-        <Overlay>
-          <InnerText
-            onChangeText={(e) => {
-              setNome(e);
-            }}
-            placeholder="Nome"
-            style={{ display: visible ? "flex" : "none" }}
-          />
-          <InnerText
-            onChangeText={(e) => {
-              setCpf(e);
-            }}
-            placeholder="CPF"
-            style={{ display: visible ? "flex" : "none" }}
-          />
-          <InnerText
-            onChangeText={(e) => {
-              setDtNascimento(e);
-            }}
-
-            placeholder="Data de Nascimento"
-            style={{ display: visible ? "flex" : "none" }}
-          />
-          <InnerText
-            onChangeText={(e) => {
-              setLogin(e);
-            }}
-            placeholder="Login"
-            style={{ display: visible ? "flex" : "none" }}
-          />
-
-          <InnerText
-            onChangeText={(e) => {
-              setSenha(e);
-            }}
-            secureTextEntry={true}
-            placeholder="Senha"
-            style={{ display: visible ? "flex" : "none" }}
-          />
-          <InnerText
-            onChangeText={(e) => {
-              setFoto(e);
-            }}
-            placeholder="URL da foto"
-            style={{ display: visible ? "flex" : "none" }}
-          />
-          <Section>
-            <PrincipalButton
-              onUserPress={handleModal}
-              mTop="26px"
-              height="50px"
-              width="120px"
-              border="50px"
-               bColor={`${colors.seventh}`}
-            >
-              <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
-                Fechar
-              </TextoDinamico>
-            </PrincipalButton>
-            <PrincipalButton
-              onUserPress={handleClickModal}
-              mTop="26px"
-              height="50px"
-              width="120px"
-              border="50px"
-               bColor={`${colors.seventh}`}
-            >
-              <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
-                Cadastrar
-              </TextoDinamico>
-            </PrincipalButton>
-          </Section>
-        </Overlay>
+        <InnerText
+          onChangeText={(e) => {
+            setNome(e);
+          }}
+          placeholder="Nome"
+        />
+        <InnerText
+          onChangeText={(e) => {
+            setCpf(e);
+          }}
+          placeholder="CPF"
+        />
+        <InnerText
+          onChangeText={(e) => {
+            setDtNascimento(e);
+          }}
+          placeholder="Data de Nascimento"
+        />
+        <InnerText
+          onChangeText={(e) => {
+            setLogin(e);
+          }}
+          placeholder="Login"
+        />
+        <InnerText
+          onChangeText={(e) => {
+            setSenha(e);
+          }}
+          secureTextEntry={true}
+          placeholder="Senha"
+        />
+        <InnerText
+          onChangeText={(e) => {
+            setFoto(e);
+          }}
+          placeholder="URL da foto"
+        />
+        <Section>
+          <PrincipalButton
+            onUserPress={handleModal}
+            mTop="26px"
+            height="50px"
+            width="90px"
+            border="50px"
+            bColor={`${colors.seventh}`}
+          >
+            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+              Fechar
+            </TextoDinamico>
+          </PrincipalButton>
+          <PrincipalButton
+            onUserPress={handleClickModal}
+            mTop="26px"
+            height="50px"
+            width="90px"
+            border="50px"
+            bColor={`${colors.seventh}`}
+          >
+            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+              Cadastrar
+            </TextoDinamico>
+          </PrincipalButton>
+        </Section>
       </Modal>
       <PrincipalButton
         onUserPress={handleModal}

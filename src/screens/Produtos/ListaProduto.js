@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlatList, View, Modal } from "react-native";
+import { FlatList, View } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
@@ -16,6 +16,7 @@ import { ContainerCatProd } from "../../components/Containers/styled";
 import herokuApi from "../../service";
 import { InnerText } from "../../components/Inputs/styled";
 import { Section } from './../../components/Section/styled';
+import Modal from "react-native-modal"
 
 const Item = ({ nome, qtdEstoque, preco, foto }) => (
   <ListaEstilizada>
@@ -124,6 +125,7 @@ const ListaProduto = () => {
         ItemSeparatorComponent={SeparadorLista}
       />
       <Modal
+        style={{ alignItems: "center" }}
         isVisible={isModalVisible}
         visible={isModalVisible}
         animationType="slide"
@@ -134,42 +136,37 @@ const ListaProduto = () => {
             setNome(e);
           }}
           placeholder="Nome do produto"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setDescricao(e);
           }}
           placeholder="Descrição"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setFoto(e);
           }}
           placeholder="URL da foto"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setQtdEstoque(e);
           }}
           placeholder="Quantidade em estoque"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setPreco(e);
           }}
           placeholder="Preco"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <Section>
           <PrincipalButton
             onUserPress={handleModal}
             mTop="26px"
             height="50px"
-            width="120px"
+            width="90px"
             border="50px"
             bColor={`${colors.seventh}`}
           >
@@ -181,7 +178,7 @@ const ListaProduto = () => {
             onUserPress={handleClick}
             mTop="26px"
             height="50px"
-            width="120px"
+            width="90px"
             border="50px"
             bColor={`${colors.seventh}`}
           >
