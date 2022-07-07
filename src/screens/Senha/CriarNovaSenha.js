@@ -5,7 +5,7 @@ import { CustomTitle } from "../../components/Texts/styled";
 import { CustomText } from "../../components/Texts/styled";
 import { AlignContainerCadastro } from "../Cadastros/styled";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
-import InputEye from "../../components/InputEye";
+import InputEye from "../../components/Inputs/InputEye";
 
 const CriarSenha = ({ navigation }) => {
   return (

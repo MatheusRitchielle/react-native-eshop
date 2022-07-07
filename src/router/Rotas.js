@@ -1,19 +1,11 @@
-import {
-  Entypo,
-  FontAwesome5,
-  FontAwesome,
-  EvilIcons,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import { Entypo, FontAwesome5 } from "@expo/vector-icons";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Carrinho from "../screens/Carrinho/index";
-import Favorito from "../screens/Favorito/index";
 import Principal from "../screens/Home/index";
 import Opcoes from "../screens/Opcoes/index";
 import ListaUsuario from "../screens/Usuarios/ListaUsuario";
 import ListaProduto from "../screens/Produtos/ListaProduto";
-import Categoria from "../screens/Categorias/ListaCategoria";
+import Categoria from "../screens/Categoria/Categoria";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,11 +33,10 @@ const Rotas = () => {
 
       <Tab.Screen
         name="Pagina de Produtos"
-        
         component={ListaProduto}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome5 name="rocket" size={size} color={color}  />
+            <FontAwesome5 name="rocket" size={size} color={color} />
           ),
           title: "Produtos",
         }}
@@ -55,7 +46,7 @@ const Rotas = () => {
         component={Categoria}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome5 name="boxes" size={size} color={color}  />
+            <FontAwesome5 name="boxes" size={size} color={color} />
           ),
           title: "Categorias",
         }}
@@ -65,7 +56,7 @@ const Rotas = () => {
         component={ListaUsuario}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome5 name="users" size={size} color={color}  />
+            <FontAwesome5 name="users" size={size} color={color} />
           ),
           title: "Usuários",
         }}
@@ -80,26 +71,6 @@ const Rotas = () => {
           title: "Opções",
         }}
       />
-
-      {/* <Tab.Screen
-        name="Carrinho"
-        component={Carrinho}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ size, color }) => (
-            <Entypo name="shopping-cart" size={size} color={color} />
-          ),
-        }}
-      /> */}
-      {/* <Tab.Screen
-        name="Favorito"
-        component={Favorito}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Entypo name="star" size={size} color={color} />
-          ),
-        }}
-      /> */}
     </Tab.Navigator>
   );
 };

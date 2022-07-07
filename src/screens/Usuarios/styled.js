@@ -2,11 +2,11 @@ import styled from "styled-components/native";
 import colors from "../../theme/index";
 
 export const ContainerCabecalho = styled.View`
-  flex-direction: row;
-  margin-top: 10px;
   padding: 5px;
+  margin-top: 10px;
   border: 2px solid;
   border-radius: 5px;
+  flex-direction: row;
 `;
 
 export const CustomText = styled.Text`
@@ -19,10 +19,10 @@ export const CustomText = styled.Text`
 `;
 
 export const CardGeneric = styled.View`
-  justify-content: space-around;
-  margin-top: 10px;
   padding: 5px;
+  margin-top: 10px;
   flex-direction: row;
+  justify-content: space-around;
 `;
 
 export const NomeUsuario = styled.View`
@@ -30,8 +30,7 @@ export const NomeUsuario = styled.View`
 `;
 
 export const ContainerCarrinho = styled.View`
-  justify-content: space-around;
   padding: 3px;
   flex-direction: row;
+  justify-content: space-around;
 `;
-

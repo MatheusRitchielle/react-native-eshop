@@ -6,7 +6,7 @@ import logoGrande from "../../../assets/images/logo-grande.png";
 import TextoDinamico from "../../components/Texts/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import CustomButton from "../../components/Buttons/SecondaryButton";
-import InputEye from "../../components/InputEye";
+import InputEye from "../../components/Inputs/InputEye";
 
 const Login = ({ navigation }) => {
   return (

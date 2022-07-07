@@ -30,18 +30,14 @@ export const SecondaryButton = styled.Pressable`
 export const PrimaryButtonCS = styled.Pressable`
   width: 204px;
   height: 50px;
-  background-color: ${colors.primary};
-  mix-blend-mode: normal;
-  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
+  mix-blend-mode: normal;
+  background-color: ${colors.primary};
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const ButtonContainer = styled.Pressable`
-  /* margin-top: 8px; */
   font-weight: bold;
-  /* justify-content: center;
-  align-self: center;
-  align-items: center; */
   justify-content: center;
   text-align: ${(props) => props.text || "center"};
 `;

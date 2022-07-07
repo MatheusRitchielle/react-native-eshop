@@ -9,11 +9,10 @@ import Rotas from "../router/Rotas";
 import Opcoes from "../screens/Opcoes";
 import CadastroSucesso from "../screens/Cadastros/CadastroSucesso";
 import Login from "../screens/Login/index";
-import ModalUsuario from "../screens/Usuarios/ModalUsuario";
 import SenhaAlterada from "../screens/Senha/SenhaAlterada";
 import CriarNovaSenha from "./../screens/Senha/CriarNovaSenha";
 import ListaUsuario from "../screens/Usuarios/ListaUsuario";
-import Categoria from "../screens/Categorias/ListaCategoria";
+import Categoria from "../screens/Categoria/Categoria";
 
 const Stack = createNativeStackNavigator();
 
@@ -108,6 +107,8 @@ const Navigation = () => {
           component={Categoria}
           options={{
             headerStyle: { backgroundColor: "#333" },
+            headerShown: false,
+            title: "Categorias",
             headerTintColor: "#C8C5C5",
             headerTitleAlign: "center",
           }}
@@ -121,15 +122,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="Usuarios"
-          component={ModalUsuario}
-          options={{
-            headerStyle: { backgroundColor: "#333" },
-            headerTintColor: "#61882E",
-            title: "Usuários",
-          }}
-        />
+
         <Stack.Screen
           name="ListaUsuario"
           component={ListaUsuario}
