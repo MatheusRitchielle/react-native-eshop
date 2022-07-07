@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
@@ -17,49 +17,11 @@ import {
 } from "../../components/FlatList/styled";
 import { CategoryHeader } from "../../components/Headers/CategoryHeader";
 
-const ListaCategoria = () => {
+const ListaCategoria = ({ navigation }) => {
   const [categoria, setCategoria] = useState([]);
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
-
-  const MyRenderItem = ({ id, name, image }) => (
-    <ListaEstilizada>
-      <FotoContainer>
-        <SombraFoto>
-          <FotoEstilizada source={{ uri: image }} />
-        </SombraFoto>
-      </FotoContainer>
-      <NomeProduto>
-        <TextoDinamico
-          fColor={`${colors.secondary}`}
-          fSize="12px"
-          fontFamily="Verdana"
-        >
-          {name}
-        </TextoDinamico>
-      </NomeProduto>
-
-      <TouchableOpacity>
-        <TextoDinamico
-          fColor="rgb(60, 98, 85);"
-          fSize="12px"
-          fontFamily="Verdana"
-        >
-          Editar
-        </TextoDinamico>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => deleteCategory(id)}>
-        <TextoDinamico
-          fColor="rgb(60, 98, 85);"
-          fSize="12px"
-          fontFamily="Verdana"
-        >
-          Excluir
-        </TextoDinamico>
-      </TouchableOpacity>
-    </ListaEstilizada>
-  );
 
   const handleClick = () => {
     if (photo && name) {
@@ -68,10 +30,6 @@ const ListaCategoria = () => {
     }
     setVisible(!visible);
   };
-
-  const responseItem = ({ item }) => (
-    <MyRenderItem name={item.nome} image={item.foto} id={item.id} />
-  );
 
   useEffect(() => {
     herokuApi.get("/categoria").then((res) => setCategoria(res.data));
@@ -101,7 +59,8 @@ const ListaCategoria = () => {
       setCategoria((oldCategory) => oldCategory.filter((item) => item.id)),
         res.status == 200
           ? alert("Categoria deletada com sucesso")
-          : alert("Verifique as informações passadas.");
+          : alert("Verifique as informações passadas."),
+        navigation.navigate("Categorias");
     });
   };
 
@@ -110,25 +69,64 @@ const ListaCategoria = () => {
       <FlatList
         ListHeaderComponent={CategoryHeader}
         data={categoria}
-        renderItem={responseItem}
+        renderItem={({ item }) => (
+          <ListaEstilizada>
+            <FotoContainer>
+              <SombraFoto>
+                <FotoEstilizada source={{ uri: item.foto }} />
+              </SombraFoto>
+            </FotoContainer>
+            <NomeProduto>
+              <TextoDinamico
+                fColor={`${colors.secondary}`}
+                fSize="12px"
+                fontFamily="Verdana"
+              >
+                {item.nome}
+              </TextoDinamico>
+            </NomeProduto>
+
+            <TouchableOpacity>
+              <TextoDinamico
+                fColor="rgb(60, 98, 85);"
+                fSize="12px"
+                fontFamily="Verdana"
+              >
+                Editar
+              </TextoDinamico>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => deleteCategory(item.id)}>
+              <TextoDinamico
+                fColor="rgb(60, 98, 85);"
+                fSize="12px"
+                fontFamily="Verdana"
+              >
+                Excluir
+              </TextoDinamico>
+            </TouchableOpacity>
+          </ListaEstilizada>
+        )}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorLista}
       />
-
-      <InnerText
-        onChangeText={(e) => {
-          setName(e);
+      <View
+        style={{
+          display: visible ? "flex" : "none",
         }}
-        placeholder="Nome da Categoria"
-        style={{ display: visible ? "flex" : "none" }}
-      />
-      <InnerText
-        onChangeText={(e) => {
-          setPhoto(e);
-        }}
-        placeholder="URL da foto"
-        style={{ display: visible ? "flex" : "none" }}
-      />
+      >
+        <InnerText
+          onChangeText={(write) => {
+            setName(write);
+          }}
+          placeholder="Nome da Categoria"
+        />
+        <InnerText
+          onChangeText={(url) => {
+            setPhoto(url);
+          }}
+          placeholder="URL da foto"
+        />
+      </View>
       <PrincipalButton
         onUserPress={handleClick}
         height="50px"
