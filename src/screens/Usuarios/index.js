@@ -1,2 +1,3 @@
-export { default as EditarUsuario } from "./EditarUsuario";
+export { default as ListaUsuario } from "./ListaUsuario";
 export { default as ModalUsuario } from "./ModalUsuario";
+

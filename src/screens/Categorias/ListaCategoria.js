@@ -15,6 +15,7 @@ import {
   FotoEstilizada,
   NomeProduto,
 } from "../../components/FlatList/styled";
+import { CategoryHeader } from "../../components/Headers/CategoryHeader";
 
 const MyRenderItem = ({ name, image }) => (
   <ListaEstilizada>
@@ -35,7 +36,7 @@ const MyRenderItem = ({ name, image }) => (
 
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor="rgb(60, 98, 85);"
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -44,7 +45,7 @@ const MyRenderItem = ({ name, image }) => (
     </TouchableOpacity>
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor="rgb(60, 98, 85);"
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -59,6 +60,7 @@ const ListaCategoria = () => {
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
+  const [returnApi, setReturnApi] = useState("");
 
   const handleClick = () => {
     if (photo && name) {
@@ -73,7 +75,7 @@ const ListaCategoria = () => {
   );
 
   useEffect(() => {
-    herokuApi.get("/categoria").then((response) => setCategoria(response.data));
+    herokuApi.get("/categoria").then((res) => setCategoria(res.data));
   }, []);
 
   const postCategory = () => {
@@ -81,12 +83,19 @@ const ListaCategoria = () => {
       nome: name,
       foto: photo,
     };
-    herokuApi.post("/categoria", postBodyRequest);
+    herokuApi
+      .post("/categoria", postBodyRequest)
+      .then((res) =>
+        res.status == 200
+          ? alert("Categoria adicionada com sucesso")
+          : alert("Verifique as informações passadas.")
+      );
   };
 
   return (
     <ContainerCatProd>
       <FlatList
+        ListHeaderComponent={CategoryHeader}
         data={categoria}
         renderItem={responseItem}
         keyExtractor={(item) => item.id}
@@ -113,7 +122,7 @@ const ListaCategoria = () => {
         border="50px"
         mBottom="32px"
         mTop="10px"
-        bColor={`${colors.secondary}`}
+        bColor="rgb(60, 98, 85);"
       >
         <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
           Adicionar

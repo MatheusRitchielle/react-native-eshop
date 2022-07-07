@@ -59,3 +59,4 @@ export const updateCategory = async (item) => {
       );
     });
 };
+
