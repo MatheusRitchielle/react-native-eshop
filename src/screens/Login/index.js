@@ -6,6 +6,7 @@ import logoGrande from "../../../assets/images/logo-grande.png";
 import TextoDinamico from "../../components/Texts/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import CustomButton from "../../components/Buttons/SecondaryButton";
+import InputEye from "../../components/InputEye";
 
 const Login = ({ navigation }) => {
   return (
@@ -13,7 +14,7 @@ const Login = ({ navigation }) => {
       <LogoHorizontal source={logoGrande} />
 
       <InnerText placeholder="Login" />
-      <InnerText placeholder="Senha" secureTextEntry={true} />
+      <InputEye placeholder="Senha" secureTextEntry={true} />
 
       <CustomButton
         onUserPress={() => {

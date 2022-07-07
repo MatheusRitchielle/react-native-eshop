@@ -44,7 +44,7 @@ const Opcoes = ({ navigation }) => {
       </CardOpcoes>
 
       <CardOpcoes>
-        <SecondaryButton onPress={() => navigation.navigate("Usuarios")}>
+        <SecondaryButton onPress={() => navigation.navigate("ListaUsuario")}>
           <CustomText>
             <FontAwesome5 name="users" size={24} color="black" /> Usuários
           </CustomText>
