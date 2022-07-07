@@ -114,6 +114,7 @@ const ListaCategoria = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorLista}
       />
+
       <InnerText
         onChangeText={(e) => {
           setName(e);

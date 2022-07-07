@@ -6,7 +6,7 @@ export const InnerText = styled.TextInput`
   width: 270px;
   font-size: 16px;
   padding: 10px;
-  background-color: #333333;
+  background-color: #e3e3e3;
   align-self: center;
   border-radius: 12px;
   font-family: "Blinker";
