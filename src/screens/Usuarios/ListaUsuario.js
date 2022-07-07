@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FlatList } from "react-native";
+import React, { useState, useEffect, useCallback } from "react";
+import { FlatList, Modal } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
@@ -15,7 +15,8 @@ import {
   FotoEstilizada,
   NomeProduto,
 } from "../../components/FlatList/styled";
-import { ContainerCadastro } from "../../components/Containers/styled";
+import { Section } from './../../components/Section/styled';
+import { Overlay } from "react-native-elements";
 
 const RenderUsuario = ({ nome, image }) => (
   <ListaEstilizada>
@@ -63,8 +64,11 @@ const ListaUsuario = () => {
   const [login, setLogin] = useState("");
   const [ativo, setAtivo] = useState(true);
   const [usuario, setUsuario] = useState([]);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [dtNascimento, setDtNascimento] = useState("");
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
   const handleClick = () => {
     if (foto && nome && cpf && dtNascimento && login && senha && ativo) {
@@ -95,6 +99,16 @@ const ListaUsuario = () => {
     herokuApi.post("/usuario", postBodyRequest);
   };
 
+  const refreshPage = () => {
+    window.location.reload(false);
+  }
+
+  const handleClickModal = () => {
+    handleClick();
+    handleModal();
+    // refreshPage();
+  };
+
   return (
     <ContainerCatProd>
       <FlatList
@@ -103,55 +117,88 @@ const ListaUsuario = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorLista}
       />
-      <ContainerCadastro>
-        <InnerText
-          onChangeText={(e) => {
-            setNome(e);
-          }}
-          placeholder="Nome"
-          style={{ display: visible ? "flex" : "none" }}
-        />
-        <InnerText
-          onChangeText={(e) => {
-            setCpf(e);
-          }}
-          placeholder="CPF"
-          style={{ display: visible ? "flex" : "none" }}
-        />
-        <InnerText
-          onChangeText={(e) => {
-            setDtNascimento(e);
-          }}
+      <Modal
+        isVisible={isModalVisible}
+        visible={isModalVisible}
+        animationType="slide"
+        transparent={true}
+      >
+        <Overlay>
+          <InnerText
+            onChangeText={(e) => {
+              setNome(e);
+            }}
+            placeholder="Nome"
+            style={{ display: visible ? "flex" : "none" }}
+          />
+          <InnerText
+            onChangeText={(e) => {
+              setCpf(e);
+            }}
+            placeholder="CPF"
+            style={{ display: visible ? "flex" : "none" }}
+          />
+          <InnerText
+            onChangeText={(e) => {
+              setDtNascimento(e);
+            }}
 
-          placeholder="Data de Nascimento"
-          style={{ display: visible ? "flex" : "none" }}
-        />
-        <InnerText
-          onChangeText={(e) => {
-            setLogin(e);
-          }}
-          placeholder="Login"
-          style={{ display: visible ? "flex" : "none" }}
-        />
+            placeholder="Data de Nascimento"
+            style={{ display: visible ? "flex" : "none" }}
+          />
+          <InnerText
+            onChangeText={(e) => {
+              setLogin(e);
+            }}
+            placeholder="Login"
+            style={{ display: visible ? "flex" : "none" }}
+          />
 
-        <InnerText
-          onChangeText={(e) => {
-            setSenha(e);
-          }}
-          secureTextEntry={true}
-          placeholder="Senha"
-          style={{ display: visible ? "flex" : "none" }}
-        />
-        <InnerText
-          onChangeText={(e) => {
-            setFoto(e);
-          }}
-          placeholder="Foto"
-          style={{ display: visible ? "flex" : "none" }}
-        />
-      </ContainerCadastro>
+          <InnerText
+            onChangeText={(e) => {
+              setSenha(e);
+            }}
+            secureTextEntry={true}
+            placeholder="Senha"
+            style={{ display: visible ? "flex" : "none" }}
+          />
+          <InnerText
+            onChangeText={(e) => {
+              setFoto(e);
+            }}
+            placeholder="URL da foto"
+            style={{ display: visible ? "flex" : "none" }}
+          />
+          <Section>
+            <PrincipalButton
+              onUserPress={handleModal}
+              mTop="26px"
+              height="50px"
+              width="120px"
+              border="50px"
+              bColor={`${colors.secondary}`}
+            >
+              <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+                Fechar
+              </TextoDinamico>
+            </PrincipalButton>
+            <PrincipalButton
+              onUserPress={handleClickModal}
+              mTop="26px"
+              height="50px"
+              width="120px"
+              border="50px"
+              bColor={`${colors.secondary}`}
+            >
+              <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+                Cadastrar
+              </TextoDinamico>
+            </PrincipalButton>
+          </Section>
+        </Overlay>
+      </Modal>
       <PrincipalButton
-        onUserPress={handleClick}
+        onUserPress={handleModal}
         height="50px"
         width="120px"
         border="50px"

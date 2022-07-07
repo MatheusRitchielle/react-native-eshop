@@ -33,7 +33,6 @@ const Cadastro = ({ navigation }) => {
     navigation.navigate("CadastroSucesso")
   }
 
-
   useEffect(() => {
     herokuApi.get("/usuario").then((response) => setUsuario(response.data));
   }, []);
@@ -91,7 +90,7 @@ const Cadastro = ({ navigation }) => {
             onChangeText={(e) => {
               setFoto(e);
             }}
-            placeholder="Foto"
+            placeholder="URL da foto"
           />
         </ContainerCadastro>
         <PrincipalButton
