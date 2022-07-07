@@ -15,7 +15,7 @@ import {
   FotoEstilizada,
   NomeProduto,
 } from "../../components/FlatList/styled";
-import { Cadastro,  } from "./styled";
+import { ContainerCadastro } from "../../components/Containers/styled";
 
 const RenderUsuario = ({ nome, image }) => (
   <ListaEstilizada>
@@ -103,7 +103,7 @@ const ListaUsuario = () => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorLista}
       />
-      <Cadastro>
+      <ContainerCadastro>
         <InnerText
           onChangeText={(e) => {
             setNome(e);
@@ -149,7 +149,7 @@ const ListaUsuario = () => {
           placeholder="Foto"
           style={{ display: visible ? "flex" : "none" }}
         />
-      </Cadastro>
+      </ContainerCadastro>
       <PrincipalButton
         onUserPress={handleClick}
         height="50px"

@@ -28,3 +28,8 @@ export const ContainerCatProd = styled.View`
   padding: 24px;
   background-color: ${colors.tertiary};
 `;
+
+export const ContainerCadastro = styled.View`
+  justify-content: space-around;
+  width: 350px;
+`;
