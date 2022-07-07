@@ -171,7 +171,7 @@ const ListaProduto = () => {
             height="50px"
             width="120px"
             border="50px"
-            bColor={`${colors.secondary}`}
+            bColor={`${colors.seventh}`}
           >
             <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
               Fechar
@@ -183,7 +183,7 @@ const ListaProduto = () => {
             height="50px"
             width="120px"
             border="50px"
-            bColor={`${colors.secondary}`}
+            bColor={`${colors.seventh}`}
           >
             <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
               Cadastrar
@@ -197,7 +197,7 @@ const ListaProduto = () => {
         height="50px"
         width="120px"
         border="50px"
-        bColor={`${colors.secondary}`}
+        bColor={`${colors.seventh}`}
       >
         <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
           Adicionar

@@ -176,7 +176,7 @@ const ListaUsuario = () => {
               height="50px"
               width="120px"
               border="50px"
-              bColor={`${colors.secondary}`}
+               bColor={`${colors.seventh}`}
             >
               <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
                 Fechar
@@ -188,7 +188,7 @@ const ListaUsuario = () => {
               height="50px"
               width="120px"
               border="50px"
-              bColor={`${colors.secondary}`}
+               bColor={`${colors.seventh}`}
             >
               <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
                 Cadastrar
@@ -204,7 +204,7 @@ const ListaUsuario = () => {
         border="50px"
         mBottom="32px"
         mTop="10px"
-        bColor={`${colors.secondary}`}
+        bColor={`${colors.seventh}`}
       >
         <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
           Adicionar
@@ -213,5 +213,6 @@ const ListaUsuario = () => {
     </ContainerCatProd>
   );
 };
+
 
 export default ListaUsuario;
