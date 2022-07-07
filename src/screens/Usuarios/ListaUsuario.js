@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FlatList } from "react-native";
-import { TouchableOpacity, Modal } from "react-native-web";
+import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
@@ -15,8 +15,7 @@ import {
   FotoEstilizada,
   NomeProduto,
 } from "../../components/FlatList/styled";
-import { Cadastro } from "./styled";
-
+import { Cadastro,  } from "./styled";
 
 const RenderUsuario = ({ nome, image }) => (
   <ListaEstilizada>
@@ -44,7 +43,7 @@ const RenderUsuario = ({ nome, image }) => (
         Editar
       </TextoDinamico>
     </TouchableOpacity>
-    <TouchableOpacity>
+    <TouchableOpacity onClick={() => onDelete(data.id)}>
       <TextoDinamico
         fColor={`${colors.primary}`}
         fSize="12px"
@@ -68,7 +67,7 @@ const ListaUsuario = () => {
   const [dtNascimento, setDtNascimento] = useState("");
 
   const handleClick = () => {
-    if (foto && nome && cpf && dtNascimento && login && senha) {
+    if (foto && nome && cpf && dtNascimento && login && senha && ativo) {
       postUser();
       return;
     }
@@ -91,6 +90,7 @@ const ListaUsuario = () => {
       dtNascimento: dtNascimento,
       login: login,
       senha: senha,
+      ativo: ativo,
     };
     herokuApi.post("/usuario", postBodyRequest);
   };
@@ -133,12 +133,7 @@ const ListaUsuario = () => {
           placeholder="Login"
           style={{ display: visible ? "flex" : "none" }}
         />
-        {/* <InnerText
-          onChangeText={(e) => {
-            setAtivo(e);
-          }}
-          style={{ display: visible ? "flex" : "none" }}
-        /> */}
+
         <InnerText
           onChangeText={(e) => {
             setSenha(e);
@@ -168,7 +163,6 @@ const ListaUsuario = () => {
           Adicionar
         </TextoDinamico>
       </PrincipalButton>
-
     </ContainerCatProd>
   );
 };

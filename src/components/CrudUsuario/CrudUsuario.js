@@ -22,7 +22,7 @@ export const deleteUser = async (id) => {
         categoria,
     };
     await axios
-        .delete("https://reactnative.herokuapp.com/reactnative/", {
+        .delete("https://reactnative.herokuapp.com/reactnative/usuario/{id}", {
             data: delBodyRequest,
         })
         .then((response) => {
