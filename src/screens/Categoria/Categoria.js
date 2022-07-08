@@ -106,7 +106,6 @@ const ListaCategoria = ({ navigation }) => {
                 {item.nome}
               </TextoDinamico>
             </NomeProduto>
-
             <TouchableOpacity>
               <TextoDinamico
                 fColor={`${colors.verde}`}
@@ -116,7 +115,6 @@ const ListaCategoria = ({ navigation }) => {
                 Editar
               </TextoDinamico>
             </TouchableOpacity>
-
             <TouchableOpacity onPress={() => deleteCategory(item.id)}>
               <TextoDinamico
                 fColor={`${colors.verde}`}

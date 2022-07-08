@@ -4,9 +4,6 @@ import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
-import herokuApi from "../../service";
-import { InnerText } from "../../components/Inputs/styled";
-import { ContainerCatProd } from "../../components/Containers/styled";
 import {
   SeparadorLista,
   ListaEstilizada,
@@ -15,47 +12,11 @@ import {
   FotoEstilizada,
   NomeProduto,
 } from "../../components/FlatList/styled";
+import { ContainerCatProd } from "../../components/Containers/styled";
+import herokuApi from "../../service";
+import { InnerText } from "../../components/Inputs/styled";
 import { Section } from './../../components/Section/styled';
 import Modal from "react-native-modal"
-
-const RenderUsuario = ({ nome, image }) => (
-  <ListaEstilizada>
-    <FotoContainer>
-      <SombraFoto>
-        <FotoEstilizada source={{ uri: image }} />
-      </SombraFoto>
-    </FotoContainer>
-    <NomeProduto>
-      <TextoDinamico
-        fColor={`${colors.cinza}`}
-        fSize="12px"
-        fontFamily="Verdana"
-      >
-        {nome}
-      </TextoDinamico>
-    </NomeProduto>
-
-    <TouchableOpacity>
-      <TextoDinamico
-        fColor={`${colors.verde}`}
-        fSize="12px"
-        fontFamily="Verdana"
-      >
-        Editar
-      </TextoDinamico>
-    </TouchableOpacity>
-    <TouchableOpacity onClick={() => onDelete(data.id)}>
-      <TextoDinamico
-        fColor={`${colors.verde}`}
-        fSize="12px"
-        fontFamily="Verdana"
-      >
-        Excluir
-      </TextoDinamico>
-    </TouchableOpacity>
-  </ListaEstilizada>
-);
-
 
 const ListaUsuario = () => {
   const [cpf, setCpf] = useState("");
@@ -64,16 +25,107 @@ const ListaUsuario = () => {
   const [senha, setSenha] = useState("");
   const [login, setLogin] = useState("");
   const [ativo, setAtivo] = useState(true);
+  const [dtNascimento, setDtNascimento] = useState("");
   const [usuario, setUsuario] = useState([]);
   const [visible, setVisible] = useState(true);
-  const [dtNascimento, setDtNascimento] = useState("");
-
   const [isModalVisible, setIsModalVisible] = useState(false);
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
+  const RenderUsuario = ({ nome, image }) => (
+    <ListaEstilizada>
+      <FotoContainer>
+        <SombraFoto>
+          <FotoEstilizada source={{ uri: image }} />
+        </SombraFoto>
+      </FotoContainer>
+      <NomeProduto>
+        <TextoDinamico
+          fColor={`${colors.cinza}`}
+          fSize="12px"
+          fontFamily="Verdana"
+        >
+          {nome}
+        </TextoDinamico>
+      </NomeProduto>
+      <TouchableOpacity>
+        <TextoDinamico
+          fColor={`${colors.verde}`}
+          fSize="12px"
+          fontFamily="Verdana"
+        >
+          Editar
+        </TextoDinamico>
+      </TouchableOpacity>
+      <TouchableOpacity onClick={() => deleteUser(item.id)}>
+        <TextoDinamico
+          fColor={`${colors.verde}`}
+          fSize="12px"
+          fontFamily="Verdana"
+        >
+          Excluir
+        </TextoDinamico>
+      </TouchableOpacity>
+    </ListaEstilizada>
+  );
+
+  const postUsuario = () => {
+    let postBodyRequest = {
+      nome: nome,
+      foto: foto,
+      cpf: cpf,
+      dtNascimento: dtNascimento,
+      login: login,
+      senha: senha,
+      ativo: ativo,
+    };
+    herokuApi.post("/usuario", postBodyRequest).then((res) => {
+      if (res.status == 200) {
+        alert("Usuário cadastrado com sucesso");
+        setUsuario([
+          ...usuario,
+          {
+            id: res.data.id,
+            nome: res.data.nome,
+            foto: res.data.foto,
+            cpf: res.data.cpf,
+            dtNascimento: res.data.dtNascimento,
+            login: res.data.login,
+            senha: res.data.senha,
+            ativo: res.data.ativo,
+          },
+        ]);
+      } else {
+        alert("Verifique os campos preenchidos.");
+      }
+    });
+  };
+
+  const deleteUser = (id) => {
+    const delBodyRequest = {
+      id: id,
+      nome: nome,
+      foto: foto,
+      cpf: cpf,
+      dtNascimento: dtNascimento,
+      login: login,
+      senha: senha,
+      ativo: ativo,
+    };
+    herokuApi.delete(`/usuario/${id}`, delBodyRequest).then((res) => {
+      setUsuario((oldUsuario) =>
+        oldUsuario.filter((item) => item.id != id)
+      ),
+        res.status == 200
+          ? alert("Usuário deletado com sucesso!")
+          : alert("Não foi possível deletar o usuário!");
+    });
+  };
+
+
+
   const handleClick = () => {
     if (foto && nome && cpf && dtNascimento && login && senha && ativo) {
-      postUser();
+      postUsuario();
       return;
     }
     setVisible(!visible);
@@ -89,22 +141,7 @@ const ListaUsuario = () => {
     herokuApi.get("/usuario").then((response) => setUsuario(response.data));
   }, []);
 
-  const postUser = () => {
-    let postBodyRequest = {
-      nome: nome,
-      foto: foto,
-      cpf: cpf,
-      dtNascimento: dtNascimento,
-      login: login,
-      senha: senha,
-      ativo: ativo,
-    };
-    herokuApi.post("/usuario", postBodyRequest);
-  };
 
-  const refreshPage = () => {
-    window.location.reload(false);
-  }
 
   const handleClickModal = () => {
     handleClick();
