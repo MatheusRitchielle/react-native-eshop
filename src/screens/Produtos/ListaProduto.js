@@ -18,11 +18,11 @@ import { InnerText } from "../../components/Inputs/styled";
 import { Section } from './../../components/Section/styled';
 import Modal from "react-native-modal"
 
-const Item = ({ nome, qtdEstoque, preco, foto }) => (
+const RenderProduto = ({ nome, qtdEstoque, preco, image }) => (
   <ListaEstilizada>
     <FotoContainer>
       <SombraFoto>
-        <FotoEstilizada source={{ uri: foto }} />
+        <FotoEstilizada source={{ uri: image }} />
       </SombraFoto>
     </FotoContainer>
     <View>
@@ -73,28 +73,29 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
 );
 
 const ListaProduto = () => {
-  const [produto, setProduto] = useState([]);
+  const [categoriaId, setCategoriaId] = useState("")
+  const [descricao, setDescricao] = useState("");
   const [foto, setFoto] = useState("");
   const [nome, setNome] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const [qtdEstoque, setQtdEstoque] = useState("");
   const [preco, setPreco] = useState("");
+  const [qtdEstoque, setQtdEstoque] = useState("");
+  const [produto, setProduto] = useState([]);
   const [visible, setVisible] = useState(true);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
   const handleClick = () => {
-    if (nome && foto && qtdEstoque && preco) {
-      postProduct();
+    if (categoriaId && descricao && nome && foto && qtdEstoque && preco) {
+      postProduto();
       return;
     }
     setVisible(!visible);
   };
 
   const itemRenderizado = ({ item }) => (
-    <Item
-      foto={item.foto}
+    <RenderProduto
+      image={item.foto}
       nome={item.nome}
       qtdEstoque={item.qtdEstoque}
       preco={item.preco}
@@ -105,15 +106,22 @@ const ListaProduto = () => {
     herokuApi.get("/produto").then((response) => setProduto(response.data));
   }, []);
 
-  const postProduct = () => {
+  const postProduto = () => {
     let postBodyRequest = {
+      categoriaId: categoriaId,
+      descricao: descricao,
       foto: foto,
       nome: nome,
-      qtdEstoque: qtdEstoque,
       preco: preco,
-      descricao: descricao,
+      qtdEstoque: qtdEstoque,
     };
     herokuApi.post("/produto", postBodyRequest);
+  };
+
+  const handleClickModal = () => {
+    handleClick();
+    handleModal();
+    // refreshPage();
   };
 
   return (
@@ -136,6 +144,12 @@ const ListaProduto = () => {
             setNome(e);
           }}
           placeholder="Nome do produto"
+        />
+        <InnerText
+          onChangeText={(e) => {
+            setCategoriaId(e);
+          }}
+          placeholder="Número da categoria"
         />
         <InnerText
           onChangeText={(e) => {
@@ -175,7 +189,7 @@ const ListaProduto = () => {
             </TextoDinamico>
           </PrincipalButton>
           <PrincipalButton
-            onUserPress={handleClick}
+            onUserPress={handleClickModal}
             mTop="26px"
             height="50px"
             width="90px"

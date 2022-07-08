@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
@@ -56,6 +56,7 @@ const RenderUsuario = ({ nome, image }) => (
   </ListaEstilizada>
 );
 
+
 const ListaUsuario = () => {
   const [cpf, setCpf] = useState("");
   const [nome, setNome] = useState("");
@@ -79,7 +80,9 @@ const ListaUsuario = () => {
   };
 
   const responseItem = ({ item }) => (
-    <RenderUsuario nome={item.nome} image={item.foto} />
+    <RenderUsuario
+      nome={item.nome}
+      image={item.foto} />
   );
 
   useEffect(() => {
@@ -111,7 +114,6 @@ const ListaUsuario = () => {
 
   return (
     <ContainerCatProd>
-
       <FlatList
         data={usuario}
         renderItem={responseItem}

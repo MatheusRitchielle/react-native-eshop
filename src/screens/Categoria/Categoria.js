@@ -26,6 +26,9 @@ const ListaCategoria = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
   const [editar, setEditar] = useState(false);
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const handleModal = () => setIsModalVisible(() => !isModalVisible);
+
   const handleClick = () => {
     if (photo && name) {
       postCategory();
