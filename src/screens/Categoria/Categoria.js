@@ -22,6 +22,7 @@ const ListaCategoria = ({ navigation }) => {
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
+  const [editar, setEditar] = useState(false);
 
   const handleClick = () => {
     if (photo && name) {
@@ -40,13 +41,21 @@ const ListaCategoria = ({ navigation }) => {
       nome: name,
       foto: photo,
     };
-    herokuApi
-      .post("/categoria", postBodyRequest)
-      .then((res) =>
-        res.status == 200
-          ? alert("Categoria adicionada com sucesso")
-          : alert("Verifique as informações passadas.")
-      );
+    herokuApi.post("/categoria", postBodyRequest).then((res) => {
+      if (res.status == 200) {
+        alert("Categoria adicionada com sucesso");
+        setCategoria([
+          ...categoria,
+          {
+            id: res.data.id,
+            name: res.data.nome,
+            photo: res.data.foto,
+          },
+        ]);
+      } else {
+        alert("Verifique as informações passadas.");
+      }
+    });
   };
 
   const deleteCategory = (id) => {
@@ -56,11 +65,12 @@ const ListaCategoria = ({ navigation }) => {
       foto: photo,
     };
     herokuApi.delete(`/categoria/${id}`, delBodyRequest).then((res) => {
-      setCategoria((oldCategory) => oldCategory.filter((item) => item.id)),
+      setCategoria((oldCategory) =>
+        oldCategory.filter((item) => item.id != id)
+      ),
         res.status == 200
           ? alert("Categoria deletada com sucesso")
-          : alert("Verifique as informações passadas."),
-        navigation.navigate("Categorias");
+          : alert("Verifique as informações passadas.");
     });
   };
 
@@ -95,6 +105,7 @@ const ListaCategoria = ({ navigation }) => {
                 Editar
               </TextoDinamico>
             </TouchableOpacity>
+
             <TouchableOpacity onPress={() => deleteCategory(item.id)}>
               <TextoDinamico
                 fColor="rgb(60, 98, 85);"
@@ -104,6 +115,24 @@ const ListaCategoria = ({ navigation }) => {
                 Excluir
               </TextoDinamico>
             </TouchableOpacity>
+            <View
+              style={{
+                display: visible ? "flex" : "none",
+              }}
+            >
+              <InnerText
+                onChangeText={(write) => {
+                  setName(write);
+                }}
+                placeholder="Nome da Categoria"
+              />
+              <InnerText
+                onChangeText={(url) => {
+                  setPhoto(url);
+                }}
+                placeholder="URL da foto"
+              />
+            </View>
           </ListaEstilizada>
         )}
         keyExtractor={(item) => item.id}

@@ -11,7 +11,7 @@ export const ListaEstilizada = styled.View`
 `;
 
 export const FotoContainer = styled.View`
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 export const FotoEstilizada = styled.Image`
@@ -21,6 +21,7 @@ export const FotoEstilizada = styled.Image`
 `;
 
 export const SombraFoto = styled.View`
+  flex-direction: column;
   border-radius: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
