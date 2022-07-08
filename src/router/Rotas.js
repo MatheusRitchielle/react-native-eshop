@@ -17,7 +17,7 @@ const Rotas = () => {
           backgroundColor: "#121212",
           borderTopColor: "transparent",
         },
-        tabBarActiveTintColor: "#61882E",
+        tabBarActiveTintColor: "#3c6255",
         headerShown: false,
       }}
     >

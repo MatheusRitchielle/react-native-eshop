@@ -13,7 +13,7 @@ export const PrimaryButton = styled.Pressable`
   margin-left: ${(props) => props.marginL || "0px"};
   margin-right: ${(props) => props.marginR || "0px"};
   margin-bottom: ${(props) => props.marginB || "0px"};
-  background-color: ${(props) => props.buttonColor || `${colors.primary}`};
+  background-color: ${(props) => props.buttonColor || `${colors.verde}`};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: ${(props) => props.marginB || "0px"};
 `;
@@ -32,7 +32,7 @@ export const PrimaryButtonCS = styled.Pressable`
   height: 50px;
   border-radius: 50px;
   mix-blend-mode: normal;
-  background-color: ${colors.primary};
+  background-color: ${colors.verde};
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 

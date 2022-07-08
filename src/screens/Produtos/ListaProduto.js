@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlatList, View, Modal } from "react-native";
+import { FlatList, View } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 import TextoDinamico from "../../components/Texts";
 import colors from "../../theme/index";
@@ -16,6 +16,7 @@ import { ContainerCatProd } from "../../components/Containers/styled";
 import herokuApi from "../../service";
 import { InnerText } from "../../components/Inputs/styled";
 import { Section } from './../../components/Section/styled';
+import Modal from "react-native-modal"
 
 const Item = ({ nome, qtdEstoque, preco, foto }) => (
   <ListaEstilizada>
@@ -27,7 +28,7 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
     <View>
       <NomeProduto>
         <TextoDinamico
-          fColor={`${colors.secondary}`}
+          fColor={`${colors.cinza}`}
           fSize="12px"
           fontFamily="Verdana"
         >
@@ -35,14 +36,14 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
         </TextoDinamico>
       </NomeProduto>
       <TextoDinamico
-        fColor={`${colors.secondary}`}
+        fColor={`${colors.cinza}`}
         fSize="12px"
         fontFamily="Verdana"
       >
         {qtdEstoque} unidades
       </TextoDinamico>
       <TextoDinamico
-        fColor={`${colors.secondary}`}
+        fColor={`${colors.cinza}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -52,7 +53,7 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
 
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor={`${colors.verde}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -61,7 +62,7 @@ const Item = ({ nome, qtdEstoque, preco, foto }) => (
     </TouchableOpacity>
     <TouchableOpacity>
       <TextoDinamico
-        fColor={`${colors.primary}`}
+        fColor={`${colors.verde}`}
         fSize="12px"
         fontFamily="Verdana"
       >
@@ -124,6 +125,7 @@ const ListaProduto = () => {
         ItemSeparatorComponent={SeparadorLista}
       />
       <Modal
+        style={{ alignItems: "center" }}
         isVisible={isModalVisible}
         visible={isModalVisible}
         animationType="slide"
@@ -134,46 +136,41 @@ const ListaProduto = () => {
             setNome(e);
           }}
           placeholder="Nome do produto"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setDescricao(e);
           }}
           placeholder="Descrição"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setFoto(e);
           }}
           placeholder="URL da foto"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setQtdEstoque(e);
           }}
           placeholder="Quantidade em estoque"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <InnerText
           onChangeText={(e) => {
             setPreco(e);
           }}
           placeholder="Preco"
-          style={{ display: visible ? "flex" : "none" }}
         />
         <Section>
           <PrincipalButton
             onUserPress={handleModal}
             mTop="26px"
             height="50px"
-            width="120px"
+            width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Fechar
             </TextoDinamico>
           </PrincipalButton>
@@ -181,11 +178,11 @@ const ListaProduto = () => {
             onUserPress={handleClick}
             mTop="26px"
             height="50px"
-            width="120px"
+            width="90px"
             border="50px"
-            bColor={`${colors.seventh}`}
+            bColor={`${colors.verde}`}
           >
-            <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
               Cadastrar
             </TextoDinamico>
           </PrincipalButton>
@@ -193,13 +190,14 @@ const ListaProduto = () => {
       </Modal>
       <PrincipalButton
         onUserPress={handleModal}
-        mTop="26px"
         height="50px"
         width="120px"
         border="50px"
-        bColor={`${colors.seventh}`}
+        mBottom="32px"
+        mTop="10px"
+        bColor={`${colors.verde}`}
       >
-        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+        <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
           Adicionar
         </TextoDinamico>
       </PrincipalButton>

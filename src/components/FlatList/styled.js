@@ -5,7 +5,7 @@ export const ListaEstilizada = styled.View`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: ${colors.sixth};
+  background-color: ${colors.creme};
   padding: 8px;
   border-radius: 5px;
 `;
@@ -31,7 +31,7 @@ export const SeparadorLista = styled.View`
   width: ${(props) => props.width || "100%"};
   margin-top: ${(props) => props.marginTop || "0px"};
   margin-bottom: ${(props) => props.marginBottom || "0px"};
-  background-color: ${(props) => props.backgroundColor || `${colors.tertiary}`};
+  background-color: ${(props) => props.backgroundColor || `${colors.branco}`};
 `;
 
 export const NomeProduto = styled.View`

@@ -7,6 +7,7 @@ import TextoDinamico from "../../components/Texts/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import CustomButton from "../../components/Buttons/SecondaryButton";
 import InputEye from "../../components/Inputs/InputEye";
+import colors from "../../theme/index";
 
 const Login = ({ navigation }) => {
   return (
@@ -28,6 +29,7 @@ const Login = ({ navigation }) => {
 
       <PrincipalButton
         mTop="80px"
+        bColor={`${colors.verde}`}
         onUserPress={() => navigation.navigate("Rotas")}
       >
         <TextoDinamico>Entrar</TextoDinamico>

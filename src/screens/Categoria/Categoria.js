@@ -16,6 +16,8 @@ import {
   NomeProduto,
 } from "../../components/FlatList/styled";
 import { CategoryHeader } from "../../components/Headers/CategoryHeader";
+import Modal from "react-native-modal";
+import { Section } from "./../../components/Section/styled";
 
 const ListaCategoria = ({ navigation }) => {
   const [categoria, setCategoria] = useState([]);
@@ -30,6 +32,12 @@ const ListaCategoria = ({ navigation }) => {
       return;
     }
     setVisible(!visible);
+  };
+
+  const handleClickModal = () => {
+    handleClick();
+    handleModal();
+    // refreshPage();
   };
 
   useEffect(() => {
@@ -88,7 +96,7 @@ const ListaCategoria = ({ navigation }) => {
             </FotoContainer>
             <NomeProduto>
               <TextoDinamico
-                fColor={`${colors.secondary}`}
+                fColor={`${colors.cinza}`}
                 fSize="12px"
                 fontFamily="Verdana"
               >
@@ -98,7 +106,7 @@ const ListaCategoria = ({ navigation }) => {
 
             <TouchableOpacity>
               <TextoDinamico
-                fColor="rgb(60, 98, 85);"
+                fColor={`${colors.verde}`}
                 fSize="12px"
                 fontFamily="Verdana"
               >
@@ -108,7 +116,7 @@ const ListaCategoria = ({ navigation }) => {
 
             <TouchableOpacity onPress={() => deleteCategory(item.id)}>
               <TextoDinamico
-                fColor="rgb(60, 98, 85);"
+                fColor={`${colors.verde}`}
                 fSize="12px"
                 fontFamily="Verdana"
               >
@@ -138,10 +146,12 @@ const ListaCategoria = ({ navigation }) => {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={SeparadorLista}
       />
-      <View
-        style={{
-          display: visible ? "flex" : "none",
-        }}
+      <Modal
+        style={{ alignItems: "center" }}
+        isVisible={isModalVisible}
+        visible={isModalVisible}
+        animationType="slide"
+        transparent={true}
       >
         <InnerText
           onChangeText={(write) => {
@@ -155,17 +165,43 @@ const ListaCategoria = ({ navigation }) => {
           }}
           placeholder="URL da foto"
         />
-      </View>
+        <Section>
+          <PrincipalButton
+            onUserPress={handleModal}
+            mTop="26px"
+            height="50px"
+            width="90px"
+            border="50px"
+            bColor={`${colors.verde}`}
+          >
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
+              Fechar
+            </TextoDinamico>
+          </PrincipalButton>
+          <PrincipalButton
+            onUserPress={handleClickModal}
+            mTop="26px"
+            height="50px"
+            width="90px"
+            border="50px"
+            bColor={`${colors.verde}`}
+          >
+            <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
+              Cadastrar
+            </TextoDinamico>
+          </PrincipalButton>
+        </Section>
+      </Modal>
       <PrincipalButton
-        onUserPress={handleClick}
+        onUserPress={handleModal}
         height="50px"
         width="120px"
         border="50px"
         mBottom="32px"
         mTop="10px"
-        bColor="rgb(60, 98, 85);"
+        bColor={`${colors.verde}`}
       >
-        <TextoDinamico fColor={`${colors.tertiary}`} fSize="16px">
+        <TextoDinamico fColor={`${colors.branco}`} fSize="16px">
           Adicionar
         </TextoDinamico>
       </PrincipalButton>

@@ -15,7 +15,7 @@ export const CustomText = styled.Text`
   font-weight: ${(props) => props.weight || "normal"};
   font-size: ${(props) => props.size || "15"};
   padding-right: ${(props) => props.pdRight || "0"};
-  color: ${(props) => props.color || `${colors.fifth}`};
+  color: ${(props) => props.color || `${colors.preto}`};
 `;
 
 export const CardGeneric = styled.View`
