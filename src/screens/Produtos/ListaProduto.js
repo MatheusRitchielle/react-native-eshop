@@ -16,7 +16,8 @@ import { ContainerCatProd } from "../../components/Containers/styled";
 import herokuApi from "../../service";
 import { InnerText } from "../../components/Inputs/styled";
 import { Section } from './../../components/Section/styled';
-import Modal from "react-native-modal"
+import Modal from "react-native-modal";
+import { ProductListHeader } from "../../components/Headers/ProductListHeader";
 
 const RenderProduto = ({ nome, qtdEstoque, preco, image }) => (
   <ListaEstilizada>
@@ -127,6 +128,7 @@ const ListaProduto = () => {
   return (
     <ContainerCatProd>
       <FlatList
+        ListHeaderComponent={ProductListHeader}
         data={produto}
         renderItem={itemRenderizado}
         keyExtractor={(item) => item.id}

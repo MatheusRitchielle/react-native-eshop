@@ -32,7 +32,7 @@ const Login = ({ navigation }) => {
         bColor={`${colors.verde}`}
         onUserPress={() => navigation.navigate("Rotas")}
       >
-        <TextoDinamico>Entrar</TextoDinamico>
+        <TextoDinamico fColor={`${colors.branco}`}>Entrar</TextoDinamico>
       </PrincipalButton>
       <CustomButton
         sizeWidht="90px"
