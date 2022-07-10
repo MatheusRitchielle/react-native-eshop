@@ -17,6 +17,7 @@ import herokuApi from "../../service";
 import { InnerText } from "../../components/Inputs/styled";
 import { Section } from './../../components/Section/styled';
 import Modal from "react-native-modal"
+import { UserHeader } from "../../components/Headers/UserHeader";
 
 const ListaUsuario = () => {
   const [cpf, setCpf] = useState("");
@@ -121,8 +122,6 @@ const ListaUsuario = () => {
     });
   };
 
-
-
   const handleClick = () => {
     if (foto && nome && cpf && dtNascimento && login && senha && ativo) {
       postUsuario();
@@ -141,8 +140,6 @@ const ListaUsuario = () => {
     herokuApi.get("/usuario").then((response) => setUsuario(response.data));
   }, []);
 
-
-
   const handleClickModal = () => {
     handleClick();
     handleModal();
@@ -152,6 +149,7 @@ const ListaUsuario = () => {
   return (
     <ContainerCatProd>
       <FlatList
+        ListHeaderComponent={UserHeader}
         data={usuario}
         renderItem={responseItem}
         keyExtractor={(item) => item.id}
@@ -244,6 +242,5 @@ const ListaUsuario = () => {
     </ContainerCatProd>
   );
 };
-
 
 export default ListaUsuario;
