@@ -1,11 +1,12 @@
 import React from "react";
 import ContainerDinamico from "../../components/Containers";
-import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { CustomTitle } from "../../components/Texts/styled";
-import { CustomText } from "../../components/Texts/styled";
 import { AlignContainerCadastro } from "../Cadastros/styled";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
 import InputEye from "../../components/Inputs/InputEye";
+import colors from "../../theme/index";
+import TextoDinamico from "../../components/Texts";
 
 const CriarSenha = ({ navigation }) => {
   return (
@@ -20,7 +21,7 @@ const CriarSenha = ({ navigation }) => {
           mTop="48px"
           onUserPress={() => navigation.navigate("SenhaAlterada")}
         >
-          <CustomText>Alterar Senha</CustomText>
+          <TextoDinamico fColor={`${colors.branco}`}>Alterar senha</TextoDinamico>
         </PrincipalButton>
       </AlignContainerCadastro>
     </ContainerDinamico>

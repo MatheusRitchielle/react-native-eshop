@@ -6,6 +6,7 @@ import TextoDinamico from "../../components/Texts/index";
 import { LogoRecover } from "../../components/Images/styled";
 import recoverImage from "../../../assets/images/recover.png";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import colors from "../../theme/index";
 
 const RecuperaSenha = ({ navigation }) => {
   return (
@@ -20,7 +21,7 @@ const RecuperaSenha = ({ navigation }) => {
           mTop="80px"
           onUserPress={() => navigation.navigate("CriarSenha")}
         >
-          <TextoDinamico>Recuperar</TextoDinamico>
+          <TextoDinamico fColor={`${colors.branco}`}>Recuperar</TextoDinamico>
         </PrincipalButton>
       </View>
     </CustomContainer>

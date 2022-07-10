@@ -4,6 +4,7 @@ import { LogoRecover } from "../../components/Images/styled";
 import recoverImage from "../../../assets/images/recover.png";
 import TextoDinamico from "../../components/Texts/index";
 import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import colors from "../../theme/index";
 
 const SenhaAlterada = () => {
   return (
@@ -14,7 +15,7 @@ const SenhaAlterada = () => {
         mTop="80px"
         onUserPress={() => navigation.navigate("Login")}
       >
-        <TextoDinamico>Login</TextoDinamico>
+        <TextoDinamico fColor={`${colors.branco}`}>Login</TextoDinamico>
       </PrincipalButton>
     </ContainerDinamico>
   );
