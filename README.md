@@ -1,6 +1,8 @@
 # App Development Project - REACT NATIVE
 
-Projeto final desenvolvido em ReactNative. O intuito é criar um aplicativo dinâmico, que seja um eCommerce. 
+Projeto final desenvolvido em ReactNative. O intuito é criar um aplicativo dinâmico, que seja um eCommerce.
+
+<img align="center" src="https://uploaddeimagens.com.br/images/003/936/612/full/ecommerce.PNG?1657484859" />
 
 ## Setup
 Após clonar ou baixar o repositório, execute o comando:
