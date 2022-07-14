@@ -1,11 +1,13 @@
 import React from "react";
-import { InnerText } from "../../components/CustomInput/styles";
-import ContainerDinamico from "../../components/CustomContainer";
-import { LogoHorizontal } from "../../components/CustomImageLogo/styles";
+import { InnerText } from "../../components/Inputs/styled";
+import ContainerDinamico from "../../components/Containers/index";
+import { LogoHorizontal } from "../../components/Images/styled";
 import logoGrande from "../../../assets/images/logo-grande.png";
-import TextoDinamico from "../../components/CustomText";
-import PrincipalButton from "../../components/CustomButton/PrimaryButton";
-import CustomButton from "../../components/CustomButton/SecondaryButton";
+import TextoDinamico from "../../components/Texts/index";
+import PrincipalButton from "../../components/Buttons/PrimaryButton";
+import CustomButton from "../../components/Buttons/SecondaryButton";
+import InputEye from "../../components/Inputs/InputEye";
+import colors from "../../theme/index";
 
 const Login = ({ navigation }) => {
   return (
@@ -13,22 +15,24 @@ const Login = ({ navigation }) => {
       <LogoHorizontal source={logoGrande} />
 
       <InnerText placeholder="Login" />
-      <InnerText placeholder="Senha" secureTextEntry={true} />
+      <InputEye placeholder="Senha" secureTextEntry={true} />
 
       <CustomButton
-        tAlign="left"
         onUserPress={() => {
           navigation.navigate("Recuperar Senha");
         }}
       >
-        <TextoDinamico fSize="15px">Esqueci a senha</TextoDinamico>
+        <TextoDinamico fSize="15px" alignSelf="flex-start">
+          Esqueci a senha
+        </TextoDinamico>
       </CustomButton>
 
       <PrincipalButton
-        mTop="5rem"
+        mTop="80px"
+        bColor={`${colors.verde}`}
         onUserPress={() => navigation.navigate("Rotas")}
       >
-        <TextoDinamico>Entrar</TextoDinamico>
+        <TextoDinamico fColor={`${colors.branco}`}>Entrar</TextoDinamico>
       </PrincipalButton>
       <CustomButton
         sizeWidht="90px"

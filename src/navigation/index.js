@@ -1,16 +1,18 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Cadastro from "../screens/Cadastro/index";
-import Categoria from "../screens/Categoria/index";
-import Produto from "../screens/ListaProduto/index";
-import RecuperarSenha from "../screens/RecuperarSenha/index";
+import CadastrarUsuario from "../screens/Cadastros/CadastrarUsuario";
+import ListaProduto from "../screens/Produtos/ListaProduto";
+import RecuperarSenha from "../screens/Senha/RecuperarSenha";
 import Home from "../screens/Home/index";
 import Rotas from "../router/Rotas";
 import Opcoes from "../screens/Opcoes";
-import CadastroSucesso from "../screens/CadastroSucesso/index";
-import colors from "../theme/index";
-import Login from "../screens/Login";
+import CadastroSucesso from "../screens/Cadastros/CadastroSucesso";
+import Login from "../screens/Login/index";
+import SenhaAlterada from "../screens/Senha/SenhaAlterada";
+import CriarNovaSenha from "./../screens/Senha/CriarNovaSenha";
+import ListaUsuario from "../screens/Usuarios/ListaUsuario";
+import Categoria from "../screens/Categoria/Categoria";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,21 +28,23 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
-
         <Stack.Screen
           name="Cadastro"
-          component={Cadastro}
+          component={CadastrarUsuario}
           options={{
-            headerStyle: { backgroundColor: "#d9d9d9" },
-            headerTintColor: "#121212",
+            headerTintColor: "#474747",
+            headerTransparent: true,
+            title: false,
           }}
         />
         <Stack.Screen
-          name=" "
+          name="CadastroSucesso"
           component={CadastroSucesso}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
             headerTintColor: "#121212",
+            headerTransparent: true,
+            title: false,
           }}
         />
         <Stack.Screen
@@ -48,8 +52,26 @@ const Navigation = () => {
           component={RecuperarSenha}
           options={{
             headerStyle: { backgroundColor: "#d9d9d9" },
-            headerTintColor: "#121212",
-            headerShown: false,
+            headerTransparent: true,
+            title: false,
+          }}
+        />
+        <Stack.Screen
+          name="SenhaAlterada"
+          component={SenhaAlterada}
+          options={{
+            headerStyle: { backgroundColor: "#d9d9d9" },
+            headerTransparent: true,
+            title: false,
+          }}
+        />
+        <Stack.Screen
+          name="CriarSenha"
+          component={CriarNovaSenha}
+          options={{
+            headerStyle: { backgroundColor: "#d9d9d9" },
+            headerTransparent: true,
+            title: false,
           }}
         />
         <Stack.Screen
@@ -72,30 +94,41 @@ const Navigation = () => {
         />
         <Stack.Screen
           name="Pagina de Produtos"
-          component={Produto}
+          component={ListaProduto}
           options={{
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
-            headerShown: false,
+            title: "Produtos",
+            headerTitleAlign: "center",
           }}
         />
         <Stack.Screen
-          name="Pagina de Categirias"
+          name="Categorias"
           component={Categoria}
           options={{
             headerStyle: { backgroundColor: "#333" },
-            headerTintColor: "#C8C5C5",
             headerShown: false,
+            title: "Categorias",
+            headerTintColor: "#C8C5C5",
+            headerTitleAlign: "center",
           }}
         />
         <Stack.Screen
           name="Opcao"
           component={Opcoes}
           options={{
-            headerShadowVisible: false,
             headerStyle: { backgroundColor: "#333" },
             headerTintColor: "#C8C5C5",
             headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="ListaUsuario"
+          component={ListaUsuario}
+          options={{
+            headerStyle: { backgroundColor: "#333" },
+            headerTintColor: "#61882E",
           }}
         />
       </Stack.Navigator>

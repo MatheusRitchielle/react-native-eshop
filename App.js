@@ -1,12 +1,14 @@
-import * as React from "react";
-import { SafeAreaView } from "react-native";
+import React from "react";
 import Navigation from "./src/navigation/index";
+import { MySafeAreaView } from "./Styled";
 
-const App = () => {
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
+const App = () => (
+
+   <MySafeAreaView>
+      {/* <FontStyles /> */}
       <Navigation />
-    </SafeAreaView>
-  );
-};
+    </MySafeAreaView>
+
+);
+
 export default App;
